@@ -22,7 +22,7 @@ As a student, I want to easily enroll in courses through the enrollment system s
       2. If space are available, the user is enrolled in the practical, and the system logs the enrollment details in the database.
       3. If no space are available, the user is added to the waiting list for that practical, with all relevant data stored in the database.
 6. System update the dashboard in enrollment for user to view the most recent enrollment status and waiting list information.
-   
+
 #### Responsibilities
 
 ##### Data data retrieval responsibilities
