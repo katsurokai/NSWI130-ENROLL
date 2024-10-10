@@ -51,13 +51,11 @@ As a student, I want to easily enroll in courses through the enrollment system s
 * Provide clear feedback and next steps to the user regarding their enrollment process.
 
 ##### User notification responsibilities
-
 * Inform the user of successful enrollment or waiting list placement immediately.
 * Provide status updates on the dashboard and via email or SMS if requested.
 * Alert users if a seat becomes available in a course they are on the waiting list for.
 
 ##### Error handling and troubleshooting responsibilities
-
 * Detect and handle errors that might occur during the data retrieval and enrollment process.
 * Provide helpful error messages to guide users if enrollment fails.
 * Log any system issues for further analysis and troubleshooting.

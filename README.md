@@ -1,11 +1,22 @@
 # NSWI130-ENROLL
 
+## Random thoughts & problems
+what does teacher see x what does students see on a dashboard (admin???)
+
 # Terminology
 I'm proposing this terminology I did not change anything in features/Enrollment.md in case you disagree
 
 *Enrolment* -  the action of signing for a subject
 *Sign up for lecture/practical* - the action of choosing specific time of a class from the available, given from the subject we enrolled in
+course
+lecture
+practical
 
+user x student x teacher
+
+does class material-feature contain students sending files(homework) to teachers or do we not support this? Is it seperate feature?
+Should class material be split between teacher and student more clearly?
+does it track HW deadlines?
 
 ## CORE
 - [Student Enrollment](./features/Enrollment.md)
@@ -18,7 +29,7 @@ I'm proposing this terminology I did not change anything in features/Enrollment.
 > - Adding/ removing classes
 > - Unenrolling students
 
-- Class material
+- [Class material](./features/ClassMaterial.md)
 > As a teacher I want to share class material with the students
 > As a student I want to access said material for my education and studying purpuses
 
