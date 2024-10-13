@@ -26,7 +26,7 @@ does it track HW deadlines?
 > As a administator, I would like to have the ability to manage courses, including the following capabilities:
 > - Adding/archiving courses.
 > - Open courses for student enrollment.
-> - Enroll or unenroll students in courses.
+> - [Enroll or unenroll students in courses.](./features/Enroll%20accessibility.md)
 > - Rescheduling classes
 
 > As a teacher, I would like to modify course details as needed.
