@@ -22,6 +22,13 @@ does it track HW deadlines?
 - [Student Enrollment](./features/Enrollment.md)
 > As a student I need to be able to enroll in a class as my rights according to \<legal document\>
 
+- Teacher's course establishment
+> As a teacher, I would like to have the ability to manage my courses, including the following capabilities:
+> - Open courses for student enrollment.
+> - Enroll or unenroll students in my courses.
+> - Modify course details as needed to ensure they are up-to-date.
+> This will allow for greater flexibility and control over the course management process.
+
 - Admin Override
 > In a case of unpredictible circumstanses/ emergency
 > As administrator I want to be able to change anything not limited to
