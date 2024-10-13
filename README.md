@@ -27,15 +27,9 @@ does it track HW deadlines?
 > - Adding/archiving courses.
 > - Open courses for student enrollment.
 > - Enroll or unenroll students in courses.
+> - Rescheduling classes
 
 > As a teacher, I would like to modify course details as needed.
-
-- Admin Override
-> In a case of unpredictible circumstanses/ emergency
-> As administrator I want to be able to change anything not limited to
-> - Rescheduling classes
-> - Adding/ removing classes
-> - Unenrolling students
 
 - [Class material](./features/ClassMaterial.md)
 > As a teacher I want to share class material with the students
