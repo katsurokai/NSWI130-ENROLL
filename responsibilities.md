@@ -1,7 +1,3 @@
-# Enrollment System
-
-## Core features and responsibilities
-
 ### Feature: Class Material(student)
 ### Feature: Class Material(teacher)
 #### Responsibilities
@@ -23,10 +19,6 @@
 #### Safe data storage responsibilities
 * Files upload to SIS must be secure and not visible to non-users.
 * Files should be encrypted or otherwise protected.
-
-# Enrollment System
-
-## Core features and responsibilities
 
 ### Feature: Enroll accessibility
 #### Responsibilities
@@ -75,9 +67,8 @@
 * Detect and handle errors that might occur during the data retrieval and enrollment process.
 * Provide helpful error messages to guide users if enrollment fails.
 * Log any system issues for further analysis and troubleshooting.
-# Enrollment System
 
-# Feature: Unenroll Course
+## Feature: Unenroll Course
 #### Data Retrieval Responsibilities
 
 * Retrieve the student’s enrollment information from the database.
