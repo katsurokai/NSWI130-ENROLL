@@ -35,9 +35,11 @@ does it track HW deadlines?
 > As a teacher I want to share class material with the students
 > As a student I want to access said material for my education and studying purpuses
 
+
+- [Unenrollment](./features/Unenroll.md)
+> As a student I might want to change my schedules/ subjects to better fit my schedule/ study plan 
+
 ## Pretty Essential
-#### Unenrollment
-> As a student I might want to change my schedules/ subjects to better fit my schedule/ study plan
 
 #### Enrollment assistant
 > As a student I have an assistant remiding me of
