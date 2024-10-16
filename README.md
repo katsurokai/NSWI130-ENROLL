@@ -1,5 +1,11 @@
 # NSWI130-ENROLL
 
+## (10/16/2024)
+I have created C4 model folder and add a base software system level 1 to the repo.
+I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram. 
+
+The most important part that each individual of us need to do is the **lvl2 containers** and **lvl3 components**
+
 ## Random thoughts & problems
 what does teacher see x what does students see on a dashboard (admin???)
 
