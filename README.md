@@ -8,6 +8,8 @@ The most important part that each individual of us need to do is the **lvl2 cont
 
 Here is my take on lvl2 containers [Containers](./C4/lvl2-Containers/structurizr-lvl2-enrollmentSystemContainerDiagram.png)
 
+Level 3 which is component of each feature in in detail that we each need to do [component](./C4/lvl3-Components/structurizr-lvl3-enrollmentSystemComponentDiagram.png)
+
 ## Random thoughts & problems
 what does teacher see x what does students see on a dashboard (admin???)
 
