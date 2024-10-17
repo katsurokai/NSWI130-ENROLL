@@ -10,7 +10,7 @@ Here is my take on lvl2 containers [Containers](./C4/lvl2-Containers/structurizr
 
 Level 3 which is component of each feature in in detail that we each need to do [component](./C4/lvl3-Components/structurizr-lvl3-enrollmentSystemComponentDiagram.png)
 
-Lastly, this is the whole model with presentation, business, and persistence layer [C4](./C4-enrolldashboardAppComponentDiagram.png)
+Lastly, this is the whole model with presentation, business, and persistence layer [C4](./C4/C4-enrolldashboardAppComponentDiagram.png)
 
 ## Random thoughts & problems
 what does teacher see x what does students see on a dashboard (admin???)
