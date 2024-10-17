@@ -1,16 +1,16 @@
 # NSWI130-ENROLL
 
 ## (10/16/2024)
-I have created C4 model folder and add a base software system level 1 to the repo. [Software System](./C4/lvl1-System-Software/structurizr-1-enrollmentSystemContextDiagram.png)
-I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram. 
+> I have created C4 model folder and add a base software system level 1 to the repo. [Software System](./C4/lvl1-System-Software/structurizr-1-enrollmentSystemContextDiagram.png)
+> I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram. 
 
-The most important part that each individual of us need to do is the **lvl2 containers** and **lvl3 components**
+> The most important part that each individual of us need to do is the **lvl2 containers** and **lvl3 components**
 
-Here is my take on lvl2 containers [Containers](./C4/lvl2-Containers/structurizr-lvl2-enrollmentSystemContainerDiagram.png)
+> Here is my take on lvl2 containers [Containers](./C4/lvl2-Containers/structurizr-lvl2-enrollmentSystemContainerDiagram.png)
 
-Level 3 which is component of each feature in in detail that we each need to do [component](./C4/lvl3-Components/structurizr-lvl3-enrollmentSystemComponentDiagram.png)
+> Level 3 which is component of each feature in in detail that we each need to do [component](./C4/lvl3-Components/structurizr-lvl3-enrollmentSystemComponentDiagram.png)
 
-Lastly, this is the whole model with presentation, business, and persistence layer [C4](./C4/C4-enrolldashboardAppComponentDiagram.png)
+> Lastly, this is the whole model with presentation, business, and persistence layer [C4](./C4/C4-enrolldashboardAppComponentDiagram.png)
 
 ## Random thoughts & problems
 what does teacher see x what does students see on a dashboard (admin???)
