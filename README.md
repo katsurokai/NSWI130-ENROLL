@@ -1,5 +1,13 @@
 # NSWI130-ENROLL
 
+## Meeting Minute
+
+> As we have discuess, we would use the dsl file to make our diagram like in the lecture video.
+> I have create a template for it from lvl1 to lvl3 (Software System, Containers, Components).
+> Use this latest [file](./C4/workspaceC4.dsl) to add your part
+> This dsl file require Structurizr to be running on your machine to generate the diagram. (View the lecture videos)
+> **Note**: lvl1 have already been define. Please add lvl2 (containers) and lvl3 (components) which related to your features.
+
 ## (10/16/2024)
 > I have created C4 model folder and add a base software system level 1 to the repo. [Software System](./C4/lvl1-System-Software/structurizr-1-enrollmentSystemContextDiagram.png)
 > I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram. 
