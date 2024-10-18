@@ -3,9 +3,13 @@
 ## Meeting Minute
 
 > As we have discuess, we would use the dsl file to make our diagram like in the lecture video.
+
 > I have create a template for it from lvl1 to lvl3 (Software System, Containers, Components).
+
 > Use this latest [file](./C4/workspaceC4.dsl) to add your part
+
 > This dsl file require Structurizr to be running on your machine to generate the diagram. (View the lecture videos)
+
 > **Note**: lvl1 have already been define. Please add lvl2 (containers) and lvl3 (components) which related to your features.
 
 ## (10/16/2024)
