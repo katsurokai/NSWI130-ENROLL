@@ -15,7 +15,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
                 enrollValidation = component "Enrollment Validation" "Check for requirement on courses"
                 notifer = component "Notifier" "Send notification to notif container"
                 dataSync = component "DataSync" "handle data retrieval and synchronication with SIS API"
-                enrollLog = component "Enrollment Logger" "Logs all enrollment actions"
+                enrollLog = component "Enrollment Logger" "Logs all enrollment actions (and unenrollment)"
                 errorHandler = component "Error Handler" "Detect and handle any errors that occur"
             }
             unenroll = container "Unenrollment Manager" "add"
