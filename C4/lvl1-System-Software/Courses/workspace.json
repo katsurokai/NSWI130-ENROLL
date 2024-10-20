@@ -1,0 +1,135 @@
+{
+  "configuration" : { },
+  "description" : "This workspace documents the architecture of the Course establishment",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2024-10-20T19:19:04Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Manages content of their tought courses",
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Teacher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "teacher"
+      },
+      "relationships" : [ {
+        "description" : "Add materials to their tought courses",
+        "destinationId" : "1",
+        "id" : "5",
+        "properties" : {
+          "structurizr.dsl.identifier" : "9286a18d-f36c-4ec0-b947-6c6367220c9e"
+        },
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Administers courses",
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Business administrator",
+      "properties" : {
+        "structurizr.dsl.identifier" : "admin"
+      },
+      "relationships" : [ {
+        "description" : "Rules courses lifecycle, stes enroll access status",
+        "destinationId" : "1",
+        "id" : "6",
+        "properties" : {
+          "structurizr.dsl.identifier" : "74f3a0f2-14cb-45b3-9a7d-4aa4e3a57329"
+        },
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "add later",
+      "documentation" : { },
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Course establishment",
+      "properties" : {
+        "structurizr.dsl.identifier" : "coursesestablishmentsys"
+      },
+      "relationships" : [ {
+        "description" : "Make API calls to write/read courses information",
+        "destinationId" : "2",
+        "id" : "7",
+        "properties" : {
+          "structurizr.dsl.identifier" : "6e9c130a-b397-4940-85a7-07210b460244"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Manages courses data",
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Courses Information System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cisapi"
+      },
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Course establishment",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJDb3Vyc2UgZXN0YWJsaXNobWVudCAiICJUaGlzIHdvcmtzcGFjZSBkb2N1bWVudHMgdGhlIGFyY2hpdGVjdHVyZSBvZiB0aGUgQ291cnNlIGVzdGFibGlzaG1lbnQiIHsKICAgIAogICAgbW9kZWwgewogICAgICAgICMgc29mdHdhcmUgc3lzdGVtcwogICAgICAgIGNvdXJzZXNFc3RhYmxpc2htZW50U3lzID0gc29mdHdhcmVTeXN0ZW0gIkNvdXJzZSBlc3RhYmxpc2htZW50IiAiYWRkIGxhdGVyIgogICAgICAgIGNpc0FwaSA9IHNvZnR3YXJlU3lzdGVtICJDb3Vyc2VzIEluZm9ybWF0aW9uIFN5c3RlbSIgIk1hbmFnZXMgY291cnNlcyBkYXRhIgoKICAgICAgICAjIGFjdG9ycwogICAgICAgIHRlYWNoZXIgPSBwZXJzb24gIlRlYWNoZXIiICJNYW5hZ2VzIGNvbnRlbnQgb2YgdGhlaXIgdG91Z2h0IGNvdXJzZXMiCiAgICAgICAgYWRtaW4gPSBwZXJzb24gIkJ1c2luZXNzIGFkbWluaXN0cmF0b3IiICJBZG1pbmlzdGVycyBjb3Vyc2VzIgoKICAgICAgICAjIHJlbGF0aW9uc2hpcHMgYmV0d2VlbiB1c2VycyBhbmQgRW5yb2xsbWVudCBTeXN0ZW0KICAgICAgICB0ZWFjaGVyIC0+IGNvdXJzZXNFc3RhYmxpc2htZW50U3lzICJBZGQgbWF0ZXJpYWxzIHRvIHRoZWlyIHRvdWdodCBjb3Vyc2VzIgogICAgICAgIGFkbWluIC0+IGNvdXJzZXNFc3RhYmxpc2htZW50U3lzICJSdWxlcyBjb3Vyc2VzIGxpZmVjeWNsZSwgc3RlcyBlbnJvbGwgYWNjZXNzIHN0YXR1cyIKCiAgICAgICAgIyByZWxhdGlvbnNoaXBzIGJldHdlZW4gZXh0ZXJuYWwgc3lzdGVtcyBhbmQgRW5yb2xsbWVudCBTeXN0ZW0KICAgICAgICBjb3Vyc2VzRXN0YWJsaXNobWVudFN5cyAtPiBjaXNBcGkgIk1ha2UgQVBJIGNhbGxzIHRvIHdyaXRlL3JlYWQgY291cnNlcyBpbmZvcm1hdGlvbiIKICAgIH0KCiAgICB2aWV3cyB7CgogICAgICAgIHN5c3RlbUNvbnRleHQgY291cnNlc0VzdGFibGlzaG1lbnRTeXMgImNvdXJzZXNFc3RhYmxpc2htZW50U3lzdGVtQ29udGV4dERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgICAKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgfQogICAgCgp9"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "coursesEstablishmentSystemContextDiagram",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "Existing System"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "systemContextViews" : [ {
+      "dimensions" : {
+        "height" : 1748,
+        "width" : 2480
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 1085,
+        "y" : 590
+      }, {
+        "id" : "2",
+        "x" : 285,
+        "y" : 970
+      }, {
+        "id" : "3",
+        "x" : 1830,
+        "y" : 910
+      }, {
+        "id" : "4",
+        "x" : 1775,
+        "y" : 115
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "coursesEstablishmentSystemContextDiagram",
+      "order" : 1,
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "5"
+      }, {
+        "id" : "6"
+      }, {
+        "id" : "7"
+      } ],
+      "softwareSystemId" : "1"
+    } ]
+  }
+}

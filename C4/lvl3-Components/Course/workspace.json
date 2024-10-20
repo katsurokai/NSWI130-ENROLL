@@ -1,0 +1,233 @@
+{
+  "configuration" : { },
+  "description" : "This workspace documents the architecture of the Course establishment",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2024-10-20T20:23:22Z",
+  "model" : {
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Creates course if validation is true.",
+        "documentation" : { },
+        "id" : "2",
+        "name" : "Creator",
+        "properties" : {
+          "structurizr.dsl.identifier" : "creator"
+        },
+        "relationships" : [ {
+          "description" : "Validates data before creating course",
+          "destinationId" : "3",
+          "id" : "7",
+          "properties" : {
+            "structurizr.dsl.identifier" : "a02a93df-08e3-4a27-b093-4e492bce4e51"
+          },
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Make API call to add data (external)",
+          "destinationId" : "4",
+          "id" : "8",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0a6ef8ae-72b1-4382-a49d-4239ac57c523"
+          },
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Handles data.",
+        "documentation" : { },
+        "id" : "3",
+        "name" : "Data Validation Handler",
+        "properties" : {
+          "structurizr.dsl.identifier" : "datavalidationhandler"
+        },
+        "relationships" : [ {
+          "description" : "Make API call to validate data (external)",
+          "destinationId" : "4",
+          "id" : "10",
+          "properties" : {
+            "structurizr.dsl.identifier" : "59338433-a0cc-4499-a078-5a0bdbab6dc5"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Handles course establishment functionalities",
+      "documentation" : { },
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Course establishment",
+      "properties" : {
+        "structurizr.dsl.identifier" : "coursesestablishmentsys"
+      },
+      "relationships" : [ {
+        "description" : "Make API call to add data (external)",
+        "destinationId" : "4",
+        "id" : "9",
+        "linkedRelationshipId" : "8",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Manages courses data",
+      "documentation" : { },
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Courses Information System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cisapi"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "Provides functionality for course administration in a web browser.",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Course administration dashboard HTML",
+        "properties" : {
+          "structurizr.dsl.identifier" : "coursesadministationdashboardhtml"
+        },
+        "relationships" : [ {
+          "description" : "Delivers course data (external)",
+          "destinationId" : "2",
+          "id" : "11",
+          "properties" : {
+            "structurizr.dsl.identifier" : "2f710c18-f985-4b5b-bf4b-028d1d6eb5ed"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Delivers course data (external)",
+          "destinationId" : "1",
+          "id" : "12",
+          "linkedRelationshipId" : "11",
+          "sourceId" : "6"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Web Front-End"
+      } ],
+      "description" : "Provides functionality for course administration.",
+      "documentation" : { },
+      "id" : "5",
+      "location" : "Unspecified",
+      "name" : "Courses Administration Dashboard System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "coursesadministationdashboardsys"
+      },
+      "relationships" : [ {
+        "description" : "Delivers course data (external)",
+        "destinationId" : "2",
+        "id" : "13",
+        "linkedRelationshipId" : "11",
+        "sourceId" : "5"
+      }, {
+        "description" : "Delivers course data (external)",
+        "destinationId" : "1",
+        "id" : "14",
+        "linkedRelationshipId" : "11",
+        "sourceId" : "5"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Course establishment",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJDb3Vyc2UgZXN0YWJsaXNobWVudCIgIlRoaXMgd29ya3NwYWNlIGRvY3VtZW50cyB0aGUgYXJjaGl0ZWN0dXJlIG9mIHRoZSBDb3Vyc2UgZXN0YWJsaXNobWVudCIgewoKICAgIG1vZGVsIHsKICAgICAgICAjIHNvZnR3YXJlIHN5c3RlbXMKICAgICAgICBjb3Vyc2VzRXN0YWJsaXNobWVudFN5cyA9IHNvZnR3YXJlU3lzdGVtICJDb3Vyc2UgZXN0YWJsaXNobWVudCIgIkhhbmRsZXMgY291cnNlIGVzdGFibGlzaG1lbnQgZnVuY3Rpb25hbGl0aWVzIiB7CiAgICAgICAgICAgIGNyZWF0b3IgPSBjb250YWluZXIgIkNyZWF0b3IiICJDcmVhdGVzIGNvdXJzZSBpZiB2YWxpZGF0aW9uIGlzIHRydWUuIgogICAgICAgICAgICBkYXRhVmFsaWRhdGlvbkhhbmRsZXIgPSBjb250YWluZXIgIkRhdGEgVmFsaWRhdGlvbiBIYW5kbGVyIiAiSGFuZGxlcyBkYXRhLiIKICAgICAgICB9CgogICAgICAgICMgZXh0ZXJuYWwgc3lzdGVtcwogICAgICAgIGNpc0FwaSA9IHNvZnR3YXJlU3lzdGVtICJDb3Vyc2VzIEluZm9ybWF0aW9uIFN5c3RlbSIgIk1hbmFnZXMgY291cnNlcyBkYXRhIgoKICAgICAgICAjIERlZmluZSBjb3Vyc2VzQWRtaW5pc3RhdGlvbkRhc2hib2FyZEhUTUwgYXMgYSBjb250YWluZXIgd2l0aGluIGFuIGV4dGVybmFsIHNvZnR3YXJlIHN5c3RlbQogICAgICAgIGNvdXJzZXNBZG1pbmlzdGF0aW9uRGFzaGJvYXJkU3lzID0gc29mdHdhcmVTeXN0ZW0gIkNvdXJzZXMgQWRtaW5pc3RyYXRpb24gRGFzaGJvYXJkIFN5c3RlbSIgIlByb3ZpZGVzIGZ1bmN0aW9uYWxpdHkgZm9yIGNvdXJzZSBhZG1pbmlzdHJhdGlvbi4iIHsKICAgICAgICAgICAgY291cnNlc0FkbWluaXN0YXRpb25EYXNoYm9hcmRIVE1MID0gY29udGFpbmVyICJDb3Vyc2UgYWRtaW5pc3RyYXRpb24gZGFzaGJvYXJkIEhUTUwiICJQcm92aWRlcyBmdW5jdGlvbmFsaXR5IGZvciBjb3Vyc2UgYWRtaW5pc3RyYXRpb24gaW4gYSB3ZWIgYnJvd3Nlci4iICJXZWIgRnJvbnQtRW5kIgogICAgICAgIH0KCiAgICAgICAgIyByZWxhdGlvbnNoaXBzCiAgICAgICAgY3JlYXRvciAtPiBkYXRhVmFsaWRhdGlvbkhhbmRsZXIgIlZhbGlkYXRlcyBkYXRhIGJlZm9yZSBjcmVhdGluZyBjb3Vyc2UiCiAgICAgICAgY3JlYXRvciAtPiBjaXNBcGkgIk1ha2UgQVBJIGNhbGwgdG8gYWRkIGRhdGEgKGV4dGVybmFsKSIKICAgICAgICBkYXRhVmFsaWRhdGlvbkhhbmRsZXIgLT4gY2lzQXBpICJNYWtlIEFQSSBjYWxsIHRvIHZhbGlkYXRlIGRhdGEgKGV4dGVybmFsKSIKICAgICAgICBjb3Vyc2VzQWRtaW5pc3RhdGlvbkRhc2hib2FyZEhUTUwgLT4gY3JlYXRvciAiRGVsaXZlcnMgY291cnNlIGRhdGEgKGV4dGVybmFsKSIKICAgIH0KCiAgICB2aWV3cyB7CgogICAgICAgIHN5c3RlbUNvbnRleHQgY291cnNlc0VzdGFibGlzaG1lbnRTeXMgImNvdXJzZXNFc3RhYmxpc2htZW50U3lzdGVtQ29udGV4dERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgY291cnNlc0VzdGFibGlzaG1lbnRTeXMgImNvdXJzZXNFc3RhYmxpc2htZW50U3lzdGVtQ29udGFpbmVyRGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBjcmVhdG9yICJjb3Vyc2VzQ3JlYXRvckNvbXBvbmVudERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBGcm9udC1FbmQiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "containerId" : "2",
+      "externalContainerBoundariesVisible" : false,
+      "key" : "coursesCreatorComponentDiagram",
+      "order" : 3
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "coursesEstablishmentSystemContainerDiagram",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "Existing System"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Front-End"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2516,
+        "width" : 1341
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 329,
+        "y" : 808
+      }, {
+        "id" : "3",
+        "x" : 329,
+        "y" : 1408
+      }, {
+        "id" : "4",
+        "x" : 695,
+        "y" : 2030
+      }, {
+        "id" : "5",
+        "x" : 329,
+        "y" : 208
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "coursesEstablishmentSystemContainerDiagram",
+      "order" : 2,
+      "paperSize" : "A4_Portrait",
+      "relationships" : [ {
+        "id" : "10"
+      }, {
+        "id" : "13"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "8",
+        "vertices" : [ {
+          "x" : 929,
+          "y" : 1408
+        }, {
+          "x" : 929,
+          "y" : 1812
+        } ]
+      } ],
+      "softwareSystemId" : "1"
+    } ],
+    "systemContextViews" : [ {
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "coursesEstablishmentSystemContextDiagram",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "14"
+      }, {
+        "id" : "9"
+      } ],
+      "softwareSystemId" : "1"
+    } ]
+  }
+}
