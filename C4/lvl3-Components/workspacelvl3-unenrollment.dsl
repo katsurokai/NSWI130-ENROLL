@@ -1,10 +1,10 @@
-workspace "Enrollment Workspace" "This workspace documents the architecture of the Enrollment" {
-    
+workspace "Enrollment Workspace" "This workspace documents the architecture of the Unenrollment" {
+
     model {
         # software systems
         enrollmentSys = softwareSystem "Enrollment System" "manage the process of registering individuals for courses, class material, unenroll, course establishment"{
             # Enrollment System front-end containers
-            adminApp = container "Administration Web Application" "add here" 
+            adminApp = container "Administration Web Application" "add here"
             adminHTML = container "Administration HTML" "add here" "HTML+Reach.js" "Web Front-End"
 
             enrolldashboardApp = container "Enrollment Dashboard Web Application" "Deliver HTML content to teacher, student, admin accessing module."
@@ -12,38 +12,21 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
             # Enrollment System back-end containers
             enrollManager = container "Enrollment Manager" "Provides functionality for enrollment in course with appropriate validation" {
-                
-                courseEnrollmentController = component "Course Enrollment Controller" "Process user request to manage course enrollment"
-                unEnrollmentController = component "Unenrollment Controller" "Process user request to manage unenrollment"
-                EnrollmentHistoryController = component "Enrollment History Controller" "Process user request to manage enrollment history"
-                recommendataionController = component "Course Recommendation Controller" "Process user request to manage course recommendationr"
-                courseEnrollment = component "Course Enrollment" "business logic for enrollemnt service"
-                unEnrollment = component "Unenrollment" "business logic for unenrollemnt service"
-                enrollmentHistory = component "Enrollment History" "business logic for enrollemnt history service"
-                Recomendation = component "Course Recommendation" "business logic for corse recommendation service"
-                notificationService = component "Notification Service" "provide notification service"
-                enrollmentRepository = component "Enrollment Repository" "persistes enrollemnt data into the database"
-                auditLogRepository = component "Audit Log Repository" "persistes log event into the database"
-                
+                enrollValidation = component "Enrollment Validation" "Check for requirement on courses"
+                notifer = component "Notifier" "Send notification to notif container"
+                dataSync = component "DataSync" "handle data retrieval and synchronication with SIS API"
+                enrollLog = component "Enrollment Logger" "Logs all enrollment actions (and unenrollment)"
+                errorHandler = component "Error Handler" "Detect and handle any errors that occur"
             }
-            
+            unenroll = container "Unenrollment Manager" "add"
             classMat = container "Class Material Manager" "add"
             courseEsta = container "Course Establishment Manager" "add"
 
             # Enrollment System databases
-            enrollDB = container "Enroll Database" "Store register enrollment for each student's user" "Database" {
-                tags "Database"
-            }
-            classMatDB = container "ClassMaterial Database" "do something" "Database" {
-                tags "Database"
-            }
-            courseEstaDB = container "CourseEstablisment Database" "do something" "Database" {
-                tags "Database"
-            }
-            
-            auditLogDB = container "AuditLog Database" "store events..." {
-                tags "Database"
-            }
+            enrollDB = container "Enroll Database" "Store register enrollment for each student's user" "Database"
+            unenrollDB = container "Unenroll Database" "do something" "Database"
+            classMatDB = container "ClassMaterial Database" "do something" "Database"
+            courseEstaDB = container "CourseEstablisment Database" "do something" "Database"
         }
 
         sisApi = softwareSystem "Student Information System (SIS)" "Provides user profile data"
@@ -57,19 +40,23 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         # relationships of Enrollment system containers
         adminApp -> adminHTML "Delivers content to"
         adminHTML -> enrollManager "API call read/write enrollment information"
+        adminHTML -> unenroll "API call read/write to enrollment DB"
         adminHTML -> courseEsta "API call ..."
 
         enrolldashboardApp -> enrolldashboardHTML "Deliver content to"
         enrolldashboardHTML -> enrollManager "API call read/write enrollment information"
+        enrolldashboardHTML -> unenroll "API call read/write to enrollment DB"
         enrolldashboardHTML -> classMat "API call ...."
         enrolldashboardHTML -> courseEsta "API call ..."
 
-        enrollManager -> enrollDB "Reads from and Write to"
-        enrollManager -> auditLogDB "Write to"
+        enrollManager -> enrollDB "Write to"
         enrollManager -> courseEstaDB "Read for courses data"
         enrollManager -> sisApi "API call for information"
         enrollManager -> notif "Send notification to student"
 
+        unenroll -> unenrollDB "Write to"
+        unenroll -> enrollDB "Read from"
+        unenroll -> notif "Send notification to users"
 
         classMat -> classMatDB "Write and Read"
         classMat -> courseEstaDB "Read from"
@@ -80,30 +67,12 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         ### relationships of Enrollment Manager components
 
-        courseEnrollmentController -> courseEnrollment "get and update data"
-        unEnrollmentController -> unEnrollment "Gets and update data"
-        EnrollmentHistoryController -> enrollmentHistory "get and update data"
-        recommendataionController -> Recomendation "get and update"
-        
-        courseEnrollment -> enrollmentRepository "uses to persist course enrollment data" 
-        courseEnrollment -> sisApi "retrieve student information"
-        courseEnrollment -> notificationService "trigger notification"
-        courseEnrollment -> auditLogRepository "log event"
-        
-        unEnrollment -> enrollmentRepository "uses to update course enrollment data"
-        unEnrollment -> auditLogRepository "logs event"
-        unEnrollment -> notificationService "trigger notification"
-        
-        enrollmentHistory -> enrollmentRepository "uses to get student course enrollment data"
-        Recomendation -> enrollmentRepository "uses to get student course enrollment data"
-        Recomendation -> sisApi "retrieve student information"
-        Recomendation ->  "auditLogRepository" "logs event"
-        
-        enrollmentRepository -> enrollDB "read from and writes to"
-        notificationService -> notif "send notifications"
-        auditLogRepository -> auditLogDB "writes to"
-        
-        
+        enrollValidation -> courseEstaDB "Read from"
+        notifer -> notif "Send notification"
+        dataSync -> sisApi "Read from"
+        enrollLog -> enrollDB "Write to"
+        errorHandler -> notifer "Send error to"
+        errorHandler -> enrollLog "Send error to"
 
         # user relationship
         admin -> adminHTML "Manage enroll and unenroll"
@@ -125,7 +94,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         component enrollManager "enrollmentSystemComponentDiagram" {
             include *
         }
-         
+
         theme default
 
         styles {
@@ -141,10 +110,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             element "Database"  {
                 shape Cylinder
             }
-            
         }
 
     }
-    
-
 }

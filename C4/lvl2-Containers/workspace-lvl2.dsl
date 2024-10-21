@@ -1,24 +1,24 @@
 workspace "Enrollment Workspace" "This workspace documents the architecture of the Enrollment" {
-    
+
     model {
         # software systems
         enrollmentSys = softwareSystem "Enrollment System" "manage the process of registering individuals for courses, class material, unenroll, course establishment"{
             # Enrollment System front-end containers
-            adminApp = container "Administration Web Application" "add here" 
+            adminApp = container "Administration Web Application" "add here"
             adminHTML = container "Administration HTML" "add here"
 
             enrolldashboardApp = container "Enrollment Dashboard Web Application" "Deliver HTML content to teacher, student, admin accessing module."
             enrolldashboardHTML = container "Enrollment Dashboard HTML" "Provide functionality for enrollment page in a web browser." "HTML+Reach.js" "Web Front-End"
 
             # Enrollment System back-end containers
-            enrollManager = container "Enrollment Manager" "Provides functionality for enrollment in course with appropriate validation"
-            unenroll = container "Unenrollment Manager" "add"
-            classMat = container "Class Material Manager" "add"
-            courseEsta = container "Course Establishment Manager" "add"
+            enrollManager = container "Enrollment Manager" "Provides functionality for enrollment in course with appropriate validation" "Manager"
+            unenroll = container "Unenrollment Manager" "Provides functionality for unenrollment of courses" "Manager"
+            classMat = container "Class Material Manager" "add" "Manager"
+            courseEsta = container "Course Establishment Manager" "add" "Manager"
 
             # Enrollment System databases
             enrollDB = container "Enroll Database" "Store register enrollment for each student's user" "Database"
-            unenrollDB = container "Unenroll Database" "do something" "Database"
+            unenrollDB = container "Unenroll Database" "Store unenrollment record for each student course timestamp combination" "Database"
             classMatDB = container "ClassMaterial Database" "do something" "Database"
             courseEstaDB = container "CourseEstablisment Database" "do something" "Database"
         }
@@ -34,7 +34,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         # relationships of Enrollment system containers
         adminHTML -> adminApp "Sends request to"
         adminApp -> adminHTML "Delivers content to"
-        adminApp -> enrollDB "Read and write to" 
+        adminApp -> enrollDB "Read and write to"
         adminApp -> unenrollDB "Read and write to"
         adminApp -> sisApi "API call to get student information"
         adminApp -> courseEsta "Get courses information"
@@ -76,7 +76,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         container enrollmentSys "enrollmentSystemContainerDiagram" {
             include *
         }
-         
+
         theme default
 
         styles {
@@ -95,6 +95,6 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         }
 
     }
-    
+
 
 }

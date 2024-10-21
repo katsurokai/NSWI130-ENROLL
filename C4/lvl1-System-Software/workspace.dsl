@@ -1,5 +1,5 @@
 workspace "Enrollment Workspace" "This workspace documents the architecture of the Enrollment" {
-    
+
     model {
         # software systems
         enrollmentSys = softwareSystem "Enrollment System" "manage the process of registering individuals for courses, class material, unenroll, course establishment"
@@ -28,7 +28,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         systemContext enrollmentSys "enrollmentSystemContextDiagram" {
             include *
         }
-         
+
         theme default
 
         styles {
@@ -39,6 +39,6 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         }
 
     }
-    
+
 
 }
