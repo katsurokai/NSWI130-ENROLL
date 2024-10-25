@@ -28,7 +28,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         container enrollmentSys "enrollmentSystemContainerDiagram" {
             include *
-            # autolayout tb
+            autolayout tb
         }
 
         component enrollManager "enrollmentSystemComponentDiagram" {
@@ -38,6 +38,12 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
             include *
+            autolayout tb
+        }
+
+        component classMat "classMaterialComponentDiagram" {
+            include *
+            # include enrolldashboardApp ->
             autolayout tb
         }
 

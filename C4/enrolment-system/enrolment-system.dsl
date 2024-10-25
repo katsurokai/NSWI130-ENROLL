@@ -10,26 +10,24 @@ enrollmentSys = softwareSystem "Enrollment System" "manage the process of regist
     enrollHandler = container "Enrollment Handler" "Handle module access to enroll Manager"
     !include containers/enrollManager.dsl
     unenroll = container "Unenrollment Manager" "add"
-    classMat = container "Class Material Manager" "add"
+    !include containers/classMat.dsl
     courseEsta = container "Course Establishment Manager" "add"
 
     # Enrollment System databases
-    enrollDB = container "Enroll Database" "Store register enrollment for each student's user" "Database" {
+    enrollDB = container "Enroll Database" "Store register enrollment for each student's user" {
         tags "Database"
     }
-    classMatDB = container "ClassMaterial Database" "do something" "Database" {
+    classMatDB = container "ClassMaterial Database" "Holds files such as student homeworks, lecture recordings, notes etc. " {
         tags "Database"
     }
-    courseEstaDB = container "CourseEstablisment Database" "do something" "Database" {
+    courseEstaDB = container "CourseEstablisment Database" "do something" {
         tags "Database"
     }
 
     auditLogDB = container "AuditLog Database" "store events..." {
         tags "Database"
     }
-
 }
-
 
 # =============== Container <-> Container relationships ===============
 adminHTML -> adminApp "Sends request to"
@@ -87,5 +85,12 @@ enrollValidation -> courseEstaDB "Read from"
 # enrolldashboardapp outside relationsships
 enrollRepository -> enrollDB "Reads and write to"
 unenrollRepository -> enrollDB "Read and write to"
-classMatRepository -> classMatDB "Read and write to"
+
 courseEstaRepository -> courseEstaDB "Read and write to"
+
+# class Material
+classMatDBComm -> classMatDB "Builds requests + Querries database"
+courseEstablismentDBComm -> courseEstaDB "Builds requests + Querries database"
+
+enrolldashboardApp -> homeworkAPI "Create/submit homework"
+enrolldashboardApp -> lectureMaterial "Add course material"
