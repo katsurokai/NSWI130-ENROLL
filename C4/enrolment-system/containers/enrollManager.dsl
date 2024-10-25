@@ -1,0 +1,25 @@
+enrollManager = container "Enrollment Manager" "Provides functionality for enrollment in course with appropriate validation" {
+    enrollValidation = component "Enrollment Validation" "Check for requirement on courses"
+    enrollHistory = component "Enrollment History" "Store enrollment data to history"
+    enrollIn = component "Enrollment Logic" "Make enrollment"
+    unenrollIn = component "Unrollment Logic" "Make unenrollment"
+    notifer = component "Notifier" "Send notification to notif container"
+    dataSync = component "DataSync" "handle data retrieval and synchronication with SIS API"
+    enrollLog = component "Enrollment Logger" "Logs all enrollment actions"
+    errorHandler = component "Error Handler" "Detect and handle any errors that occur"
+    enrollRep = component "Enrollment Repository" "Store data to database"
+}
+
+# relationships of Enrollment Manager components
+enrollHandler -> enrollIn "Send enrollment information from user to validate"
+enrollHandler -> unenrollIn "Send unenrollment information from user to validate"
+enrollValidation -> dataSync "Read from"
+notifer -> notif "Send notification"
+dataSync -> sisApi "Read from"
+enrollValidation -> errorHandler "Send error to"
+errorHandler -> notifer "Send error to"
+errorHandler -> enrollLog "Send error to"
+enrollIn -> enrollValidation "Request validation for enrollment"
+unenrollIn -> enrollValidation "Request validation for unenrollment"
+enrollValidation -> enrollHistory "Send enroll/unenroll to history"
+enrollHistory -> enrollRep "Send data to repository"

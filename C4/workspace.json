@@ -1,0 +1,1904 @@
+{
+  "configuration" : { },
+  "description" : "This workspace documents the architecture of the Enrollment",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2024-10-25T17:05:47Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Access courses available to enroll, check class material, or unenroll",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Student",
+      "properties" : {
+        "structurizr.dsl.identifier" : "student"
+      },
+      "relationships" : [ {
+        "description" : "View, enroll, unenroll in courses and class material",
+        "destinationId" : "6",
+        "id" : "127",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dc8161cd-83d5-4540-8779-d9d60f9d6cb7"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "View, enroll in courses. Check for class material",
+        "destinationId" : "9",
+        "id" : "133",
+        "properties" : {
+          "structurizr.dsl.identifier" : "640bb563-c8b2-468c-8fdb-d2204dece48e"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Access their own upload courses, class material, enroll a student or unenroll a student from their course",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Teacher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "teacher"
+      },
+      "relationships" : [ {
+        "description" : "Establish course, unenroll or enroll student base on request, and upload class material",
+        "destinationId" : "6",
+        "id" : "128",
+        "properties" : {
+          "structurizr.dsl.identifier" : "9a2231c8-a6c7-4df6-ae40-b74903bafea2"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "View, establish courses. View and manage class material",
+        "destinationId" : "9",
+        "id" : "134",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dd159888-8aab-4bff-a087-e1073f7887eb"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Administers the whole process of enroll and unenroll",
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Business administrator",
+      "properties" : {
+        "structurizr.dsl.identifier" : "admin"
+      },
+      "relationships" : [ {
+        "description" : "administer enroll, unenroll for student in courses",
+        "destinationId" : "6",
+        "id" : "129",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f5d04fbe-9189-4694-a74a-7439c743216a"
+        },
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Manage enroll and unenroll",
+        "destinationId" : "9",
+        "id" : "132",
+        "properties" : {
+          "structurizr.dsl.identifier" : "e74e27ce-452a-4093-8070-e4e87fc0cd1f"
+        },
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "Provides user profile data",
+      "documentation" : { },
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Student Information System (SIS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "sisapi"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Used to send updates to student, teacher, or admin",
+      "documentation" : { },
+      "id" : "5",
+      "location" : "Unspecified",
+      "name" : "Email/SMS Notification System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "notif"
+      },
+      "relationships" : [ {
+        "description" : "Notify studend about changese in courses",
+        "destinationId" : "1",
+        "id" : "130",
+        "properties" : {
+          "structurizr.dsl.identifier" : "83cac4e8-afa3-45c2-974f-c894435deee5"
+        },
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Notify teacher on the courses established",
+        "destinationId" : "2",
+        "id" : "131",
+        "properties" : {
+          "structurizr.dsl.identifier" : "895f3c35-2b5d-42aa-8552-a6d2e9974229"
+        },
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "add here",
+        "documentation" : { },
+        "id" : "7",
+        "name" : "Administration Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "adminapp"
+        },
+        "relationships" : [ {
+          "description" : "Delivers content to",
+          "destinationId" : "8",
+          "id" : "85",
+          "properties" : {
+            "structurizr.dsl.identifier" : "da947198-776c-4e4b-9841-053d616be020"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Read and write to",
+          "destinationId" : "80",
+          "id" : "86",
+          "properties" : {
+            "structurizr.dsl.identifier" : "31e37535-1cd3-43a6-bd1c-a22b2b165208"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call to get student information",
+          "destinationId" : "4",
+          "id" : "87",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8e7b81c-92cd-46dc-a96e-90d0f275ed1b"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Get courses information",
+          "destinationId" : "79",
+          "id" : "88",
+          "properties" : {
+            "structurizr.dsl.identifier" : "a127a5a3-77d0-4ceb-87ab-7c1201bccfee"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "add here",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "Administration HTML",
+        "properties" : {
+          "structurizr.dsl.identifier" : "adminhtml"
+        },
+        "relationships" : [ {
+          "description" : "Sends request to",
+          "destinationId" : "7",
+          "id" : "84",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1bc380ab-d23c-4b10-9fa6-c5448ca94eca"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write enrollment information",
+          "destinationId" : "50",
+          "id" : "108",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c986380c-5230-4a68-b475-006d0dfaf309"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write to enrollment DB",
+          "destinationId" : "77",
+          "id" : "109",
+          "properties" : {
+            "structurizr.dsl.identifier" : "24c2a665-c3b3-44bf-9336-8849cce6d9a8"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call ...",
+          "destinationId" : "79",
+          "id" : "110",
+          "properties" : {
+            "structurizr.dsl.identifier" : "3b74daa1-de8c-433d-ad15-03ed6704fe00"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Web Front-End",
+        "technology" : "HTML+Reach.js"
+      }, {
+        "description" : "Provide functionality for enrollment page in a web browser.",
+        "documentation" : { },
+        "id" : "9",
+        "name" : "Enrollment Dashboard HTML",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrolldashboardhtml"
+        },
+        "relationships" : [ {
+          "description" : "Sends requests to",
+          "destinationId" : "12",
+          "id" : "27",
+          "properties" : {
+            "structurizr.dsl.identifier" : "04e1f6ad-5622-452e-a25e-bca616339f04"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Sends requests to",
+          "destinationId" : "10",
+          "id" : "28",
+          "linkedRelationshipId" : "27",
+          "sourceId" : "9"
+        }, {
+          "description" : "Sends requests to",
+          "destinationId" : "14",
+          "id" : "29",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d243a5b6-f32e-4155-9467-96661894cae2"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Sends requests to",
+          "destinationId" : "16",
+          "id" : "30",
+          "properties" : {
+            "structurizr.dsl.identifier" : "3823eeb7-91e9-45a4-8821-90961b6544f4"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Sends requests to",
+          "destinationId" : "18",
+          "id" : "31",
+          "properties" : {
+            "structurizr.dsl.identifier" : "4685a925-e9dc-484f-80ea-b0cb8e920a5e"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call to get student information",
+          "destinationId" : "4",
+          "id" : "89",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f0687990-49bb-4fac-af54-967191177834"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Get courses information",
+          "destinationId" : "82",
+          "id" : "90",
+          "properties" : {
+            "structurizr.dsl.identifier" : "bfcd2818-589a-4bad-b7be-eb2e78665787"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Get class material data",
+          "destinationId" : "81",
+          "id" : "91",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5d406b25-1e0c-4f5d-8e6e-43c2ad19979a"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write enrollment information",
+          "destinationId" : "50",
+          "id" : "111",
+          "properties" : {
+            "structurizr.dsl.identifier" : "577518b3-8cdd-4116-8bbf-3b570e2731fe"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write to enrollment DB",
+          "destinationId" : "77",
+          "id" : "112",
+          "properties" : {
+            "structurizr.dsl.identifier" : "45a410c6-97d4-4e7e-9e5c-1c8a15e6d246"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call ....",
+          "destinationId" : "78",
+          "id" : "113",
+          "properties" : {
+            "structurizr.dsl.identifier" : "e7dc7ec4-ef47-4c5e-93d1-090a7c7afff9"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call ...",
+          "destinationId" : "79",
+          "id" : "114",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5eefab4c-27ed-4695-af95-ab211855964e"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Web Front-End",
+        "technology" : "HTML+Reach.js"
+      }, {
+        "components" : [ {
+          "description" : "Provides HTML of the UI",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "11",
+          "name" : "Enrollment User Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollwebui"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Process user's request to manage enrollment",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "12",
+          "name" : "Enrollment Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Deliver content to",
+            "destinationId" : "9",
+            "id" : "32",
+            "properties" : {
+              "structurizr.dsl.identifier" : "0a8bc030-ccf8-4732-ae15-7a46b26cd629"
+            },
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Use to render content for enrollment management",
+            "destinationId" : "11",
+            "id" : "37",
+            "properties" : {
+              "structurizr.dsl.identifier" : "dd88c0ed-5299-4d49-99e5-fbbe74b6c470"
+            },
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get and update enrollment data",
+            "destinationId" : "19",
+            "id" : "38",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2e44287c-e688-4602-8e0a-bc10dd1aac59"
+            },
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides HTML of the UI",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "13",
+          "name" : "Unenroll User Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollwebui"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Process user's request to manage unenrollment",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "14",
+          "name" : "Unenrollment Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Deliver content to",
+            "destinationId" : "9",
+            "id" : "34",
+            "properties" : {
+              "structurizr.dsl.identifier" : "637cfa10-3b93-403d-9250-85b9a8044286"
+            },
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Use to render content for unenroll management",
+            "destinationId" : "13",
+            "id" : "39",
+            "properties" : {
+              "structurizr.dsl.identifier" : "d16bbde1-5f6b-4e5a-948b-fbb48ead0aac"
+            },
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get and update unenrollment data",
+            "destinationId" : "20",
+            "id" : "40",
+            "properties" : {
+              "structurizr.dsl.identifier" : "226a3e97-08a1-4582-8927-0dadabbaf94a"
+            },
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides HTML of the UI",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "15",
+          "name" : "Class Material User Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "classmatwebui"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Process user's request to manage class Material",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "16",
+          "name" : "Class Material Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "classmatcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Deliver content to",
+            "destinationId" : "9",
+            "id" : "35",
+            "properties" : {
+              "structurizr.dsl.identifier" : "0cd42cf5-b68a-4891-aa1c-00bd82aea29f"
+            },
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Use to render content for classMaterial management",
+            "destinationId" : "15",
+            "id" : "41",
+            "properties" : {
+              "structurizr.dsl.identifier" : "19528aee-4fd9-423f-9557-3425985b613a"
+            },
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get and update ClassMaterial data",
+            "destinationId" : "21",
+            "id" : "42",
+            "properties" : {
+              "structurizr.dsl.identifier" : "0a6daeb4-9193-4de4-bc82-5a7a8b5d9dc6"
+            },
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides HTML of the UI",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "17",
+          "name" : "Course Establishment User Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseestawebui"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Process user's request to manage course establishment",
+          "documentation" : { },
+          "group" : "Presentation Layer",
+          "id" : "18",
+          "name" : "Course Establishment Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseestacontroller"
+          },
+          "relationships" : [ {
+            "description" : "Deliver content to",
+            "destinationId" : "9",
+            "id" : "36",
+            "properties" : {
+              "structurizr.dsl.identifier" : "08208441-5cdc-4d23-8817-b8d5abc9e4a3"
+            },
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Use to render content for courseEstablishment management",
+            "destinationId" : "17",
+            "id" : "43",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3a4b10b9-485e-4224-bb74-af5e5fb3bffe"
+            },
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get and update CourseEstablishment data",
+            "destinationId" : "22",
+            "id" : "44",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f37f5658-c340-4df3-963b-fcf099a29407"
+            },
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Business logic for enrollment",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "19",
+          "name" : "Enrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollmodel"
+          },
+          "relationships" : [ {
+            "description" : "Uses to persist enrollment data",
+            "destinationId" : "23",
+            "id" : "45",
+            "properties" : {
+              "structurizr.dsl.identifier" : "d8f6a930-b64b-41f2-8879-26113464a3ea"
+            },
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Business logic for Unenrollment",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "20",
+          "name" : "Unenrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollmodel"
+          },
+          "relationships" : [ {
+            "description" : "Uses to persist unenrollment data",
+            "destinationId" : "24",
+            "id" : "46",
+            "properties" : {
+              "structurizr.dsl.identifier" : "e83b4865-f449-4122-84a5-a62d007d38aa"
+            },
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Business logic for ClassMaterial",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "21",
+          "name" : "ClassMaterial",
+          "properties" : {
+            "structurizr.dsl.identifier" : "classmatmodel"
+          },
+          "relationships" : [ {
+            "description" : "Uses to persist classMaterial data",
+            "destinationId" : "25",
+            "id" : "47",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2d490a78-eed0-4cd5-a3be-0046d342938d"
+            },
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Business logic for CourseEstablishment",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "22",
+          "name" : "CourseEstablishment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseestamodel"
+          },
+          "relationships" : [ {
+            "description" : "Uses to persist courseEstablishment data",
+            "destinationId" : "26",
+            "id" : "48",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3ac30491-2819-48fb-bb15-9788817a5569"
+            },
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Persists enrollment in database",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "23",
+          "name" : "Enrollment Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollrepository"
+          },
+          "relationships" : [ {
+            "description" : "Reads and write to",
+            "destinationId" : "80",
+            "id" : "120",
+            "properties" : {
+              "structurizr.dsl.identifier" : "95ba6f35-bd01-424f-a4e3-b4deafcbe716"
+            },
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Persists Unenrollment in database",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "24",
+          "name" : "Unenrollment Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollrepository"
+          },
+          "relationships" : [ {
+            "description" : "Read and write to",
+            "destinationId" : "80",
+            "id" : "122",
+            "properties" : {
+              "structurizr.dsl.identifier" : "4945f2ab-9b52-4e8e-814e-271e2059b3b2"
+            },
+            "sourceId" : "24",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Persists ClassMaterial in database",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "25",
+          "name" : "ClassMaterial Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "classmatrepository"
+          },
+          "relationships" : [ {
+            "description" : "Read and write to",
+            "destinationId" : "81",
+            "id" : "123",
+            "properties" : {
+              "structurizr.dsl.identifier" : "6798a72a-036f-4dc0-80c7-7af5dde4eb2f"
+            },
+            "sourceId" : "25",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Persists Course Establishment in database",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "26",
+          "name" : "Course Establishment Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseestarepository"
+          },
+          "relationships" : [ {
+            "description" : "Read and write to",
+            "destinationId" : "82",
+            "id" : "125",
+            "properties" : {
+              "structurizr.dsl.identifier" : "6f377671-2766-4827-a0b6-78433037ee15"
+            },
+            "sourceId" : "26",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Deliver HTML content to teacher, student, admin accessing module.",
+        "documentation" : { },
+        "id" : "10",
+        "name" : "Enrollment Dashboard Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrolldashboardapp"
+        },
+        "relationships" : [ {
+          "description" : "Deliver content to",
+          "destinationId" : "9",
+          "id" : "33",
+          "linkedRelationshipId" : "32",
+          "sourceId" : "10"
+        }, {
+          "description" : "Delivers content to",
+          "destinationId" : "9",
+          "id" : "103",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5ed33afb-36cd-45ad-961d-f6a6fd52b345"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write enrollment information",
+          "destinationId" : "49",
+          "id" : "104",
+          "properties" : {
+            "structurizr.dsl.identifier" : "489d1616-416b-47d3-a1fa-4ef78446ce81"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write enrollment information",
+          "destinationId" : "78",
+          "id" : "105",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5f2d193a-157d-4674-89a9-fe04a1976bfd"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call read/write enrollment information",
+          "destinationId" : "79",
+          "id" : "106",
+          "properties" : {
+            "structurizr.dsl.identifier" : "614f6ccc-d9e7-4c5e-80ec-52e6e5e23e2f"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads and write to",
+          "destinationId" : "80",
+          "id" : "121",
+          "linkedRelationshipId" : "120",
+          "sourceId" : "10"
+        }, {
+          "description" : "Read and write to",
+          "destinationId" : "81",
+          "id" : "124",
+          "linkedRelationshipId" : "123",
+          "sourceId" : "10"
+        }, {
+          "description" : "Read and write to",
+          "destinationId" : "82",
+          "id" : "126",
+          "linkedRelationshipId" : "125",
+          "sourceId" : "10"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Handle module access to enroll Manager",
+        "documentation" : { },
+        "id" : "49",
+        "name" : "Enrollment Handler",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollhandler"
+        },
+        "relationships" : [ {
+          "description" : "Send enrollment information from user to validate",
+          "destinationId" : "53",
+          "id" : "60",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f5486e04-2af7-487c-a8e2-ee835ebfa18b"
+          },
+          "sourceId" : "49",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Send enrollment information from user to validate",
+          "destinationId" : "50",
+          "id" : "61",
+          "linkedRelationshipId" : "60",
+          "sourceId" : "49"
+        }, {
+          "description" : "Send unenrollment information from user to validate",
+          "destinationId" : "54",
+          "id" : "62",
+          "properties" : {
+            "structurizr.dsl.identifier" : "4863c0c8-60ec-4ef5-9d59-19322bac6c5d"
+          },
+          "sourceId" : "49",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Check for requirement on courses",
+          "documentation" : { },
+          "id" : "51",
+          "name" : "Enrollment Validation",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollvalidation"
+          },
+          "relationships" : [ {
+            "description" : "Read from",
+            "destinationId" : "56",
+            "id" : "63",
+            "properties" : {
+              "structurizr.dsl.identifier" : "57518a35-5bdc-4f8f-a91c-ea13708b4cc2"
+            },
+            "sourceId" : "51",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Send error to",
+            "destinationId" : "58",
+            "id" : "70",
+            "properties" : {
+              "structurizr.dsl.identifier" : "dbbb00d0-71fc-4639-8c70-42a4b35baaf4"
+            },
+            "sourceId" : "51",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Send enroll/unenroll to history",
+            "destinationId" : "52",
+            "id" : "75",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2318c888-a89a-4fb2-9954-55f4fc4be746"
+            },
+            "sourceId" : "51",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Read from",
+            "destinationId" : "82",
+            "id" : "119",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2f8979c4-5c60-48c0-a5f1-62ea6d61731a"
+            },
+            "sourceId" : "51",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Store enrollment data to history",
+          "documentation" : { },
+          "id" : "52",
+          "name" : "Enrollment History",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollhistory"
+          },
+          "relationships" : [ {
+            "description" : "Send data to repository",
+            "destinationId" : "59",
+            "id" : "76",
+            "properties" : {
+              "structurizr.dsl.identifier" : "48f78170-2905-4756-990a-b1dd96989727"
+            },
+            "sourceId" : "52",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Make enrollment",
+          "documentation" : { },
+          "id" : "53",
+          "name" : "Enrollment Logic",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollin"
+          },
+          "relationships" : [ {
+            "description" : "Request validation for enrollment",
+            "destinationId" : "51",
+            "id" : "73",
+            "properties" : {
+              "structurizr.dsl.identifier" : "97f73b25-3d2b-4b19-bcac-5a05b976f578"
+            },
+            "sourceId" : "53",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Make unenrollment",
+          "documentation" : { },
+          "id" : "54",
+          "name" : "Unrollment Logic",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollin"
+          },
+          "relationships" : [ {
+            "description" : "Request validation for unenrollment",
+            "destinationId" : "51",
+            "id" : "74",
+            "properties" : {
+              "structurizr.dsl.identifier" : "8f610b26-627d-4144-bbf7-c13e4736e384"
+            },
+            "sourceId" : "54",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Send notification to notif container",
+          "documentation" : { },
+          "id" : "55",
+          "name" : "Notifier",
+          "properties" : {
+            "structurizr.dsl.identifier" : "notifer"
+          },
+          "relationships" : [ {
+            "description" : "Send notification",
+            "destinationId" : "5",
+            "id" : "64",
+            "properties" : {
+              "structurizr.dsl.identifier" : "7983032e-824f-46ca-92d4-9a2eb2f6a102"
+            },
+            "sourceId" : "55",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "handle data retrieval and synchronication with SIS API",
+          "documentation" : { },
+          "id" : "56",
+          "name" : "DataSync",
+          "properties" : {
+            "structurizr.dsl.identifier" : "datasync"
+          },
+          "relationships" : [ {
+            "description" : "Read from",
+            "destinationId" : "4",
+            "id" : "67",
+            "properties" : {
+              "structurizr.dsl.identifier" : "8f42e7ec-f712-4120-a112-79cef1552313"
+            },
+            "sourceId" : "56",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Read from",
+            "destinationId" : "82",
+            "id" : "117",
+            "properties" : {
+              "structurizr.dsl.identifier" : "7677c533-c725-443c-bf1c-0532dbbc8ad3"
+            },
+            "sourceId" : "56",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Logs all enrollment actions",
+          "documentation" : { },
+          "id" : "57",
+          "name" : "Enrollment Logger",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrolllog"
+          },
+          "relationships" : [ {
+            "description" : "Write to",
+            "destinationId" : "80",
+            "id" : "116",
+            "properties" : {
+              "structurizr.dsl.identifier" : "d0ed0f3e-6efa-4f75-b08d-1b95735371f3"
+            },
+            "sourceId" : "57",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Write to",
+            "destinationId" : "83",
+            "id" : "118",
+            "properties" : {
+              "structurizr.dsl.identifier" : "47517542-3221-4c9e-9826-69040886c9d5"
+            },
+            "sourceId" : "57",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Detect and handle any errors that occur",
+          "documentation" : { },
+          "id" : "58",
+          "name" : "Error Handler",
+          "properties" : {
+            "structurizr.dsl.identifier" : "errorhandler"
+          },
+          "relationships" : [ {
+            "description" : "Send error to",
+            "destinationId" : "55",
+            "id" : "71",
+            "properties" : {
+              "structurizr.dsl.identifier" : "ec64190c-2ad9-4891-910e-9945774df5df"
+            },
+            "sourceId" : "58",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Send error to",
+            "destinationId" : "57",
+            "id" : "72",
+            "properties" : {
+              "structurizr.dsl.identifier" : "c4ad99c1-98c0-4d0f-b031-d6420a9dba62"
+            },
+            "sourceId" : "58",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Store data to database",
+          "documentation" : { },
+          "id" : "59",
+          "name" : "Enrollment Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollrep"
+          },
+          "relationships" : [ {
+            "description" : "Send data to database",
+            "destinationId" : "80",
+            "id" : "115",
+            "properties" : {
+              "structurizr.dsl.identifier" : "78d94e66-13d9-4546-8c4f-ad6e4a6b25bc"
+            },
+            "sourceId" : "59",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Provides functionality for enrollment in course with appropriate validation",
+        "documentation" : { },
+        "id" : "50",
+        "name" : "Enrollment Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollmanager"
+        },
+        "relationships" : [ {
+          "description" : "Send notification",
+          "destinationId" : "5",
+          "id" : "65",
+          "linkedRelationshipId" : "64",
+          "sourceId" : "50"
+        }, {
+          "description" : "Read from",
+          "destinationId" : "4",
+          "id" : "68",
+          "linkedRelationshipId" : "67",
+          "sourceId" : "50"
+        }, {
+          "description" : "Write to",
+          "destinationId" : "80",
+          "id" : "92",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c144b3b6-7662-4cd5-96de-d68f28a5ce5e"
+          },
+          "sourceId" : "50",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Read for courses data",
+          "destinationId" : "82",
+          "id" : "93",
+          "properties" : {
+            "structurizr.dsl.identifier" : "675a5f8c-26f2-40c1-b9ed-94b24994d842"
+          },
+          "sourceId" : "50",
+          "tags" : "Relationship"
+        }, {
+          "description" : "API call for information",
+          "destinationId" : "4",
+          "id" : "94",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c727eff7-03d0-484e-a8ac-12e416b87ca4"
+          },
+          "sourceId" : "50",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Send notification to student",
+          "destinationId" : "5",
+          "id" : "95",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c8ffe9b6-ac2e-4450-b963-f191c65b4859"
+          },
+          "sourceId" : "50",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Write to",
+          "destinationId" : "83",
+          "id" : "107",
+          "properties" : {
+            "structurizr.dsl.identifier" : "77f247e5-f2ce-4a68-94b6-f81f87bdd29e"
+          },
+          "sourceId" : "50",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "add",
+        "documentation" : { },
+        "id" : "77",
+        "name" : "Unenrollment Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "unenroll"
+        },
+        "relationships" : [ {
+          "description" : "Read and Write",
+          "destinationId" : "80",
+          "id" : "96",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1513043d-c944-4c89-997d-aa147b2abee3"
+          },
+          "sourceId" : "77",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Send notification to users",
+          "destinationId" : "5",
+          "id" : "97",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aa3f6293-6ba6-4f4b-8f9d-9b7154d186ae"
+          },
+          "sourceId" : "77",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "add",
+        "documentation" : { },
+        "id" : "78",
+        "name" : "Class Material Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "classmat"
+        },
+        "relationships" : [ {
+          "description" : "Write and Read",
+          "destinationId" : "81",
+          "id" : "98",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d76fc6a1-e725-47bd-a98b-561885402d9f"
+          },
+          "sourceId" : "78",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Read from",
+          "destinationId" : "82",
+          "id" : "99",
+          "properties" : {
+            "structurizr.dsl.identifier" : "16ee50a8-be0f-4ade-8ffa-8bd1bc1ff743"
+          },
+          "sourceId" : "78",
+          "tags" : "Relationship"
+        }, {
+          "description" : "send notification to student",
+          "destinationId" : "5",
+          "id" : "100",
+          "properties" : {
+            "structurizr.dsl.identifier" : "43f2b363-3499-4307-92c8-9886c0f135cd"
+          },
+          "sourceId" : "78",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "add",
+        "documentation" : { },
+        "id" : "79",
+        "name" : "Course Establishment Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "courseesta"
+        },
+        "relationships" : [ {
+          "description" : "Write to",
+          "destinationId" : "82",
+          "id" : "101",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b3edff07-12c3-49b7-9c87-b0605a2d7f92"
+          },
+          "sourceId" : "79",
+          "tags" : "Relationship"
+        }, {
+          "description" : "send notification to user",
+          "destinationId" : "5",
+          "id" : "102",
+          "properties" : {
+            "structurizr.dsl.identifier" : "28927e8b-5f2d-402a-952e-62b0042f5018"
+          },
+          "sourceId" : "79",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Store register enrollment for each student's user",
+        "documentation" : { },
+        "id" : "80",
+        "name" : "Enroll Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrolldb"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Database"
+      }, {
+        "description" : "do something",
+        "documentation" : { },
+        "id" : "81",
+        "name" : "ClassMaterial Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "classmatdb"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Database"
+      }, {
+        "description" : "do something",
+        "documentation" : { },
+        "id" : "82",
+        "name" : "CourseEstablisment Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "courseestadb"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Database"
+      }, {
+        "description" : "store events...",
+        "documentation" : { },
+        "id" : "83",
+        "name" : "AuditLog Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "auditlogdb"
+        },
+        "tags" : "Element,Container,Database"
+      } ],
+      "description" : "manage the process of registering individuals for courses, class material, unenroll, course establishment",
+      "documentation" : { },
+      "id" : "6",
+      "location" : "Unspecified",
+      "name" : "Enrollment System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "enrollmentsys"
+      },
+      "relationships" : [ {
+        "description" : "Send notification",
+        "destinationId" : "5",
+        "id" : "66",
+        "linkedRelationshipId" : "64",
+        "sourceId" : "6"
+      }, {
+        "description" : "Read from",
+        "destinationId" : "4",
+        "id" : "69",
+        "linkedRelationshipId" : "67",
+        "sourceId" : "6"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Enrollment Workspace",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJFbnJvbGxtZW50IFdvcmtzcGFjZSIgIlRoaXMgd29ya3NwYWNlIGRvY3VtZW50cyB0aGUgYXJjaGl0ZWN0dXJlIG9mIHRoZSBFbnJvbGxtZW50IiB7CiAgICBtb2RlbCB7CgogICAgICAgIHN0dWRlbnQgPSBwZXJzb24gIlN0dWRlbnQiICJBY2Nlc3MgY291cnNlcyBhdmFpbGFibGUgdG8gZW5yb2xsLCBjaGVjayBjbGFzcyBtYXRlcmlhbCwgb3IgdW5lbnJvbGwiCiAgICAgICAgdGVhY2hlciA9IHBlcnNvbiAiVGVhY2hlciIgIkFjY2VzcyB0aGVpciBvd24gdXBsb2FkIGNvdXJzZXMsIGNsYXNzIG1hdGVyaWFsLCBlbnJvbGwgYSBzdHVkZW50IG9yIHVuZW5yb2xsIGEgc3R1ZGVudCBmcm9tIHRoZWlyIGNvdXJzZSIKICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQnVzaW5lc3MgYWRtaW5pc3RyYXRvciIgIkFkbWluaXN0ZXJzIHRoZSB3aG9sZSBwcm9jZXNzIG9mIGVucm9sbCBhbmQgdW5lbnJvbGwiCiAgICAgICAgIyBzb2Z0d2FyZSBzeXN0ZW1zCiAgICAgICAgc2lzQXBpID0gc29mdHdhcmVTeXN0ZW0gIlN0dWRlbnQgSW5mb3JtYXRpb24gU3lzdGVtIChTSVMpIiAiUHJvdmlkZXMgdXNlciBwcm9maWxlIGRhdGEiCiAgICAgICAgbm90aWYgPSBzb2Z0d2FyZVN5c3RlbSAiRW1haWwvU01TIE5vdGlmaWNhdGlvbiBTeXN0ZW0iICJVc2VkIHRvIHNlbmQgdXBkYXRlcyB0byBzdHVkZW50LCB0ZWFjaGVyLCBvciBhZG1pbiIKICAgICAgICBlbnJvbGxtZW50U3lzID0gc29mdHdhcmVTeXN0ZW0gIkVucm9sbG1lbnQgU3lzdGVtIiAibWFuYWdlIHRoZSBwcm9jZXNzIG9mIHJlZ2lzdGVyaW5nIGluZGl2aWR1YWxzIGZvciBjb3Vyc2VzLCBjbGFzcyBtYXRlcmlhbCwgdW5lbnJvbGwsIGNvdXJzZSBlc3RhYmxpc2htZW50InsKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBmcm9udC1lbmQgY29udGFpbmVycwogICAgICAgICAgICBhZG1pbkFwcCA9IGNvbnRhaW5lciAiQWRtaW5pc3RyYXRpb24gV2ViIEFwcGxpY2F0aW9uIiAiYWRkIGhlcmUiCiAgICAgICAgICAgIGFkbWluSFRNTCA9IGNvbnRhaW5lciAiQWRtaW5pc3RyYXRpb24gSFRNTCIgImFkZCBoZXJlIiAiSFRNTCtSZWFjaC5qcyIgIldlYiBGcm9udC1FbmQiCiAgICAgICAgCiAgICAgICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgPSBjb250YWluZXIgIkVucm9sbG1lbnQgRGFzaGJvYXJkIEhUTUwiICJQcm92aWRlIGZ1bmN0aW9uYWxpdHkgZm9yIGVucm9sbG1lbnQgcGFnZSBpbiBhIHdlYiBicm93c2VyLiIgIkhUTUwrUmVhY2guanMiICJXZWIgRnJvbnQtRW5kIgogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgPSBjb250YWluZXIgIkVucm9sbG1lbnQgRGFzaGJvYXJkIFdlYiBBcHBsaWNhdGlvbiIgIkRlbGl2ZXIgSFRNTCBjb250ZW50IHRvIHRlYWNoZXIsIHN0dWRlbnQsIGFkbWluIGFjY2Vzc2luZyBtb2R1bGUuIiB7CiAgICAgICAgICAgICAgICBncm91cCAiUHJlc2VudGF0aW9uIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgZW5yb2xsV2ViVUkgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgVXNlciBJbnRlcmZhY2UiICJQcm92aWRlcyBIVE1MIG9mIHRoZSBVSSIKICAgICAgICAgICAgICAgICAgICBlbnJvbGxDb250cm9sbGVyID0gY29tcG9uZW50ICJFbnJvbGxtZW50IENvbnRyb2xsZXIiICJQcm9jZXNzIHVzZXIncyByZXF1ZXN0IHRvIG1hbmFnZSBlbnJvbGxtZW50IgogICAgICAgICAgICAgICAgICAgIHVuZW5yb2xsV2ViVUkgPSBjb21wb25lbnQgIlVuZW5yb2xsIFVzZXIgSW50ZXJmYWNlIiAiUHJvdmlkZXMgSFRNTCBvZiB0aGUgVUkiCiAgICAgICAgICAgICAgICAgICAgdW5lbnJvbGxDb250cm9sbGVyID0gY29tcG9uZW50ICJVbmVucm9sbG1lbnQgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlcidzIHJlcXVlc3QgdG8gbWFuYWdlIHVuZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICBjbGFzc01hdFdlYlVJID0gY29tcG9uZW50ICJDbGFzcyBNYXRlcmlhbCBVc2VyIEludGVyZmFjZSIgIlByb3ZpZGVzIEhUTUwgb2YgdGhlIFVJIgogICAgICAgICAgICAgICAgICAgIGNsYXNzTWF0Q29udHJvbGxlciA9IGNvbXBvbmVudCAiQ2xhc3MgTWF0ZXJpYWwgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlcidzIHJlcXVlc3QgdG8gbWFuYWdlIGNsYXNzIE1hdGVyaWFsIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGFXZWJVSSA9IGNvbXBvbmVudCAiQ291cnNlIEVzdGFibGlzaG1lbnQgVXNlciBJbnRlcmZhY2UiICJQcm92aWRlcyBIVE1MIG9mIHRoZSBVSSIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFc3RhQ29udHJvbGxlciA9IGNvbXBvbmVudCAiQ291cnNlIEVzdGFibGlzaG1lbnQgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlcidzIHJlcXVlc3QgdG8gbWFuYWdlIGNvdXJzZSBlc3RhYmxpc2htZW50IgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIkJ1c2luZXNzIGxheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgZW5yb2xsTW9kZWwgPSBjb21wb25lbnQgIkVucm9sbG1lbnQiICJCdXNpbmVzcyBsb2dpYyBmb3IgZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICB1bmVucm9sbE1vZGVsID0gY29tcG9uZW50ICJVbmVucm9sbG1lbnQiICJCdXNpbmVzcyBsb2dpYyBmb3IgVW5lbnJvbGxtZW50IgogICAgICAgICAgICAgICAgICAgIGNsYXNzTWF0TW9kZWwgPSBjb21wb25lbnQgIkNsYXNzTWF0ZXJpYWwiICJCdXNpbmVzcyBsb2dpYyBmb3IgQ2xhc3NNYXRlcmlhbCIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFc3RhTW9kZWwgPSBjb21wb25lbnQgIkNvdXJzZUVzdGFibGlzaG1lbnQiICJCdXNpbmVzcyBsb2dpYyBmb3IgQ291cnNlRXN0YWJsaXNobWVudCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJQZXJzaXN0ZW5jZSBMYXllciIgewogICAgICAgICAgICAgICAgICAgIGVucm9sbFJlcG9zaXRvcnkgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgUmVwb3NpdG9yeSIgIlBlcnNpc3RzIGVucm9sbG1lbnQgaW4gZGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgdW5lbnJvbGxSZXBvc2l0b3J5ID0gY29tcG9uZW50ICJVbmVucm9sbG1lbnQgUmVwb3NpdG9yeSIgIlBlcnNpc3RzIFVuZW5yb2xsbWVudCBpbiBkYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBjbGFzc01hdFJlcG9zaXRvcnkgPSBjb21wb25lbnQgIkNsYXNzTWF0ZXJpYWwgUmVwb3NpdG9yeSIgIlBlcnNpc3RzIENsYXNzTWF0ZXJpYWwgaW4gZGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRXN0YVJlcG9zaXRvcnkgPSBjb21wb25lbnQgIkNvdXJzZSBFc3RhYmxpc2htZW50IFJlcG9zaXRvcnkiICJQZXJzaXN0cyBDb3Vyc2UgRXN0YWJsaXNobWVudCBpbiBkYXRhYmFzZSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgIyByZWxhdGlvbnNoaXBzIG9mIGVucm9sbGRhc2hib2FyZCBBcHBsaWNhdGlvbiBjb21wb25lbnRzCiAgICAgICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gZW5yb2xsQ29udHJvbGxlciAiU2VuZHMgcmVxdWVzdHMgdG8iCiAgICAgICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gdW5lbnJvbGxDb250cm9sbGVyICJTZW5kcyByZXF1ZXN0cyB0byIKICAgICAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiBjbGFzc01hdENvbnRyb2xsZXIgIlNlbmRzIHJlcXVlc3RzIHRvIgogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MIC0+IGNvdXJzZUVzdGFDb250cm9sbGVyICJTZW5kcyByZXF1ZXN0cyB0byIKICAgICAgICAgICAgZW5yb2xsQ29udHJvbGxlciAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGNvbnRlbnQgdG8iCiAgICAgICAgICAgIHVuZW5yb2xsQ29udHJvbGxlciAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGNvbnRlbnQgdG8iCiAgICAgICAgICAgIGNsYXNzTWF0Q29udHJvbGxlciAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGNvbnRlbnQgdG8iCiAgICAgICAgICAgIGNvdXJzZUVzdGFDb250cm9sbGVyIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIkRlbGl2ZXIgY29udGVudCB0byIKICAgICAgICAgICAgCiAgICAgICAgICAgIGVucm9sbENvbnRyb2xsZXIgLT4gZW5yb2xsV2ViVUkgIlVzZSB0byByZW5kZXIgY29udGVudCBmb3IgZW5yb2xsbWVudCBtYW5hZ2VtZW50IgogICAgICAgICAgICBlbnJvbGxDb250cm9sbGVyIC0+IGVucm9sbE1vZGVsICJHZXQgYW5kIHVwZGF0ZSBlbnJvbGxtZW50IGRhdGEiCiAgICAgICAgICAgIHVuZW5yb2xsQ29udHJvbGxlciAtPiB1bmVucm9sbFdlYlVJICJVc2UgdG8gcmVuZGVyIGNvbnRlbnQgZm9yIHVuZW5yb2xsIG1hbmFnZW1lbnQiCiAgICAgICAgICAgIHVuZW5yb2xsQ29udHJvbGxlciAtPiB1bmVucm9sbE1vZGVsICJHZXQgYW5kIHVwZGF0ZSB1bmVucm9sbG1lbnQgZGF0YSIKICAgICAgICAgICAgY2xhc3NNYXRDb250cm9sbGVyIC0+IGNsYXNzTWF0V2ViVUkgIlVzZSB0byByZW5kZXIgY29udGVudCBmb3IgY2xhc3NNYXRlcmlhbCBtYW5hZ2VtZW50IgogICAgICAgICAgICBjbGFzc01hdENvbnRyb2xsZXIgLT4gY2xhc3NNYXRNb2RlbCAiR2V0IGFuZCB1cGRhdGUgQ2xhc3NNYXRlcmlhbCBkYXRhIgogICAgICAgICAgICBjb3Vyc2VFc3RhQ29udHJvbGxlciAtPiBjb3Vyc2VFc3RhV2ViVUkgIlVzZSB0byByZW5kZXIgY29udGVudCBmb3IgY291cnNlRXN0YWJsaXNobWVudCBtYW5hZ2VtZW50IgogICAgICAgICAgICBjb3Vyc2VFc3RhQ29udHJvbGxlciAtPiBjb3Vyc2VFc3RhTW9kZWwgIkdldCBhbmQgdXBkYXRlIENvdXJzZUVzdGFibGlzaG1lbnQgZGF0YSIKICAgICAgICAgICAgCiAgICAgICAgICAgIGVucm9sbE1vZGVsIC0+IGVucm9sbFJlcG9zaXRvcnkgIlVzZXMgdG8gcGVyc2lzdCBlbnJvbGxtZW50IGRhdGEiCiAgICAgICAgICAgIHVuZW5yb2xsTW9kZWwgLT4gdW5lbnJvbGxSZXBvc2l0b3J5ICJVc2VzIHRvIHBlcnNpc3QgdW5lbnJvbGxtZW50IGRhdGEiCiAgICAgICAgICAgIGNsYXNzTWF0TW9kZWwgLT4gY2xhc3NNYXRSZXBvc2l0b3J5ICJVc2VzIHRvIHBlcnNpc3QgY2xhc3NNYXRlcmlhbCBkYXRhIgogICAgICAgICAgICBjb3Vyc2VFc3RhTW9kZWwgLT4gY291cnNlRXN0YVJlcG9zaXRvcnkgIlVzZXMgdG8gcGVyc2lzdCBjb3Vyc2VFc3RhYmxpc2htZW50IGRhdGEiCiAgICAgICAgCiAgICAgICAgICAgICMgRW5yb2xsbWVudCBTeXN0ZW0gYmFjay1lbmQgY29udGFpbmVycwogICAgICAgICAgICBlbnJvbGxIYW5kbGVyID0gY29udGFpbmVyICJFbnJvbGxtZW50IEhhbmRsZXIiICJIYW5kbGUgbW9kdWxlIGFjY2VzcyB0byBlbnJvbGwgTWFuYWdlciIKICAgICAgICAgICAgZW5yb2xsTWFuYWdlciA9IGNvbnRhaW5lciAiRW5yb2xsbWVudCBNYW5hZ2VyIiAiUHJvdmlkZXMgZnVuY3Rpb25hbGl0eSBmb3IgZW5yb2xsbWVudCBpbiBjb3Vyc2Ugd2l0aCBhcHByb3ByaWF0ZSB2YWxpZGF0aW9uIiB7CiAgICAgICAgICAgICAgICBlbnJvbGxWYWxpZGF0aW9uID0gY29tcG9uZW50ICJFbnJvbGxtZW50IFZhbGlkYXRpb24iICJDaGVjayBmb3IgcmVxdWlyZW1lbnQgb24gY291cnNlcyIKICAgICAgICAgICAgICAgIGVucm9sbEhpc3RvcnkgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgSGlzdG9yeSIgIlN0b3JlIGVucm9sbG1lbnQgZGF0YSB0byBoaXN0b3J5IgogICAgICAgICAgICAgICAgZW5yb2xsSW4gPSBjb21wb25lbnQgIkVucm9sbG1lbnQgTG9naWMiICJNYWtlIGVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICB1bmVucm9sbEluID0gY29tcG9uZW50ICJVbnJvbGxtZW50IExvZ2ljIiAiTWFrZSB1bmVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICBub3RpZmVyID0gY29tcG9uZW50ICJOb3RpZmllciIgIlNlbmQgbm90aWZpY2F0aW9uIHRvIG5vdGlmIGNvbnRhaW5lciIKICAgICAgICAgICAgICAgIGRhdGFTeW5jID0gY29tcG9uZW50ICJEYXRhU3luYyIgImhhbmRsZSBkYXRhIHJldHJpZXZhbCBhbmQgc3luY2hyb25pY2F0aW9uIHdpdGggU0lTIEFQSSIKICAgICAgICAgICAgICAgIGVucm9sbExvZyA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBMb2dnZXIiICJMb2dzIGFsbCBlbnJvbGxtZW50IGFjdGlvbnMiCiAgICAgICAgICAgICAgICBlcnJvckhhbmRsZXIgPSBjb21wb25lbnQgIkVycm9yIEhhbmRsZXIiICJEZXRlY3QgYW5kIGhhbmRsZSBhbnkgZXJyb3JzIHRoYXQgb2NjdXIiCiAgICAgICAgICAgICAgICBlbnJvbGxSZXAgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgUmVwb3NpdG9yeSIgIlN0b3JlIGRhdGEgdG8gZGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgICMgcmVsYXRpb25zaGlwcyBvZiBFbnJvbGxtZW50IE1hbmFnZXIgY29tcG9uZW50cwogICAgICAgICAgICBlbnJvbGxIYW5kbGVyIC0+IGVucm9sbEluICJTZW5kIGVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgogICAgICAgICAgICBlbnJvbGxIYW5kbGVyIC0+IHVuZW5yb2xsSW4gIlNlbmQgdW5lbnJvbGxtZW50IGluZm9ybWF0aW9uIGZyb20gdXNlciB0byB2YWxpZGF0ZSIKICAgICAgICAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBkYXRhU3luYyAiUmVhZCBmcm9tIgogICAgICAgICAgICBub3RpZmVyIC0+IG5vdGlmICJTZW5kIG5vdGlmaWNhdGlvbiIKICAgICAgICAgICAgZGF0YVN5bmMgLT4gc2lzQXBpICJSZWFkIGZyb20iCiAgICAgICAgICAgIGVucm9sbFZhbGlkYXRpb24gLT4gZXJyb3JIYW5kbGVyICJTZW5kIGVycm9yIHRvIgogICAgICAgICAgICBlcnJvckhhbmRsZXIgLT4gbm90aWZlciAiU2VuZCBlcnJvciB0byIKICAgICAgICAgICAgZXJyb3JIYW5kbGVyIC0+IGVucm9sbExvZyAiU2VuZCBlcnJvciB0byIKICAgICAgICAgICAgZW5yb2xsSW4gLT4gZW5yb2xsVmFsaWRhdGlvbiAiUmVxdWVzdCB2YWxpZGF0aW9uIGZvciBlbnJvbGxtZW50IgogICAgICAgICAgICB1bmVucm9sbEluIC0+IGVucm9sbFZhbGlkYXRpb24gIlJlcXVlc3QgdmFsaWRhdGlvbiBmb3IgdW5lbnJvbGxtZW50IgogICAgICAgICAgICBlbnJvbGxWYWxpZGF0aW9uIC0+IGVucm9sbEhpc3RvcnkgIlNlbmQgZW5yb2xsL3VuZW5yb2xsIHRvIGhpc3RvcnkiCiAgICAgICAgICAgIGVucm9sbEhpc3RvcnkgLT4gZW5yb2xsUmVwICJTZW5kIGRhdGEgdG8gcmVwb3NpdG9yeSIKICAgICAgICAgICAgdW5lbnJvbGwgPSBjb250YWluZXIgIlVuZW5yb2xsbWVudCBNYW5hZ2VyIiAiYWRkIgogICAgICAgICAgICBjbGFzc01hdCA9IGNvbnRhaW5lciAiQ2xhc3MgTWF0ZXJpYWwgTWFuYWdlciIgImFkZCIKICAgICAgICAgICAgY291cnNlRXN0YSA9IGNvbnRhaW5lciAiQ291cnNlIEVzdGFibGlzaG1lbnQgTWFuYWdlciIgImFkZCIKICAgICAgICAKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBkYXRhYmFzZXMKICAgICAgICAgICAgZW5yb2xsREIgPSBjb250YWluZXIgIkVucm9sbCBEYXRhYmFzZSIgIlN0b3JlIHJlZ2lzdGVyIGVucm9sbG1lbnQgZm9yIGVhY2ggc3R1ZGVudCdzIHVzZXIiICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgY2xhc3NNYXREQiA9IGNvbnRhaW5lciAiQ2xhc3NNYXRlcmlhbCBEYXRhYmFzZSIgImRvIHNvbWV0aGluZyIgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBjb3Vyc2VFc3RhREIgPSBjb250YWluZXIgIkNvdXJzZUVzdGFibGlzbWVudCBEYXRhYmFzZSIgImRvIHNvbWV0aGluZyIgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgIAogICAgICAgICAgICBhdWRpdExvZ0RCID0gY29udGFpbmVyICJBdWRpdExvZyBEYXRhYmFzZSIgInN0b3JlIGV2ZW50cy4uLiIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgCiAgICAgICAgIyA9PT09PT09PT09PT09PT0gQ29udGFpbmVyIDwtPiBDb250YWluZXIgcmVsYXRpb25zaGlwcyA9PT09PT09PT09PT09PT0KICAgICAgICBhZG1pbkhUTUwgLT4gYWRtaW5BcHAgIlNlbmRzIHJlcXVlc3QgdG8iCiAgICAgICAgYWRtaW5BcHAgLT4gYWRtaW5IVE1MICJEZWxpdmVycyBjb250ZW50IHRvIgogICAgICAgIGFkbWluQXBwIC0+IGVucm9sbERCICJSZWFkIGFuZCB3cml0ZSB0byIKICAgICAgICBhZG1pbkFwcCAtPiBzaXNBcGkgIkFQSSBjYWxsIHRvIGdldCBzdHVkZW50IGluZm9ybWF0aW9uIgogICAgICAgIGFkbWluQXBwIC0+IGNvdXJzZUVzdGEgIkdldCBjb3Vyc2VzIGluZm9ybWF0aW9uIgogICAgICAgIAogICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gc2lzQXBpICJBUEkgY2FsbCB0byBnZXQgc3R1ZGVudCBpbmZvcm1hdGlvbiIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MIC0+IGNvdXJzZUVzdGFEQiAiR2V0IGNvdXJzZXMgaW5mb3JtYXRpb24iCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiBjbGFzc01hdERCICJHZXQgY2xhc3MgbWF0ZXJpYWwgZGF0YSIKICAgICAgICAKICAgICAgICBlbnJvbGxNYW5hZ2VyIC0+IGVucm9sbERCICJXcml0ZSB0byIKICAgICAgICBlbnJvbGxNYW5hZ2VyIC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBmb3IgY291cnNlcyBkYXRhIgogICAgICAgIGVucm9sbE1hbmFnZXIgLT4gc2lzQXBpICJBUEkgY2FsbCBmb3IgaW5mb3JtYXRpb24iCiAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBub3RpZiAiU2VuZCBub3RpZmljYXRpb24gdG8gc3R1ZGVudCIKICAgICAgICAKICAgICAgICB1bmVucm9sbCAtPiBlbnJvbGxEQiAiUmVhZCBhbmQgV3JpdGUiCiAgICAgICAgdW5lbnJvbGwgLT4gbm90aWYgIlNlbmQgbm90aWZpY2F0aW9uIHRvIHVzZXJzIgogICAgICAgIAogICAgICAgIGNsYXNzTWF0IC0+IGNsYXNzTWF0REIgIldyaXRlIGFuZCBSZWFkIgogICAgICAgIGNsYXNzTWF0IC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBmcm9tIgogICAgICAgIGNsYXNzTWF0IC0+IG5vdGlmICJzZW5kIG5vdGlmaWNhdGlvbiB0byBzdHVkZW50IgogICAgICAgIAogICAgICAgIGNvdXJzZUVzdGEgLT4gY291cnNlRXN0YURCICJXcml0ZSB0byIKICAgICAgICBjb3Vyc2VFc3RhIC0+IG5vdGlmICJzZW5kIG5vdGlmaWNhdGlvbiB0byB1c2VyIgogICAgICAgIAogICAgICAgIAogICAgICAgICMgcmVsYXRpb25zaGlwcyBvZiBFbnJvbGxtZW50IHN5c3RlbSBjb250YWluZXJzCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIkRlbGl2ZXJzIGNvbnRlbnQgdG8iCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGVucm9sbEhhbmRsZXIgIkFQSSBjYWxsIHJlYWQvd3JpdGUgZW5yb2xsbWVudCBpbmZvcm1hdGlvbiIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gY2xhc3NNYXQgIkFQSSBjYWxsIHJlYWQvd3JpdGUgZW5yb2xsbWVudCBpbmZvcm1hdGlvbiIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gY291cnNlRXN0YSAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIGVucm9sbE1hbmFnZXIgLT4gYXVkaXRMb2dEQiAiV3JpdGUgdG8iCiAgICAgICAgCiAgICAgICAgIyByZWxhdGlvbnNoaXBzIG9mIEVucm9sbG1lbnQgc3lzdGVtIGNvbnRhaW5lcnMKICAgICAgICBhZG1pbkhUTUwgLT4gZW5yb2xsTWFuYWdlciAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIGFkbWluSFRNTCAtPiB1bmVucm9sbCAiQVBJIGNhbGwgcmVhZC93cml0ZSB0byBlbnJvbGxtZW50IERCIgogICAgICAgIGFkbWluSFRNTCAtPiBjb3Vyc2VFc3RhICJBUEkgY2FsbCAuLi4iCiAgICAgICAgCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiBlbnJvbGxNYW5hZ2VyICJBUEkgY2FsbCByZWFkL3dyaXRlIGVucm9sbG1lbnQgaW5mb3JtYXRpb24iCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiB1bmVucm9sbCAiQVBJIGNhbGwgcmVhZC93cml0ZSB0byBlbnJvbGxtZW50IERCIgogICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gY2xhc3NNYXQgIkFQSSBjYWxsIC4uLi4iCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiBjb3Vyc2VFc3RhICJBUEkgY2FsbCAuLi4iCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgIyA9PT09PT09PT09PT09PT0gQ29tcG9uZW50IDwtPiBDb250YWluZXIgcmVsYXRpb25zaGlwcyA9PT09PT09PT09PT09PT0KICAgICAgICAjIGVucm9sbG1lbnQgbWFuYWdlciBvdXRzaWRlIHJlbGF0aW9uc3NoaXBzCiAgICAgICAgZW5yb2xsUmVwIC0+IGVucm9sbERCICJTZW5kIGRhdGEgdG8gZGF0YWJhc2UiCiAgICAgICAgZW5yb2xsTG9nIC0+IGVucm9sbERCICJXcml0ZSB0byIKICAgICAgICBkYXRhU3luYyAtPiBjb3Vyc2VFc3RhREIgIlJlYWQgZnJvbSIKICAgICAgICBlbnJvbGxMb2cgLT4gYXVkaXRMb2dEQiAiV3JpdGUgdG8iCiAgICAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBjb3Vyc2VFc3RhREIgIlJlYWQgZnJvbSIKICAgICAgICAKICAgICAgICAjIGVucm9sbGRhc2hib2FyZGFwcCBvdXRzaWRlIHJlbGF0aW9uc3NoaXBzCiAgICAgICAgZW5yb2xsUmVwb3NpdG9yeSAtPiBlbnJvbGxEQiAiUmVhZHMgYW5kIHdyaXRlIHRvIgogICAgICAgIHVuZW5yb2xsUmVwb3NpdG9yeSAtPiBlbnJvbGxEQiAiUmVhZCBhbmQgd3JpdGUgdG8iCiAgICAgICAgY2xhc3NNYXRSZXBvc2l0b3J5IC0+IGNsYXNzTWF0REIgIlJlYWQgYW5kIHdyaXRlIHRvIgogICAgICAgIGNvdXJzZUVzdGFSZXBvc2l0b3J5IC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBhbmQgd3JpdGUgdG8iCgogICAgICAgICMgdXNlciByZWxhdGlvbnNoaXAgLSBzeXN0ZW0gbGV2ZWwKICAgICAgICBzdHVkZW50IC0+IGVucm9sbG1lbnRTeXMgIlZpZXcsIGVucm9sbCwgdW5lbnJvbGwgaW4gY291cnNlcyBhbmQgY2xhc3MgbWF0ZXJpYWwiCiAgICAgICAgdGVhY2hlciAtPiBlbnJvbGxtZW50U3lzICJFc3RhYmxpc2ggY291cnNlLCB1bmVucm9sbCBvciBlbnJvbGwgc3R1ZGVudCBiYXNlIG9uIHJlcXVlc3QsIGFuZCB1cGxvYWQgY2xhc3MgbWF0ZXJpYWwiCiAgICAgICAgYWRtaW4gLT4gZW5yb2xsbWVudFN5cyAiYWRtaW5pc3RlciBlbnJvbGwsIHVuZW5yb2xsIGZvciBzdHVkZW50IGluIGNvdXJzZXMiCiAgICAgICAgbm90aWYgLT4gc3R1ZGVudCAiTm90aWZ5IHN0dWRlbmQgYWJvdXQgY2hhbmdlc2UgaW4gY291cnNlcyIKICAgICAgICBub3RpZiAtPiB0ZWFjaGVyICJOb3RpZnkgdGVhY2hlciBvbiB0aGUgY291cnNlcyBlc3RhYmxpc2hlZCIKCiAgICAgICAgIyB1c2VyIHJlbGF0aW9uc2hpcCAtIGNvbnRhaW5lciBsZXZlbAogICAgICAgIGFkbWluIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIk1hbmFnZSBlbnJvbGwgYW5kIHVuZW5yb2xsIgogICAgICAgIHN0dWRlbnQgLT4gZW5yb2xsZGFzaGJvYXJkSFRNTCAiVmlldywgZW5yb2xsIGluIGNvdXJzZXMuIENoZWNrIGZvciBjbGFzcyBtYXRlcmlhbCIKICAgICAgICB0ZWFjaGVyIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIlZpZXcsIGVzdGFibGlzaCBjb3Vyc2VzLiBWaWV3IGFuZCBtYW5hZ2UgY2xhc3MgbWF0ZXJpYWwiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgZW5yb2xsbWVudFN5cyAiZW5yb2xsbWVudFN5c3RlbUNvbnRleHREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IHRiCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgZW5yb2xsbWVudFN5cyAiZW5yb2xsbWVudFN5c3RlbUNvbnRhaW5lckRpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICMgYXV0b2xheW91dCB0YgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGVucm9sbE1hbmFnZXIgImVucm9sbG1lbnRTeXN0ZW1Db21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IHRiCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgZW5yb2xsZGFzaGJvYXJkQXBwICJlbnJvbGxkYXNoYm9hcmRBcHBDb21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IHRiCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBGcm9udC1FbmQiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiAgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICB9CgoKfQ=="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "50",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "49",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "51",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "52",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "53",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "54",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "55",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "56",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "57",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "58",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "59",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "80",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "82",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "83",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "enrollmentSystemComponentDiagram",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "115"
+      }, {
+        "id" : "116"
+      }, {
+        "id" : "117"
+      }, {
+        "id" : "118"
+      }, {
+        "id" : "119"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "76"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "10",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "80",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "81",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "82",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "enrolldashboardAppComponentDiagram",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "120"
+      }, {
+        "id" : "122"
+      }, {
+        "id" : "123"
+      }, {
+        "id" : "125"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "90"
+      }, {
+        "id" : "91"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "enrollmentSystemContainerDiagram",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "Existing System"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Front-End"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 3820,
+        "width" : 8666
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 7125,
+        "y" : 3208
+      }, {
+        "id" : "2",
+        "x" : 8008,
+        "y" : 3208
+      }, {
+        "id" : "3",
+        "x" : 4525,
+        "y" : 208
+      }, {
+        "id" : "4",
+        "x" : 208,
+        "y" : 3208
+      }, {
+        "id" : "5",
+        "x" : 6858,
+        "y" : 2608
+      }, {
+        "id" : "7",
+        "x" : 1445,
+        "y" : 2010
+      }, {
+        "id" : "8",
+        "x" : 1483,
+        "y" : 1408
+      }, {
+        "id" : "9",
+        "x" : 4525,
+        "y" : 808
+      }, {
+        "id" : "10",
+        "x" : 4525,
+        "y" : 1408
+      }, {
+        "id" : "49",
+        "x" : 2250,
+        "y" : 2005
+      }, {
+        "id" : "50",
+        "x" : 2012,
+        "y" : 2608
+      }, {
+        "id" : "77",
+        "x" : 3650,
+        "y" : 2040
+      }, {
+        "id" : "78",
+        "x" : 5905,
+        "y" : 1710
+      }, {
+        "id" : "79",
+        "x" : 3150,
+        "y" : 2610
+      }, {
+        "id" : "80",
+        "x" : 3183,
+        "y" : 3208
+      }, {
+        "id" : "81",
+        "x" : 5671,
+        "y" : 2608
+      }, {
+        "id" : "82",
+        "x" : 4746,
+        "y" : 3208
+      }, {
+        "id" : "83",
+        "x" : 2012,
+        "y" : 3208
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "enrollmentSystemContainerDiagram",
+      "order" : 2,
+      "paperSize" : "A1_Landscape",
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "101"
+      }, {
+        "id" : "102",
+        "vertices" : [ {
+          "x" : 5671,
+          "y" : 2458
+        }, {
+          "x" : 6679,
+          "y" : 2458
+        } ]
+      }, {
+        "id" : "103",
+        "vertices" : [ {
+          "x" : 4900,
+          "y" : 1258
+        } ]
+      }, {
+        "id" : "104"
+      }, {
+        "id" : "105"
+      }, {
+        "id" : "106",
+        "vertices" : [ {
+          "x" : 4200,
+          "y" : 2308
+        } ]
+      }, {
+        "id" : "107"
+      }, {
+        "id" : "108",
+        "vertices" : [ {
+          "x" : 1333,
+          "y" : 2008
+        }, {
+          "x" : 1333,
+          "y" : 2308
+        } ]
+      }, {
+        "id" : "109"
+      }, {
+        "id" : "110",
+        "vertices" : [ {
+          "x" : 2833,
+          "y" : 2008
+        } ]
+      }, {
+        "id" : "111",
+        "vertices" : [ {
+          "x" : 1333,
+          "y" : 1408
+        }, {
+          "x" : 1258,
+          "y" : 2008
+        }, {
+          "x" : 1258,
+          "y" : 2308
+        } ]
+      }, {
+        "id" : "112",
+        "vertices" : [ {
+          "x" : 4375,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "113",
+        "vertices" : [ {
+          "x" : 5975,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "114",
+        "vertices" : [ {
+          "x" : 4087,
+          "y" : 1408
+        }, {
+          "x" : 3450,
+          "y" : 2008
+        } ]
+      }, {
+        "id" : "121"
+      }, {
+        "id" : "124"
+      }, {
+        "id" : "126"
+      }, {
+        "id" : "130"
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "132"
+      }, {
+        "id" : "133",
+        "vertices" : [ {
+          "x" : 7458,
+          "y" : 2908
+        }, {
+          "x" : 7458,
+          "y" : 2608
+        }, {
+          "x" : 6800,
+          "y" : 2008
+        }, {
+          "x" : 6137,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "134",
+        "vertices" : [ {
+          "x" : 7687,
+          "y" : 2608
+        }, {
+          "x" : 7192,
+          "y" : 2008
+        }, {
+          "x" : 6529,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "33",
+        "vertices" : [ {
+          "x" : 4750,
+          "y" : 1258
+        } ]
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "68",
+        "vertices" : [ {
+          "x" : 1382,
+          "y" : 3200
+        } ]
+      }, {
+        "id" : "84",
+        "vertices" : [ {
+          "x" : 1558,
+          "y" : 1858
+        } ]
+      }, {
+        "id" : "85",
+        "vertices" : [ {
+          "x" : 1858,
+          "y" : 1858
+        } ]
+      }, {
+        "id" : "86",
+        "vertices" : [ {
+          "x" : 2612,
+          "y" : 2608
+        }, {
+          "x" : 2921,
+          "y" : 2908
+        } ]
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "88",
+        "vertices" : [ {
+          "x" : 2083,
+          "y" : 2308
+        } ]
+      }, {
+        "id" : "89",
+        "vertices" : [ {
+          "x" : 1221,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "90",
+        "vertices" : [ {
+          "x" : 5125,
+          "y" : 1408
+        }, {
+          "x" : 5125,
+          "y" : 1708
+        } ]
+      }, {
+        "id" : "91",
+        "vertices" : [ {
+          "x" : 5358,
+          "y" : 1408
+        } ]
+      }, {
+        "id" : "92",
+        "vertices" : [ {
+          "x" : 2754,
+          "y" : 3191
+        } ]
+      }, {
+        "id" : "93",
+        "vertices" : [ {
+          "x" : 3571,
+          "y" : 3204
+        } ]
+      }, {
+        "id" : "94",
+        "vertices" : [ {
+          "x" : 1287,
+          "y" : 2915
+        } ]
+      }, {
+        "id" : "95",
+        "vertices" : [ {
+          "x" : 3071,
+          "y" : 2458
+        }, {
+          "x" : 6679,
+          "y" : 2458
+        } ]
+      }, {
+        "id" : "96",
+        "vertices" : [ {
+          "x" : 3671,
+          "y" : 2908
+        } ]
+      }, {
+        "id" : "97"
+      }, {
+        "id" : "98"
+      }, {
+        "id" : "99",
+        "vertices" : [ {
+          "x" : 6271,
+          "y" : 2908
+        } ]
+      } ],
+      "softwareSystemId" : "6"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "enrollmentSystemContextDiagram",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "127"
+      }, {
+        "id" : "128"
+      }, {
+        "id" : "129"
+      }, {
+        "id" : "130"
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "69"
+      } ],
+      "softwareSystemId" : "6"
+    } ]
+  }
+}
