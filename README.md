@@ -1,4 +1,5 @@
 # NSWI130-ENROLL
+- Why does Enrollment dashboard aplication container directly write to Course establishment DB ??
 
 ## (10/21/2024)
 
@@ -23,7 +24,7 @@
 
 ## (10/16/2024)
 > I have created C4 model folder and add a base software system level 1 to the repo. [Software System](./C4/lvl1-System-Software/structurizr-1-enrollmentSystemContextDiagram.png)
-> I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram. 
+> I use Structurizr from lecture video to make the diagram with workspace.dsl file. Feel free to add more to the software system if it require more. Create an issue if you want to add to the dsl file but cannot generate the diagram.
 
 > The most important part that each individual of us need to do is the **lvl2 containers** and **lvl3 components**
 
@@ -70,7 +71,7 @@ does it track HW deadlines?
 
 
 - [Unenrollment](./features/Unenroll.md)
-> As a student I might want to change my schedules/ subjects to better fit my schedule/ study plan 
+> As a student I might want to change my schedules/ subjects to better fit my schedule/ study plan
 
 ## Pretty Essential
 
