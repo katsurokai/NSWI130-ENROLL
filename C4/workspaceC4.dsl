@@ -157,15 +157,21 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
                 deploymentNode "Web server" "" "Wildfly 34"  {
                     dashboardAppInstance = containerInstance enrolldashboardApp
                 }
-            }
             deploymentNode "Enrollment Server" "" "Red Hat Enterprise Linux 9.4"   {
-                enrollInstance = containerInstance enrollHandler
+                deploymentNode "enrollBackend server" "" "Wildfly 34"  {
+                    enrollInstance = containerInstance enrollHandler
+                }
             }
             deploymentNode "Class Material Server" "" "Red Hat Enterprise Linux 9.4"   {
-                classMatInstance = containerInstance classMat
+                deploymentNode "classMatBackend server" "" "Wildfly 34"  {
+                    classMatInstance = containerInstance classMat
+                }
             }
             deploymentNode "Course Establishment Server" "" "Red Hat Enterprise Linux 9.4"   {
-                courseEstaInstance = containerInstance courseEsta
+                deploymentNode "courseEstaBackend server" "" "Wildfly 34"  {
+                    courseEstaInstance = containerInstance courseEsta
+                }
+            }
             }
             deploymentNode "Database Server" "" "Red Hat Enterprise Linux 9.4"   {
                 deploymentNode "Relational DB server" "" "PostgreSQL 17" {
