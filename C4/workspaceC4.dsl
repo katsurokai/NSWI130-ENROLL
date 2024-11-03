@@ -127,6 +127,8 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         enrollHandler -> enrollIn "Send enrollment information from user to validate"
         enrollHandler -> unenrollIn "Send unenrollment information from user to validate"
+        enrollHandler -> enrollDB "Reand from and Write to"
+        enrollHandler -> auditLogDB "Write to"
         enrollValidation -> dataSync "Read from"
         notifer -> notif "Send notification"
         dataSync -> sisApi "Read from"
@@ -139,6 +141,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         unenrollIn -> enrollValidation "Request validation for unenrollment"
         enrollValidation -> enrollHistory "Send enroll/unenroll to history"
         enrollHistory -> enrollRep "Send data to repository"
+        enrollHistory -> enrollLog "Send data for autitlog"
         enrollRep -> enrollDB "Send data to database"
 
         # user relationship
@@ -146,6 +149,38 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         student -> enrolldashboardHTML "View, enroll in courses. Check for class material"
         teacher -> enrolldashboardHTML "View, establish courses. View and manage class material"
 
+        deploymentEnvironment "Live"    {
+            deploymentNode "User's web browser" "" ""    {
+                dashboardHTMLInstance = containerInstance enrolldashboardHTML
+            }
+            deploymentNode "Application Server" "" "Red Hat Enterprise Linux 9.4"   {
+                deploymentNode "Web server" "" "Wildfly 34"  {
+                    dashboardAppInstance = containerInstance enrolldashboardApp
+                }
+            }
+            deploymentNode "Enrollment Server" "" "Red Hat Enterprise Linux 9.4"   {
+                enrollInstance = containerInstance enrollHandler
+            }
+            deploymentNode "Class Material Server" "" "Red Hat Enterprise Linux 9.4"   {
+                classMatInstance = containerInstance classMat
+            }
+            deploymentNode "Course Establishment Server" "" "Red Hat Enterprise Linux 9.4"   {
+                courseEstaInstance = containerInstance courseEsta
+            }
+            deploymentNode "Database Server" "" "Red Hat Enterprise Linux 9.4"   {
+                deploymentNode "Relational DB server" "" "PostgreSQL 17" {
+                    enrollDBInstance = containerInstance enrollDB
+                    deviceDBInstance = containerInstance courseEstaDB
+                }
+                deploymentNode "File storage" "" "MongoDB 8.15"  {
+                    classMatDBInstance = containerInstance classMatDB # GridFS
+                }
+                deploymentNode "Log storage" "" "Elasticsearch 8.15"  {
+                    auditLogDBInstance = containerInstance auditLogDB
+                }
+            }
+            
+        }
     }
 
     views {
@@ -165,6 +200,11 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
             include *
         }
+
+        deployment enrollmentSys "Live" "Live_Deployment"   {
+            include *
+        }
+
          
         theme default
 
