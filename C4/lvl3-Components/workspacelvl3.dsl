@@ -20,7 +20,13 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             }
             unenroll = container "Unenrollment Manager" "add"
             classMat = container "Class Material Manager" "add"
-            courseEsta = container "Course Establishment Manager" "add"
+            courseEsta = container "Course Establishment Manager" "add" {
+                courseCreator = component "CourseCreator" "Creates courses"
+                courseController = component "CourseController" "Conroll courses"
+                courseValidator = component "CourseValidator" "Validates course data"
+                courseErrorHandler = component "Course Error Handler" "Detect and handle any errors that occur"
+                courseNotifer = component "Course Enroll Status Notifier" "Send notification to notif container"
+            }
 
             # Enrollment System databases
             enrollDB = container "Enroll Database" "Store register enrollment for each student's user" "Database"
@@ -74,6 +80,19 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         errorHandler -> notifer "Send error to"
         errorHandler -> enrollLog "Send error to"
 
+        ### relationships of Course Establishment Manager
+
+        enrolldashboardHTML -> courseController "Gives data to change course"
+        adminHTML -> courseController "Gives data to change course"
+        adminHTML -> courseCreator "Gives data for creating new course"
+        courseCreator -> courseValidator "Checks course info"
+        courseCreator -> courseEstaDB "Writes new courses"
+        courseController -> courseValidator "Checks course change info"
+        courseController -> courseEstaDB "Changes existing courses data"
+        courseValidator -> courseErrorHandler "Sends error"
+        courseErrorHandler -> courseNotifer "Send error to"
+        courseController -> courseNotifer "Notifies about change course enroll status"
+        courseNotifer -> notif "Send notification request"
         # user relationship
         admin -> adminHTML "Manage enroll and unenroll"
         student -> enrolldashboardHTML "View, enroll in courses. Check for class material"
@@ -94,6 +113,11 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         component enrollManager "enrollmentSystemComponentDiagram" {
             include *
         }
+
+        component courseEsta "courseEstaComponentDiagram" {
+            include *
+        }
+
          
         theme default
 
