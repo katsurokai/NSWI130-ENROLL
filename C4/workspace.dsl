@@ -47,6 +47,21 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             autolayout tb
         }
 
+        dynamic classMat "classMaterialDynamicView" {
+            # include *
+
+            homeworkAPI -> homeworkController "Forward request"
+            homeworkController -> homeworkSubmisionVerifier
+            homeworkController -> authenticator "3"
+            homeworkController -> classMatDBComm "4"
+
+            lectureMaterial -> lectureMaterialController "1"
+            lectureMaterialController -> authenticator "2"
+            lectureMaterialController -> courseEstablismentDBComm "3"
+
+            autolayout tb
+        }
+
         theme default
 
         styles {
