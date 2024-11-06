@@ -1,4 +1,15 @@
 # NSWI130-ENROLL
+## (11/03/2024)
+> Added [deployment](./C4/Deployment/deployment.png) and updated [workspaceC4.dsl ](./C4/workspaceC4.dsl)
+
+## (10/21/2024)
+
+> I have edited the diagram to all:
+> - lvl1 add admin stake holder
+> - lvl2 restructure the diagram and leave out some space for class material and course establishment
+> - lvl3 enrollment: add Betse unrollment and history to the diagram
+
+> Edit [workspaceC4.dsl ](./C4/workspaceC4.dsl) for all the diagram changes
 
 ## Meeting Minute
 
