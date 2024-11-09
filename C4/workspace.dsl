@@ -7,6 +7,8 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         notif = softwareSystem "Email/SMS Notification System" "Used to send updates to student, teacher, or admin"
         !include enrolment-system/enrolment-system.dsl
 
+        !include enrolment-system/deployment/deployment.dsl
+
         # user relationship - system level
         student -> enrollmentSys "View, enroll, unenroll in courses and class material"
         teacher -> enrollmentSys "Establish course, unenroll or enroll student base on request, and upload class material"
@@ -23,28 +25,50 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
     views {
         systemContext enrollmentSys "enrollmentSystemContextDiagram" {
             include *
-            autolayout tb
         }
 
         container enrollmentSys "enrollmentSystemContainerDiagram" {
             include *
-            autolayout tb
         }
 
         component enrollManager "enrollmentSystemComponentDiagram" {
             include *
-            autolayout tb
+        }
+
+        dynamic enrollManager "enrollDynamicView" {
+            enrollInterface -> enrollIn "Send enrollment information from user to validate"
+            enrollInterface -> unenrollIn "Send unenrollment information from user to validate"
+
+            enrollIn -> enrollValidation "Request validation for enrollment"
+            unenrollIn -> enrollValidation "Request validation for unenrollment"
+
+            enrollValidation -> dataSync "Read from"
+            dataSync -> sisApi "Read from"
+            enrollValidation -> errorHandler "Send error to"
+            errorHandler -> enrollLog "Send error to"
+            errorHandler -> notifer "Send error to"
+            notifer -> notif "Send notification"
+
+            enrollValidation -> enrollHistory "Send enroll/unenroll to history"
+            enrollHistory -> enrollRep "Send data to repository"
+            enrollLog -> enrollRep "Send data to repository"
+            enrollRep -> enrollDB "Store data in database"
+
+        }
+
+        dynamic enrollManager "enrollHistoryDynamicView"{
+            historyInterface -> enrollHistory "Send enrollment history information from user to get information"
+            enrollHistory -> enrollRep "Send data to repository"
+            enrollRep -> enrollDB "read Data from database"
         }
 
         component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
             include *
-            autolayout tb
         }
 
         component classMat "classMaterialComponentDiagram" {
             include *
             # include enrolldashboardApp ->
-            autolayout tb
         }
 
         dynamic classMat "classMaterialDynamicView" {
@@ -59,7 +83,10 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             lectureMaterialController -> authenticator "2"
             lectureMaterialController -> courseEstablismentDBComm "3"
 
-            autolayout tb
+        }
+
+        deployment enrollmentSys "Live" "Live_Deployment"   {
+            include *
         }
 
         theme default

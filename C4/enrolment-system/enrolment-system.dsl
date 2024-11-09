@@ -1,15 +1,11 @@
 enrollmentSys = softwareSystem "Enrollment System" "manage the process of registering individuals for courses, class material, unenroll, course establishment"{
     # Enrollment System front-end containers
-    adminApp = container "Administration Web Application" "add here"
-    adminHTML = container "Administration HTML" "add here" "HTML+Reach.js" "Web Front-End"
-
     enrolldashboardHTML = container "Enrollment Dashboard HTML" "Provide functionality for enrollment page in a web browser." "HTML+Reach.js" "Web Front-End"
     !include containers/enrolldashboardApp.dsl
 
     # Enrollment System back-end containers
-    enrollHandler = container "Enrollment Handler" "Handle module access to enroll Manager"
     !include containers/enrollManager.dsl
-    unenroll = container "Unenrollment Manager" "add"
+    // unenroll = container "Unenrollment Manager" "add"
     !include containers/classMat.dsl
     courseEsta = container "Course Establishment Manager" "add"
 
@@ -30,23 +26,11 @@ enrollmentSys = softwareSystem "Enrollment System" "manage the process of regist
 }
 
 # =============== Container <-> Container relationships ===============
-adminHTML -> adminApp "Sends request to"
-adminApp -> adminHTML "Delivers content to"
-adminApp -> enrollDB "Read and write to"
-adminApp -> sisApi "API call to get student information"
-adminApp -> courseEsta "Get courses information"
-
-enrolldashboardHTML -> sisApi "API call to get student information"
-enrolldashboardHTML -> courseEstaDB "Get courses information"
-enrolldashboardHTML -> classMatDB "Get class material data"
 
 enrollManager -> enrollDB "Write to"
 enrollManager -> courseEstaDB "Read for courses data"
 enrollManager -> sisApi "API call for information"
 enrollManager -> notif "Send notification to student"
-
-unenroll -> enrollDB "Read and Write"
-unenroll -> notif "Send notification to users"
 
 classMat -> classMatDB "Write and Read"
 classMat -> courseEstaDB "Read from"
@@ -57,30 +41,20 @@ courseEsta -> notif "send notification to user"
 
 
 # relationships of Enrollment system containers
+
 enrolldashboardApp -> enrolldashboardHTML "Delivers content to"
-enrolldashboardApp -> enrollHandler "API call read/write enrollment information"
+enrolldashboardApp -> enrollManager "API call read/write enrollment information"
 enrolldashboardApp -> classMat "API call read/write enrollment information"
 enrolldashboardApp -> courseEsta "API call read/write enrollment information"
 enrollManager -> auditLogDB "Write to"
-
-# relationships of Enrollment system containers
-adminHTML -> enrollManager "API call read/write enrollment information"
-adminHTML -> unenroll "API call read/write to enrollment DB"
-adminHTML -> courseEsta "API call ..."
-
-enrolldashboardHTML -> enrollManager "API call read/write enrollment information"
-enrolldashboardHTML -> unenroll "API call read/write to enrollment DB"
-enrolldashboardHTML -> classMat "API call ...."
-enrolldashboardHTML -> courseEsta "API call ..."
-
+enrolldashboardApp -> enrollInterface "Enroll or unenroll courses"
+enrolldashboardApp -> historyInterface "Access Enroll history"
 
 # =============== Component <-> Container relationships ===============
 # enrollment manager outside relationsships
 enrollRep -> enrollDB "Send data to database"
-enrollLog -> enrollDB "Write to"
 dataSync -> courseEstaDB "Read from"
-enrollLog -> auditLogDB "Write to"
-enrollValidation -> courseEstaDB "Read from"
+enrollRep -> auditLogDB "Write to"
 
 # enrolldashboardapp outside relationsships
 enrollRepository -> enrollDB "Reads and write to"
