@@ -35,6 +35,11 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             include *
         }
 
+        component courseEsta "courseEstaSystemComponentDiagram" {
+            include *
+        }
+
+
         dynamic enrollManager "enrollDynamicView" {
             enrollInterface -> enrollIn "Send enrollment information from user to validate"
             enrollInterface -> unenrollIn "Send unenrollment information from user to validate"

@@ -7,7 +7,7 @@ enrollmentSys = softwareSystem "Enrollment System" "manage the process of regist
     !include containers/enrollManager.dsl
     // unenroll = container "Unenrollment Manager" "add"
     !include containers/classMat.dsl
-    courseEsta = container "Course Establishment Manager" "add"
+    !include containers/courseEstablishment.dsl
 
     # Enrollment System databases
     enrollDB = container "Enroll Database" "Store register enrollment for each student's user" {
@@ -68,3 +68,9 @@ courseEstablismentDBComm -> courseEstaDB "Builds requests + Querries database"
 
 enrolldashboardApp -> homeworkAPI "Create/submit homework"
 enrolldashboardApp -> lectureMaterial "Add course material"
+
+# Class Establishment
+courseDatabaseCommunicator -> courseEstaDB "Writes/reads data"
+courseNotifer -> notif "Send notification request"
+enrolldashboardApp -> courseChangerInterface "Gives data to change course"
+enrolldashboardApp -> courseCreationInterface "Gives data for creating new course"
