@@ -57,9 +57,9 @@ dataSync -> courseEstaDB "Read from"
 enrollRep -> auditLogDB "Write to"
 
 # enrolldashboardapp outside relationsships
-enrollRepository -> enrollDB "Reads and write to"
-courseEstaRepository -> courseEstaDB "Read and write to"
-classMatRepository -> classMatDB "Read and write to"
+// enrollRepository -> enrollDB "Reads and write to"
+// courseEstaRepository -> courseEstaDB "Read and write to"
+// classMatRepository -> classMatDB "Read and write to"
 
 # class Material
 classMatDBComm -> classMatDB "Builds requests + Querries database"
