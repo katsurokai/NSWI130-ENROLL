@@ -57,15 +57,9 @@ dataSync -> courseEstaDB "Read from"
 enrollRep -> auditLogDB "Write to"
 
 # enrolldashboardapp outside relationsships
-<<<<<<< HEAD
 // enrollRepository -> enrollDB "Reads and write to"
 // courseEstaRepository -> courseEstaDB "Read and write to"
 // classMatRepository -> classMatDB "Read and write to"
-=======
-# enrollRepository -> enrollDB "Reads and write to"
-# courseEstaRepository -> courseEstaDB "Read and write to"
-# classMatRepository -> classMatDB "Read and write to"
->>>>>>> 1adcb9054709826bff3ad6c1d823ad09f9d0a06f
 
 # class Material
 classMatDBComm -> classMatDB "Builds requests + Querries database"
@@ -77,5 +71,5 @@ enrolldashboardApp -> lectureMaterial "Add course material"
 # Class Establishment
 courseDatabaseCommunicator -> courseEstaDB "Writes/reads data"
 courseNotifer -> notif "Send notification request"
-enrolldashboardApp -> courseChangerInterface "Gives data to change course"
-enrolldashboardApp -> courseCreationInterface "Gives data for creating new course"
+enrolldashboardApp -> courseChangerApiConnector "Gives data to change course"
+enrolldashboardApp -> courseCreationApiConnector "Gives data for creating new course"

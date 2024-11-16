@@ -1,7 +1,7 @@
 courseEsta = container "Course Establishment Manager" "add" {
         group "Presentation Layer" {
-        courseCreationInterface = component "Course creation Interface" "Provides public API for course creation"
-        courseChangerInterface = component "Course changer Interface" "Provides public API for course change"
+        courseCreationApiConnector = component "Course creation API connector" "Provides public API for course creation"
+        courseChangerApiConnector = component "Course changer API connector" "Provides public API for course change"
     }
     group "Business layer" {
         courseCreator = component "CourseCreator" "Creates courses"
@@ -15,8 +15,8 @@ courseEsta = container "Course Establishment Manager" "add" {
     }
 }
 
-courseCreationInterface -> courseCreator "Delegates request"
-courseChangerInterface -> courseController "Delegates request"
+courseCreationApiConnector -> courseCreator "Delegates request"
+courseChangerApiConnector -> courseController "Delegates request"
 courseCreator -> courseValidator "Checks course info"
 courseController -> courseValidator "Checks course change info"
 courseController -> courseNotifer "Gives command to notify subscribed students about enroll opening"

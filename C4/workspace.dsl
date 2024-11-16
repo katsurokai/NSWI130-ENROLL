@@ -67,6 +67,15 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             enrollRep -> enrollDB "read Data from database"
         }
 
+        dynamic courseEsta "courseEstaDynamicView"{
+            courseChangerApiConnector -> courseController "Sends request to change course enroll status"
+            courseController -> courseValidator
+            courseValidator -> courseDatabaseCommunicator
+            courseDatabaseCommunicator -> courseEstaDB
+            courseController -> courseNotifer
+            courseNotifer -> notif
+        }
+
         component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
             include *
         }
