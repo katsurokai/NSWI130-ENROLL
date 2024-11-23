@@ -29,43 +29,52 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         container enrollmentSys "enrollmentSystemContainerDiagram" {
             include *
+            exclude "notif -> teacher"
+            exclude "notif -> student"
         }
 
         component enrollManager "enrollmentSystemComponentDiagram" {
             include *
+            exclude "apiGateWay -> courseEsta"
+            exclude "courseEsta -> notif"
         }
 
         component courseEsta "courseEstaSystemComponentDiagram" {
             include *
         }
 
+        !include /enrolment-system/dynamic/enrollment_container_dynamic.dsl
 
-        dynamic enrollManager "enrollDynamicView" {
-            enrollInterface -> enrollIn "Send enrollment information from user to validate"
-            enrollInterface -> unenrollIn "Send unenrollment information from user to validate"
+        !include /enrolment-system/dynamic/enrollment_component_dynamic.dsl
 
-            enrollIn -> enrollValidation "Request validation for enrollment"
-            unenrollIn -> enrollValidation "Request validation for unenrollment"
+        !include /enrolment-system/dynamic/enrollmenthistory_component_dynamic.dsl
 
-            enrollValidation -> dataSync "Read from"
-            dataSync -> sisApi "Read from"
-            enrollValidation -> errorHandler "Send error to"
-            errorHandler -> enrollLog "Send error to"
-            errorHandler -> notifer "Send error to"
-            notifer -> notif "Send notification"
+        // dynamic enrollManager "enrollDynamicView" {
+        //     enrollInterface -> enrollIn "Send enrollment information from user to validate"
+        //     enrollInterface -> unenrollIn "Send unenrollment information from user to validate"
 
-            enrollValidation -> enrollHistory "Send enroll/unenroll to history"
-            enrollHistory -> enrollRep "Send data to repository"
-            enrollLog -> enrollRep "Send data to repository"
-            enrollRep -> enrollDB "Store data in database"
+        //     enrollIn -> enrollValidation "Request validation for enrollment"
+        //     unenrollIn -> enrollValidation "Request validation for unenrollment"
 
-        }
+        //     enrollValidation -> dataSync "Read from"
+        //     dataSync -> sisApi "Read from"
+        //     enrollValidation -> errorHandler "Send error to"
+        //     errorHandler -> enrollLog "Send error to"
+        //     errorHandler -> notifer "Send error to"
+        //     notifer -> notif "Send notification"
 
-        dynamic enrollManager "enrollHistoryDynamicView"{
-            historyInterface -> enrollHistory "Send enrollment history information from user to get information"
-            enrollHistory -> enrollRep "Send data to repository"
-            enrollRep -> enrollDB "read Data from database"
-        }
+        //     enrollValidation -> enrollHistory "Send enroll/unenroll to history"
+        //     enrollHistory -> enrollRep "Send data to repository"
+        //     enrollLog -> enrollRep "Send data to repository"
+        //     enrollRep -> enrollDB "Store data in database"
+
+        // }
+
+        // dynamic enrollManager "enrollHistoryDynamicView"{
+        //     historyInterface -> enrollHistory "Send enrollment history information from user to get information"
+        //     enrollHistory -> enrollRep "Send data to repository"
+        //     enrollRep -> enrollDB "read Data from database"
+        // }
 
         dynamic courseEsta "courseEstaDynamicView"{
             courseChangerApiConnector -> courseController "Sends request to change course enroll status"
@@ -76,9 +85,9 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             courseNotifer -> notif
         }
 
-        component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
-            include *
-        }
+        // component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
+        //     include *
+        // }
 
         component classMat "classMaterialComponentDiagram" {
             include *

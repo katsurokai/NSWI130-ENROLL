@@ -4,250 +4,286 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2024-11-11T11:47:35Z",
+  "lastModifiedDate" : "2024-11-22T23:49:15Z",
   "model" : {
     "deploymentNodes" : [ {
-      "containerInstances" : [ {
-        "containerId" : "7",
-        "deploymentGroups" : [ "Default" ],
-        "environment" : "Live",
-        "id" : "132",
-        "instanceId" : 1,
-        "properties" : {
-          "structurizr.dsl.identifier" : "dashboardhtmlinstance"
-        },
-        "relationships" : [ {
-          "description" : "Sends requests to",
-          "destinationId" : "135",
-          "id" : "138",
-          "linkedRelationshipId" : "19",
-          "sourceId" : "132"
-        } ],
-        "tags" : "Container Instance"
-      } ],
-      "environment" : "Live",
-      "id" : "131",
-      "instances" : "1",
-      "name" : "User's web browser",
-      "properties" : {
-        "structurizr.dsl.identifier" : "750e202d-7782-4bf2-b7e2-3f02ef0ba995"
-      },
-      "tags" : "Element,Deployment Node"
-    }, {
       "children" : [ {
         "containerInstances" : [ {
           "containerId" : "8",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "135",
+          "id" : "97",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "dashboardappinstance"
+            "structurizr.dsl.identifier" : "webserverinstance"
           },
-          "relationships" : [ {
-            "description" : "Deliver content to",
-            "destinationId" : "132",
-            "id" : "136",
-            "linkedRelationshipId" : "23",
-            "sourceId" : "135"
-          }, {
-            "description" : "Delivers content to",
-            "destinationId" : "132",
-            "id" : "137",
-            "linkedRelationshipId" : "113",
-            "sourceId" : "135"
-          }, {
-            "description" : "API call read/write enrollment information",
-            "destinationId" : "141",
-            "id" : "142",
-            "linkedRelationshipId" : "114",
-            "sourceId" : "135"
-          }, {
-            "description" : "API call read/write enrollment information",
-            "destinationId" : "145",
-            "id" : "146",
-            "linkedRelationshipId" : "115",
-            "sourceId" : "135"
-          }, {
-            "description" : "API call read/write enrollment information",
-            "destinationId" : "149",
-            "id" : "150",
-            "linkedRelationshipId" : "116",
-            "sourceId" : "135"
-          } ],
           "tags" : "Container Instance"
         } ],
         "environment" : "Live",
-        "id" : "134",
+        "id" : "96",
         "instances" : "1",
-        "name" : "Web server",
+        "name" : "Nginx",
         "properties" : {
-          "structurizr.dsl.identifier" : "3444823f-d1fd-406a-94c1-df4dcd917bb4"
+          "structurizr.dsl.identifier" : "794436de-78a3-4eec-8981-0c7bc13ff1b6"
         },
         "tags" : "Element,Deployment Node",
-        "technology" : "Wildfly 34"
-      }, {
-        "children" : [ {
-          "containerInstances" : [ {
-            "containerId" : "35",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Live",
-            "id" : "141",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "enrollinstance"
-            },
-            "relationships" : [ {
-              "description" : "Write to",
-              "destinationId" : "153",
-              "id" : "154",
-              "linkedRelationshipId" : "104",
-              "sourceId" : "141"
-            }, {
-              "description" : "Read for courses data",
-              "destinationId" : "155",
-              "id" : "158",
-              "linkedRelationshipId" : "105",
-              "sourceId" : "141"
-            }, {
-              "description" : "Write to",
-              "destinationId" : "163",
-              "id" : "164",
-              "linkedRelationshipId" : "117",
-              "sourceId" : "141"
-            } ],
-            "tags" : "Container Instance"
-          } ],
-          "environment" : "Live",
-          "id" : "140",
-          "instances" : "1",
-          "name" : "enrollBackend server",
-          "properties" : {
-            "structurizr.dsl.identifier" : "61ca0693-0984-4ebc-85ce-57409d592009"
-          },
-          "tags" : "Element,Deployment Node",
-          "technology" : "Wildfly 34"
-        } ],
-        "environment" : "Live",
-        "id" : "139",
-        "instances" : "1",
-        "name" : "Enrollment Server",
-        "properties" : {
-          "structurizr.dsl.identifier" : "572a4c93-6ffe-4df2-9dc6-947a447a524d"
-        },
-        "tags" : "Element,Deployment Node",
-        "technology" : "Red Hat Enterprise Linux 9.4"
-      }, {
-        "children" : [ {
-          "containerInstances" : [ {
-            "containerId" : "65",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Live",
-            "id" : "145",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "classmatinstance"
-            },
-            "relationships" : [ {
-              "description" : "Read from",
-              "destinationId" : "155",
-              "id" : "156",
-              "linkedRelationshipId" : "109",
-              "sourceId" : "145"
-            }, {
-              "description" : "Write and Read",
-              "destinationId" : "160",
-              "id" : "161",
-              "linkedRelationshipId" : "108",
-              "sourceId" : "145"
-            } ],
-            "tags" : "Container Instance"
-          } ],
-          "environment" : "Live",
-          "id" : "144",
-          "instances" : "1",
-          "name" : "classMatBackend server",
-          "properties" : {
-            "structurizr.dsl.identifier" : "02209820-01f7-4bd2-92f0-8818f0bce6c8"
-          },
-          "tags" : "Element,Deployment Node",
-          "technology" : "Wildfly 34"
-        } ],
-        "environment" : "Live",
-        "id" : "143",
-        "instances" : "1",
-        "name" : "Class Material Server",
-        "properties" : {
-          "structurizr.dsl.identifier" : "e4f9e472-7768-4480-8130-8b1e15075238"
-        },
-        "tags" : "Element,Deployment Node",
-        "technology" : "Red Hat Enterprise Linux 9.4"
-      }, {
-        "children" : [ {
-          "containerInstances" : [ {
-            "containerId" : "81",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Live",
-            "id" : "149",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "courseestainstance"
-            },
-            "relationships" : [ {
-              "description" : "Write to",
-              "destinationId" : "155",
-              "id" : "157",
-              "linkedRelationshipId" : "111",
-              "sourceId" : "149"
-            } ],
-            "tags" : "Container Instance"
-          } ],
-          "environment" : "Live",
-          "id" : "148",
-          "instances" : "1",
-          "name" : "courseEstaBackend server",
-          "properties" : {
-            "structurizr.dsl.identifier" : "b6e46857-dda8-449e-aafb-b1075e1b7e8f"
-          },
-          "tags" : "Element,Deployment Node",
-          "technology" : "Wildfly 34"
-        } ],
-        "environment" : "Live",
-        "id" : "147",
-        "instances" : "1",
-        "name" : "Course Establishment Server",
-        "properties" : {
-          "structurizr.dsl.identifier" : "1c9d4fda-7494-4eab-bece-dd4d2ae8d60b"
-        },
-        "tags" : "Element,Deployment Node",
-        "technology" : "Red Hat Enterprise Linux 9.4"
+        "technology" : "Nginx 1.27.2"
       } ],
       "environment" : "Live",
-      "id" : "133",
+      "id" : "95",
       "instances" : "1",
-      "name" : "Application Server",
+      "name" : "Web Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "4e488e48-78ba-41f0-b152-3dd2b695c653"
+        "structurizr.dsl.identifier" : "8e8355aa-6280-486d-a0f0-6239cc61fd67"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Red Hat Enterprise Linux 9.4"
     }, {
       "children" : [ {
         "containerInstances" : [ {
-          "containerId" : "100",
+          "containerId" : "7",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "153",
+          "id" : "100",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "dashboardhtmlinstance"
+          },
+          "relationships" : [ {
+            "description" : "Served from",
+            "destinationId" : "97",
+            "id" : "101",
+            "linkedRelationshipId" : "88",
+            "sourceId" : "100"
+          }, {
+            "description" : "Make API calls to",
+            "destinationId" : "104",
+            "id" : "105",
+            "linkedRelationshipId" : "89",
+            "sourceId" : "100"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "99",
+        "instances" : "1",
+        "name" : "User's web browser",
+        "properties" : {
+          "structurizr.dsl.identifier" : "0ad3cd06-5197-46b5-8d90-a53d51fc7a62"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Chrome, Firefox, Safari, Edge"
+      } ],
+      "description" : "OS: (Windows, Linux, Mac)",
+      "environment" : "Live",
+      "id" : "98",
+      "instances" : "1",
+      "name" : "Users's Device",
+      "properties" : {
+        "structurizr.dsl.identifier" : "f7aa9d5f-e68e-41e9-b0ba-a741ea7a74a8"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "9",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "104",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "apigatewayinstance"
+          },
+          "relationships" : [ {
+            "description" : "Routes enrollment requests",
+            "destinationId" : "108",
+            "id" : "109",
+            "linkedRelationshipId" : "59",
+            "sourceId" : "104"
+          }, {
+            "description" : "Routes class material requests",
+            "destinationId" : "112",
+            "id" : "113",
+            "linkedRelationshipId" : "90",
+            "sourceId" : "104"
+          }, {
+            "description" : "Route course establishment requests",
+            "destinationId" : "116",
+            "id" : "118",
+            "linkedRelationshipId" : "91",
+            "sourceId" : "104"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Request Routing",
+        "environment" : "Live",
+        "id" : "103",
+        "instances" : "1",
+        "name" : "API Gateway Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "89c35fb5-0bfd-47ed-a1e5-cec9f9d055f4"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Apache Tomact 11.0.0"
+      } ],
+      "environment" : "Live",
+      "id" : "102",
+      "instances" : "1",
+      "name" : "API Gateway Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "a63ee3fa-9a7e-40b8-ba0e-ce984a65b931"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Red Hat Enterprise Linux 9.4"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "49",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "108",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollinstance"
+          },
+          "relationships" : [ {
+            "description" : "reads for course data",
+            "destinationId" : "116",
+            "id" : "117",
+            "linkedRelationshipId" : "67",
+            "sourceId" : "108"
+          }, {
+            "description" : "read from and writes to",
+            "destinationId" : "121",
+            "id" : "122",
+            "linkedRelationshipId" : "81",
+            "sourceId" : "108"
+          }, {
+            "description" : "writes to",
+            "destinationId" : "129",
+            "id" : "130",
+            "linkedRelationshipId" : "83",
+            "sourceId" : "108"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "107",
+        "instances" : "1",
+        "name" : "enrollBackend server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "95b65194-9309-4e12-b85b-1705e610be48"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Spring Boot 3.0"
+      } ],
+      "environment" : "Live",
+      "group" : "Application Server",
+      "id" : "106",
+      "instances" : "1",
+      "name" : "Enrollment Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dd778275-29d8-48bb-9e8b-aaed7f945edf"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Red Hat Enterprise Linux 9.4"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "33",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "112",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "classmatinstance"
+          },
+          "relationships" : [ {
+            "description" : "Write and Read",
+            "destinationId" : "126",
+            "id" : "127",
+            "linkedRelationshipId" : "84",
+            "sourceId" : "112"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "111",
+        "instances" : "1",
+        "name" : "classMatBackend server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "b1d4c33f-e742-4b2c-8a63-d6491c02f726"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Spring Boot 3.0"
+      } ],
+      "environment" : "Live",
+      "group" : "Application Server",
+      "id" : "110",
+      "instances" : "1",
+      "name" : "Class Material Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7d2a704f-6332-458d-87c2-78697fd65651"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Red Hat Enterprise Linux 9.4"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "14",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "116",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseestainstance"
+          },
+          "relationships" : [ {
+            "description" : "Write to",
+            "destinationId" : "123",
+            "id" : "124",
+            "linkedRelationshipId" : "86",
+            "sourceId" : "116"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "115",
+        "instances" : "1",
+        "name" : "courseEstaBackend server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "99ab1186-be8c-41e6-8683-3725d8d5e31e"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Spring Boot 3.0"
+      } ],
+      "environment" : "Live",
+      "group" : "Application Server",
+      "id" : "114",
+      "instances" : "1",
+      "name" : "Course Establishment Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "08724d3e-0232-4239-ba23-f5ee292e5463"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Red Hat Enterprise Linux 9.4"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "10",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "121",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "enrolldbinstance"
           },
           "tags" : "Container Instance"
         }, {
-          "containerId" : "102",
+          "containerId" : "12",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "155",
+          "id" : "123",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "devicedbinstance"
@@ -255,20 +291,20 @@
           "tags" : "Container Instance"
         } ],
         "environment" : "Live",
-        "id" : "152",
+        "id" : "120",
         "instances" : "1",
         "name" : "Relational DB server",
         "properties" : {
-          "structurizr.dsl.identifier" : "6f3283ba-e3d8-4e31-85fa-2eec6ae66d0a"
+          "structurizr.dsl.identifier" : "31dc36d6-c1b1-4d81-be30-6fe92d8a38f8"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "PostgreSQL 17"
       }, {
         "containerInstances" : [ {
-          "containerId" : "101",
+          "containerId" : "11",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "160",
+          "id" : "126",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "classmatdbinstance"
@@ -276,20 +312,20 @@
           "tags" : "Container Instance,GridFS"
         } ],
         "environment" : "Live",
-        "id" : "159",
+        "id" : "125",
         "instances" : "1",
         "name" : "File storage",
         "properties" : {
-          "structurizr.dsl.identifier" : "bcf9d759-e84e-422e-9d11-b02d206c5a2c"
+          "structurizr.dsl.identifier" : "b505df36-9bf1-4ca3-9dd7-63a958b8c408"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "MongoDB 8.15"
       }, {
         "containerInstances" : [ {
-          "containerId" : "103",
+          "containerId" : "13",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "163",
+          "id" : "129",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "auditlogdbinstance"
@@ -297,21 +333,21 @@
           "tags" : "Container Instance"
         } ],
         "environment" : "Live",
-        "id" : "162",
+        "id" : "128",
         "instances" : "1",
         "name" : "Log storage",
         "properties" : {
-          "structurizr.dsl.identifier" : "c86bd9ad-4a5d-4925-9020-29ffb5d34abf"
+          "structurizr.dsl.identifier" : "fba03cce-93ca-4c49-9369-a83a2256a7b3"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Elasticsearch 8.15"
       } ],
       "environment" : "Live",
-      "id" : "151",
+      "id" : "119",
       "instances" : "1",
       "name" : "Database Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "c97fe4ce-a166-4703-8554-c021ae62b2b4"
+        "structurizr.dsl.identifier" : "b82cecfb-c848-4cdd-a595-3e5bcf83b89f"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Red Hat Enterprise Linux 9.4"
@@ -327,18 +363,18 @@
       "relationships" : [ {
         "description" : "View, enroll, unenroll in courses and class material",
         "destinationId" : "6",
-        "id" : "165",
+        "id" : "131",
         "properties" : {
-          "structurizr.dsl.identifier" : "76cfaf3d-50fe-48be-ba3e-b2a02deed45b"
+          "structurizr.dsl.identifier" : "14d4fafd-d9b2-410b-a1ef-da381a617dab"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "View, enroll in courses. Check for class material",
         "destinationId" : "7",
-        "id" : "171",
+        "id" : "137",
         "properties" : {
-          "structurizr.dsl.identifier" : "bef43e79-2961-4019-828c-6d97ee95d453"
+          "structurizr.dsl.identifier" : "1fe87391-a791-4473-9bfd-ab84a03e5e56"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -355,18 +391,18 @@
       "relationships" : [ {
         "description" : "Establish course, unenroll or enroll student base on request, and upload class material",
         "destinationId" : "6",
-        "id" : "166",
+        "id" : "132",
         "properties" : {
-          "structurizr.dsl.identifier" : "7b4e6b92-9d7c-4c61-9bd9-0ad73969eeeb"
+          "structurizr.dsl.identifier" : "392bc0a0-66e5-4a38-80b2-a6dc2ced1221"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "View, establish courses. View and manage class material",
         "destinationId" : "7",
-        "id" : "172",
+        "id" : "138",
         "properties" : {
-          "structurizr.dsl.identifier" : "813c025e-7f69-417c-8bff-d5307a81a80b"
+          "structurizr.dsl.identifier" : "8305f692-d1d8-4478-a77f-6698e6bbca2b"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -383,18 +419,18 @@
       "relationships" : [ {
         "description" : "administer enroll, unenroll for student in courses",
         "destinationId" : "6",
-        "id" : "167",
+        "id" : "133",
         "properties" : {
-          "structurizr.dsl.identifier" : "6dcdb477-54d0-4c5f-926c-a1e7d76f116b"
+          "structurizr.dsl.identifier" : "1fb67b30-e03d-4824-a952-1bbffc4bfc61"
         },
         "sourceId" : "3",
         "tags" : "Relationship"
       }, {
         "description" : "Manage enroll and unenroll",
         "destinationId" : "7",
-        "id" : "170",
+        "id" : "136",
         "properties" : {
-          "structurizr.dsl.identifier" : "a704db18-052e-46d4-a367-dc88948ea891"
+          "structurizr.dsl.identifier" : "20684f83-788d-4b5a-bb93-537de889e52e"
         },
         "sourceId" : "3",
         "tags" : "Relationship"
@@ -423,18 +459,18 @@
       "relationships" : [ {
         "description" : "Notify studend about changese in courses",
         "destinationId" : "1",
-        "id" : "168",
+        "id" : "134",
         "properties" : {
-          "structurizr.dsl.identifier" : "716bf0c7-0171-454d-a239-b88a51c1c8b8"
+          "structurizr.dsl.identifier" : "a6e2f8ed-47f3-460d-ae90-f2e3f2cb1525"
         },
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
         "description" : "Notify teacher on the courses established",
         "destinationId" : "2",
-        "id" : "169",
+        "id" : "135",
         "properties" : {
-          "structurizr.dsl.identifier" : "798ab7e6-3c66-4c54-bd8f-7da7a797eea1"
+          "structurizr.dsl.identifier" : "987cc6a3-a7b3-484b-98b7-404a1ef50c57"
         },
         "sourceId" : "5",
         "tags" : "Relationship"
@@ -445,40 +481,25 @@
         "description" : "Provide functionality for enrollment page in a web browser.",
         "documentation" : { },
         "id" : "7",
-        "name" : "Enrollment Dashboard HTML",
+        "name" : "Dashboard HTML",
         "properties" : {
           "structurizr.dsl.identifier" : "enrolldashboardhtml"
         },
         "relationships" : [ {
-          "description" : "Sends requests to",
-          "destinationId" : "9",
-          "id" : "18",
-          "properties" : {
-            "structurizr.dsl.identifier" : "e6debb6f-21ec-41f6-848b-fb6f6a992ad3"
-          },
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Sends requests to",
+          "description" : "Served from",
           "destinationId" : "8",
-          "id" : "19",
-          "linkedRelationshipId" : "18",
-          "sourceId" : "7"
-        }, {
-          "description" : "Sends requests to",
-          "destinationId" : "11",
-          "id" : "20",
+          "id" : "88",
           "properties" : {
-            "structurizr.dsl.identifier" : "443c61e9-8a8c-47aa-bd2c-b5bb28400c82"
+            "structurizr.dsl.identifier" : "578fbe21-431d-4ee9-bf8e-59c0b6094ae2"
           },
           "sourceId" : "7",
           "tags" : "Relationship"
         }, {
-          "description" : "Sends requests to",
-          "destinationId" : "13",
-          "id" : "21",
+          "description" : "Make API calls to",
+          "destinationId" : "9",
+          "id" : "89",
           "properties" : {
-            "structurizr.dsl.identifier" : "d8febb01-8947-41fc-a0b7-8ed51ecb6cf7"
+            "structurizr.dsl.identifier" : "74a5d793-5f9d-4071-8bf9-2b8d15960566"
           },
           "sourceId" : "7",
           "tags" : "Relationship"
@@ -486,481 +507,247 @@
         "tags" : "Element,Container,Web Front-End",
         "technology" : "HTML+Reach.js"
       }, {
-        "components" : [ {
-          "description" : "Provides HTML of the UI",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "9",
-          "name" : "Enrollment User Interface",
-          "properties" : {
-            "structurizr.dsl.identifier" : "enrollwebui"
-          },
-          "relationships" : [ {
-            "description" : "Deliver content to",
-            "destinationId" : "7",
-            "id" : "22",
-            "properties" : {
-              "structurizr.dsl.identifier" : "290d6d55-c7bb-4f28-94d4-08f282c6ba51"
-            },
-            "sourceId" : "9",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Request access to HTML content",
-            "destinationId" : "10",
-            "id" : "28",
-            "properties" : {
-              "structurizr.dsl.identifier" : "cb1ee714-fc43-48f1-ab13-adba18e721ef"
-            },
-            "sourceId" : "9",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Process user's request to manage enrollment",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "10",
-          "name" : "Enrollment Controller",
-          "properties" : {
-            "structurizr.dsl.identifier" : "enrollcontroller"
-          },
-          "relationships" : [ {
-            "description" : "Use to render content for enrollment management",
-            "destinationId" : "9",
-            "id" : "26",
-            "properties" : {
-              "structurizr.dsl.identifier" : "66f8379c-d9da-4ada-9f54-e43833e6ff34"
-            },
-            "sourceId" : "10",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Get and update enrollment data",
-            "destinationId" : "15",
-            "id" : "27",
-            "properties" : {
-              "structurizr.dsl.identifier" : "ec010884-9cf0-4ee6-a493-c46481393f24"
-            },
-            "sourceId" : "10",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Provides HTML of the UI",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "11",
-          "name" : "Class Material User Interface",
-          "properties" : {
-            "structurizr.dsl.identifier" : "classmatwebui"
-          },
-          "relationships" : [ {
-            "description" : "Deliver content to",
-            "destinationId" : "7",
-            "id" : "24",
-            "properties" : {
-              "structurizr.dsl.identifier" : "00129337-bc48-439a-80a7-5f1e6568604a"
-            },
-            "sourceId" : "11",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Request access to HTML content",
-            "destinationId" : "12",
-            "id" : "31",
-            "properties" : {
-              "structurizr.dsl.identifier" : "58b66783-6c7b-422a-8095-106ba1005630"
-            },
-            "sourceId" : "11",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Process user's request to manage class Material",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "12",
-          "name" : "Class Material Controller",
-          "properties" : {
-            "structurizr.dsl.identifier" : "classmatcontroller"
-          },
-          "relationships" : [ {
-            "description" : "Use to render content for classMaterial management",
-            "destinationId" : "11",
-            "id" : "29",
-            "properties" : {
-              "structurizr.dsl.identifier" : "e68bc182-ed0c-4f65-a882-939445730e2c"
-            },
-            "sourceId" : "12",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Get and update ClassMaterial data",
-            "destinationId" : "16",
-            "id" : "30",
-            "properties" : {
-              "structurizr.dsl.identifier" : "94b507d7-bdc0-46f0-8596-fa6568dd1239"
-            },
-            "sourceId" : "12",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Provides HTML of the UI",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "13",
-          "name" : "Course Establishment User Interface",
-          "properties" : {
-            "structurizr.dsl.identifier" : "courseestawebui"
-          },
-          "relationships" : [ {
-            "description" : "Deliver content to",
-            "destinationId" : "7",
-            "id" : "25",
-            "properties" : {
-              "structurizr.dsl.identifier" : "9606de6e-7547-4bc8-8fb3-129688f8e43d"
-            },
-            "sourceId" : "13",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Request access to HTML content",
-            "destinationId" : "14",
-            "id" : "34",
-            "properties" : {
-              "structurizr.dsl.identifier" : "a54c7811-0f8b-4795-a22a-948d767bcdd3"
-            },
-            "sourceId" : "13",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Process user's request to manage course establishment",
-          "documentation" : { },
-          "group" : "Presentation Layer",
-          "id" : "14",
-          "name" : "Course Establishment Controller",
-          "properties" : {
-            "structurizr.dsl.identifier" : "courseestacontroller"
-          },
-          "relationships" : [ {
-            "description" : "Use to render content for courseEstablishment management",
-            "destinationId" : "13",
-            "id" : "32",
-            "properties" : {
-              "structurizr.dsl.identifier" : "ae1fff83-70d3-4b8f-aac5-decc33c8ab2d"
-            },
-            "sourceId" : "14",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Get and update CourseEstablishment data",
-            "destinationId" : "17",
-            "id" : "33",
-            "properties" : {
-              "structurizr.dsl.identifier" : "7e9bb826-b62f-44a0-8c9c-ff04468ab714"
-            },
-            "sourceId" : "14",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Business logic for enrollment",
-          "documentation" : { },
-          "group" : "Request handling to appropriate Business logic",
-          "id" : "15",
-          "name" : "Enrollment Manager",
-          "properties" : {
-            "structurizr.dsl.identifier" : "enrollmodel"
-          },
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Business logic for ClassMaterial",
-          "documentation" : { },
-          "group" : "Request handling to appropriate Business logic",
-          "id" : "16",
-          "name" : "Class Material Manager",
-          "properties" : {
-            "structurizr.dsl.identifier" : "classmatmodel"
-          },
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Business logic for CourseEstablishment",
-          "documentation" : { },
-          "group" : "Request handling to appropriate Business logic",
-          "id" : "17",
-          "name" : "CourseEstablishment",
-          "properties" : {
-            "structurizr.dsl.identifier" : "courseestamodel"
-          },
-          "tags" : "Element,Component"
-        } ],
-        "description" : "Deliver HTML content to teacher, student, admin accessing module.",
+        "description" : "Hosts the static assets for Dashboard HTML (HTML, CSS, JavaScript)",
         "documentation" : { },
         "id" : "8",
-        "name" : "Enrollment Dashboard Web Application",
+        "name" : "Web Server",
         "properties" : {
-          "structurizr.dsl.identifier" : "enrolldashboardapp"
+          "structurizr.dsl.identifier" : "webserver"
+        },
+        "tags" : "Element,Container,Static Hosting",
+        "technology" : "Apache/Nginx Static Content Hosting"
+      }, {
+        "description" : "Handles routing, load balancing and API security",
+        "documentation" : { },
+        "id" : "9",
+        "name" : "API Gate Way",
+        "properties" : {
+          "structurizr.dsl.identifier" : "apigateway"
         },
         "relationships" : [ {
-          "description" : "Deliver content to",
-          "destinationId" : "7",
-          "id" : "23",
-          "linkedRelationshipId" : "22",
-          "sourceId" : "8"
-        }, {
-          "description" : "Delivers content to",
-          "destinationId" : "7",
-          "id" : "113",
+          "description" : "Routes enrollment requests",
+          "destinationId" : "50",
+          "id" : "58",
           "properties" : {
-            "structurizr.dsl.identifier" : "9dd8eb49-cf84-4679-9ae3-a63b848bb721"
+            "structurizr.dsl.identifier" : "eb8997ee-b23b-4576-95fa-ef501d6a1770"
           },
-          "sourceId" : "8",
+          "sourceId" : "9",
           "tags" : "Relationship"
         }, {
-          "description" : "API call read/write enrollment information",
-          "destinationId" : "35",
-          "id" : "114",
+          "description" : "Routes enrollment requests",
+          "destinationId" : "49",
+          "id" : "59",
+          "linkedRelationshipId" : "58",
+          "sourceId" : "9"
+        }, {
+          "description" : "Routes enrollment history requests",
+          "destinationId" : "52",
+          "id" : "60",
           "properties" : {
-            "structurizr.dsl.identifier" : "10412707-a099-401c-9b03-aab881fbfe45"
+            "structurizr.dsl.identifier" : "95b007df-c883-4d1a-b567-fdcb0c7f327e"
           },
-          "sourceId" : "8",
+          "sourceId" : "9",
           "tags" : "Relationship"
         }, {
-          "description" : "API call read/write enrollment information",
-          "destinationId" : "65",
-          "id" : "115",
+          "description" : "Routes unenrollment requests",
+          "destinationId" : "51",
+          "id" : "61",
           "properties" : {
-            "structurizr.dsl.identifier" : "37417167-2b5d-4590-8b65-d6cb2982020a"
+            "structurizr.dsl.identifier" : "a92f8505-66ca-4c17-b9d5-e808bef5e75d"
           },
-          "sourceId" : "8",
+          "sourceId" : "9",
           "tags" : "Relationship"
         }, {
-          "description" : "API call read/write enrollment information",
-          "destinationId" : "81",
-          "id" : "116",
+          "description" : "Routes class material requests",
+          "destinationId" : "33",
+          "id" : "90",
           "properties" : {
-            "structurizr.dsl.identifier" : "7f08c8c1-3c1d-4a64-8f5c-db6b7ae360e8"
+            "structurizr.dsl.identifier" : "9c413ce9-398f-4818-9f07-7674f83598ef"
           },
-          "sourceId" : "8",
+          "sourceId" : "9",
           "tags" : "Relationship"
         }, {
-          "description" : "Enroll or unenroll courses",
-          "destinationId" : "36",
-          "id" : "118",
+          "description" : "Route course establishment requests",
+          "destinationId" : "14",
+          "id" : "91",
           "properties" : {
-            "structurizr.dsl.identifier" : "88be04ff-0ed0-4c70-bef8-2608d5a858a2"
+            "structurizr.dsl.identifier" : "b2798deb-77de-480c-ad8e-4cec3479c080"
           },
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Access Enroll history",
-          "destinationId" : "37",
-          "id" : "119",
-          "properties" : {
-            "structurizr.dsl.identifier" : "122c66f9-e3cc-43fa-9fd6-310272eafc78"
-          },
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Create/submit homework",
-          "destinationId" : "66",
-          "id" : "125",
-          "properties" : {
-            "structurizr.dsl.identifier" : "50746a01-01bd-4dff-bd93-e5940012e550"
-          },
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Add course material",
-          "destinationId" : "67",
-          "id" : "126",
-          "properties" : {
-            "structurizr.dsl.identifier" : "4ac029d9-0983-425d-ba8f-15e22acb524d"
-          },
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gives data to change course",
-          "destinationId" : "83",
-          "id" : "129",
-          "properties" : {
-            "structurizr.dsl.identifier" : "2dad51b2-b134-42ba-9ece-37260ef26b3b"
-          },
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gives data for creating new course",
-          "destinationId" : "82",
-          "id" : "130",
-          "properties" : {
-            "structurizr.dsl.identifier" : "ae7eceb1-3279-48d7-a053-379261bab3c3"
-          },
-          "sourceId" : "8",
+          "sourceId" : "9",
           "tags" : "Relationship"
         } ],
-        "tags" : "Element,Container"
+        "tags" : "Element,Container",
+        "technology" : "Spring Boot, Spring Cloud Gateway"
+      }, {
+        "description" : "Store register enrollment for each student's user",
+        "documentation" : { },
+        "id" : "10",
+        "name" : "Enroll Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrolldb"
+        },
+        "tags" : "Element,Container,Database"
+      }, {
+        "description" : "Holds files such as student homeworks, lecture recordings, notes etc.",
+        "documentation" : { },
+        "id" : "11",
+        "name" : "ClassMaterial Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "classmatdb"
+        },
+        "tags" : "Element,Container,Database"
+      }, {
+        "description" : "do something",
+        "documentation" : { },
+        "id" : "12",
+        "name" : "CourseEstablisment Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "courseestadb"
+        },
+        "tags" : "Element,Container,Database"
+      }, {
+        "description" : "store events...",
+        "documentation" : { },
+        "id" : "13",
+        "name" : "AuditLog Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "auditlogdb"
+        },
+        "tags" : "Element,Container,Database"
       }, {
         "components" : [ {
-          "description" : "Handle module access to enroll Manager",
+          "description" : "Provides public API for course creation",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "36",
-          "name" : "Enrollment Interface",
+          "id" : "15",
+          "name" : "Course creation API connector",
           "properties" : {
-            "structurizr.dsl.identifier" : "enrollinterface"
+            "structurizr.dsl.identifier" : "coursecreationapiconnector"
           },
           "relationships" : [ {
-            "description" : "Send enrollment information from user to validate",
-            "destinationId" : "40",
-            "id" : "47",
+            "description" : "Delegates request",
+            "destinationId" : "17",
+            "id" : "23",
             "properties" : {
-              "structurizr.dsl.identifier" : "a36c690b-b62c-4534-8855-dfcf8c6d74cd"
+              "structurizr.dsl.identifier" : "ac3a5c46-b0f3-4c75-94c0-000e9616c9ad"
             },
-            "sourceId" : "36",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Send unenrollment information from user to validate",
-            "destinationId" : "41",
-            "id" : "48",
-            "properties" : {
-              "structurizr.dsl.identifier" : "f488db4b-7904-4ade-a541-5aae3f68842c"
-            },
-            "sourceId" : "36",
+            "sourceId" : "15",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Handle module access to enroll history in enroll Manager",
+          "description" : "Provides public API for course change",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "37",
-          "name" : "Enrollment History Interface",
+          "id" : "16",
+          "name" : "Course changer API connector",
           "properties" : {
-            "structurizr.dsl.identifier" : "historyinterface"
+            "structurizr.dsl.identifier" : "coursechangerapiconnector"
           },
           "relationships" : [ {
-            "description" : "Send enrollment history information from user to get information",
-            "destinationId" : "39",
-            "id" : "49",
+            "description" : "Delegates request",
+            "destinationId" : "18",
+            "id" : "24",
             "properties" : {
-              "structurizr.dsl.identifier" : "873e98cf-f830-40e4-8f65-2a8d3f16ac71"
+              "structurizr.dsl.identifier" : "dcdb807f-e8cf-4643-b01d-ce2f5f58ebea"
             },
-            "sourceId" : "37",
+            "sourceId" : "16",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Check for requirement on courses",
+          "description" : "Creates courses",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "38",
-          "name" : "Enrollment Validation",
+          "id" : "17",
+          "name" : "CourseCreator",
           "properties" : {
-            "structurizr.dsl.identifier" : "enrollvalidation"
+            "structurizr.dsl.identifier" : "coursecreator"
           },
           "relationships" : [ {
-            "description" : "Read from",
-            "destinationId" : "45",
-            "id" : "50",
+            "description" : "Checks course info",
+            "destinationId" : "19",
+            "id" : "25",
             "properties" : {
-              "structurizr.dsl.identifier" : "bc36f513-2a1b-478b-81f2-9cf5dc698c75"
+              "structurizr.dsl.identifier" : "6396cb04-0255-42fb-bd5e-cc699ef67a3a"
             },
-            "sourceId" : "38",
+            "sourceId" : "17",
             "tags" : "Relationship"
           }, {
-            "description" : "Send error to",
-            "destinationId" : "43",
-            "id" : "57",
+            "description" : "Gives command to create course",
+            "destinationId" : "22",
+            "id" : "28",
             "properties" : {
-              "structurizr.dsl.identifier" : "b11cddef-1495-4991-bea2-258e92bd7066"
+              "structurizr.dsl.identifier" : "cb723555-2ac5-49c2-89d7-553834aec231"
             },
-            "sourceId" : "38",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Controll courses",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "18",
+          "name" : "CourseController",
+          "properties" : {
+            "structurizr.dsl.identifier" : "coursecontroller"
+          },
+          "relationships" : [ {
+            "description" : "Checks course change info",
+            "destinationId" : "19",
+            "id" : "26",
+            "properties" : {
+              "structurizr.dsl.identifier" : "a0380816-9c27-43cb-9401-52f6502d543c"
+            },
+            "sourceId" : "18",
             "tags" : "Relationship"
           }, {
-            "description" : "Send enroll/unenroll to history",
-            "destinationId" : "39",
-            "id" : "62",
+            "description" : "Gives command to notify subscribed students about enroll opening",
+            "destinationId" : "21",
+            "id" : "27",
             "properties" : {
-              "structurizr.dsl.identifier" : "6194a7c8-e968-45bf-9491-9f70ad2e3bef"
+              "structurizr.dsl.identifier" : "d637f4e0-ab70-4ed5-942e-1dfe5fa56f7f"
             },
-            "sourceId" : "38",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Gives command to change course",
+            "destinationId" : "22",
+            "id" : "29",
+            "properties" : {
+              "structurizr.dsl.identifier" : "c31f3c31-fa7e-4c02-afc6-023ff4eb609c"
+            },
+            "sourceId" : "18",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Store enrollment data to history",
+          "description" : "Validates course data",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "39",
-          "name" : "Enrollment History",
+          "id" : "19",
+          "name" : "CourseValidator",
           "properties" : {
-            "structurizr.dsl.identifier" : "enrollhistory"
+            "structurizr.dsl.identifier" : "coursevalidator"
           },
           "relationships" : [ {
-            "description" : "Send data to repository",
-            "destinationId" : "46",
-            "id" : "63",
+            "description" : "Sends error",
+            "destinationId" : "20",
+            "id" : "30",
             "properties" : {
-              "structurizr.dsl.identifier" : "5da0a18e-bc0b-4705-89c5-3ef3494ad5fc"
+              "structurizr.dsl.identifier" : "a7232c7f-854e-4390-b4db-8be44a91f91c"
             },
-            "sourceId" : "39",
+            "sourceId" : "19",
             "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Make enrollment",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "40",
-          "name" : "Enrollment Logic",
-          "properties" : {
-            "structurizr.dsl.identifier" : "enrollin"
-          },
-          "relationships" : [ {
-            "description" : "Request validation for enrollment",
-            "destinationId" : "38",
-            "id" : "60",
+          }, {
+            "description" : "Sends request to get proper data",
+            "destinationId" : "22",
+            "id" : "31",
             "properties" : {
-              "structurizr.dsl.identifier" : "70a3d0cc-f630-46ac-aa9a-b28f601b686f"
+              "structurizr.dsl.identifier" : "23698296-6a07-458a-a055-d2a82247d9dd"
             },
-            "sourceId" : "40",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Make unenrollment",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "41",
-          "name" : "Unrollment Logic",
-          "properties" : {
-            "structurizr.dsl.identifier" : "unenrollin"
-          },
-          "relationships" : [ {
-            "description" : "Request validation for unenrollment",
-            "destinationId" : "38",
-            "id" : "61",
-            "properties" : {
-              "structurizr.dsl.identifier" : "d392bbd6-0715-4807-98ff-5f1801bfdc0e"
-            },
-            "sourceId" : "41",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Send notification to notif container",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "42",
-          "name" : "Notifier",
-          "properties" : {
-            "structurizr.dsl.identifier" : "notifer"
-          },
-          "relationships" : [ {
-            "description" : "Send notification",
-            "destinationId" : "5",
-            "id" : "51",
-            "properties" : {
-              "structurizr.dsl.identifier" : "ebe10d75-07bb-4e3b-8b11-5f29a15ebd65"
-            },
-            "sourceId" : "42",
+            "sourceId" : "19",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -968,173 +755,87 @@
           "description" : "Detect and handle any errors that occur",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "43",
-          "name" : "Error Handler",
+          "id" : "20",
+          "name" : "Course Error Handler",
           "properties" : {
-            "structurizr.dsl.identifier" : "errorhandler"
+            "structurizr.dsl.identifier" : "courseerrorhandler"
           },
           "relationships" : [ {
             "description" : "Send error to",
-            "destinationId" : "42",
-            "id" : "58",
+            "destinationId" : "21",
+            "id" : "32",
             "properties" : {
-              "structurizr.dsl.identifier" : "cadb1b3a-f627-440f-9fac-47805632275f"
+              "structurizr.dsl.identifier" : "2a368e37-93b0-492d-a9da-fe6c7805e7c3"
             },
-            "sourceId" : "43",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Send error to",
-            "destinationId" : "44",
-            "id" : "59",
-            "properties" : {
-              "structurizr.dsl.identifier" : "6b96c3b1-1410-482c-ac1b-e195af734841"
-            },
-            "sourceId" : "43",
+            "sourceId" : "20",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Logs all enrollment actions",
+          "description" : "Send notification to notif container",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "44",
-          "name" : "Enrollment Logger",
+          "id" : "21",
+          "name" : "Course Enroll Status Notifier",
           "properties" : {
-            "structurizr.dsl.identifier" : "enrolllog"
+            "structurizr.dsl.identifier" : "coursenotifer"
           },
           "relationships" : [ {
-            "description" : "Send data to repository",
-            "destinationId" : "46",
-            "id" : "64",
+            "description" : "Send notification request",
+            "destinationId" : "5",
+            "id" : "94",
             "properties" : {
-              "structurizr.dsl.identifier" : "490eb750-2742-4eb2-9254-43f9f8c9944d"
+              "structurizr.dsl.identifier" : "bf01c190-1d1d-4a85-96e5-ff04a5a48c4f"
             },
-            "sourceId" : "44",
+            "sourceId" : "21",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "handle data retrieval and synchronication with SIS API",
+          "description" : "Interface for communicating with course establishment database",
           "documentation" : { },
           "group" : "Persistence Layer",
-          "id" : "45",
-          "name" : "DataSync",
+          "id" : "22",
+          "name" : "Course database communicator",
           "properties" : {
-            "structurizr.dsl.identifier" : "datasync"
+            "structurizr.dsl.identifier" : "coursedatabasecommunicator"
           },
           "relationships" : [ {
-            "description" : "Read from",
-            "destinationId" : "4",
-            "id" : "54",
+            "description" : "Writes/reads data",
+            "destinationId" : "12",
+            "id" : "93",
             "properties" : {
-              "structurizr.dsl.identifier" : "411c237b-11b9-48e1-9606-617f161437b8"
+              "structurizr.dsl.identifier" : "d169d801-9d6d-46d4-af2d-a775f405fc1d"
             },
-            "sourceId" : "45",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Read from",
-            "destinationId" : "102",
-            "id" : "121",
-            "properties" : {
-              "structurizr.dsl.identifier" : "3fe68c6c-afa1-419c-bfa5-ab368d4ab720"
-            },
-            "sourceId" : "45",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Store data to database",
-          "documentation" : { },
-          "group" : "Persistence Layer",
-          "id" : "46",
-          "name" : "Enrollment Repository",
-          "properties" : {
-            "structurizr.dsl.identifier" : "enrollrep"
-          },
-          "relationships" : [ {
-            "description" : "Send data to database",
-            "destinationId" : "100",
-            "id" : "120",
-            "properties" : {
-              "structurizr.dsl.identifier" : "bd55a752-3adf-48e0-aabb-15c60e855647"
-            },
-            "sourceId" : "46",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Write to",
-            "destinationId" : "103",
-            "id" : "122",
-            "properties" : {
-              "structurizr.dsl.identifier" : "d1e035c1-6018-464c-b106-342528ae785a"
-            },
-            "sourceId" : "46",
+            "sourceId" : "22",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         } ],
-        "description" : "Provides functionality for enrollment in course with appropriate validation",
+        "description" : "add",
         "documentation" : { },
-        "id" : "35",
-        "name" : "Enrollment Manager",
+        "id" : "14",
+        "name" : "Course Establishment Manager",
         "properties" : {
-          "structurizr.dsl.identifier" : "enrollmanager"
+          "structurizr.dsl.identifier" : "courseesta"
         },
         "relationships" : [ {
-          "description" : "Send notification",
-          "destinationId" : "5",
-          "id" : "52",
-          "linkedRelationshipId" : "51",
-          "sourceId" : "35"
-        }, {
-          "description" : "Read from",
-          "destinationId" : "4",
-          "id" : "55",
-          "linkedRelationshipId" : "54",
-          "sourceId" : "35"
-        }, {
           "description" : "Write to",
-          "destinationId" : "100",
-          "id" : "104",
+          "destinationId" : "12",
+          "id" : "86",
           "properties" : {
-            "structurizr.dsl.identifier" : "41b7ab41-e99f-436d-914f-f1627414758f"
+            "structurizr.dsl.identifier" : "38637a42-5988-4ab8-b5c7-4a53182a0576"
           },
-          "sourceId" : "35",
+          "sourceId" : "14",
           "tags" : "Relationship"
         }, {
-          "description" : "Read for courses data",
-          "destinationId" : "102",
-          "id" : "105",
-          "properties" : {
-            "structurizr.dsl.identifier" : "1f1661f5-f061-4e67-943c-50eb77fdefae"
-          },
-          "sourceId" : "35",
-          "tags" : "Relationship"
-        }, {
-          "description" : "API call for information",
-          "destinationId" : "4",
-          "id" : "106",
-          "properties" : {
-            "structurizr.dsl.identifier" : "fee9cc0d-1b9b-4e02-ad1b-08fc65929de8"
-          },
-          "sourceId" : "35",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Send notification to student",
+          "description" : "send notification to user",
           "destinationId" : "5",
-          "id" : "107",
+          "id" : "87",
           "properties" : {
-            "structurizr.dsl.identifier" : "ef4ffd89-116d-4557-a48e-aa710dfd32e5"
+            "structurizr.dsl.identifier" : "7a58a371-8462-43cd-9923-95c966d0809e"
           },
-          "sourceId" : "35",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Write to",
-          "destinationId" : "103",
-          "id" : "117",
-          "properties" : {
-            "structurizr.dsl.identifier" : "9f980f40-d7eb-49b5-be45-70162abf7c89"
-          },
-          "sourceId" : "35",
+          "sourceId" : "14",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
@@ -1143,19 +844,19 @@
           "description" : "Provides public API for homework submission/viewing",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "66",
+          "id" : "34",
           "name" : "Homework submission/creation Interface",
           "properties" : {
             "structurizr.dsl.identifier" : "homeworkapi"
           },
           "relationships" : [ {
             "description" : "Delegates requests",
-            "destinationId" : "68",
-            "id" : "74",
+            "destinationId" : "36",
+            "id" : "42",
             "properties" : {
-              "structurizr.dsl.identifier" : "a5324c48-e6e4-4735-abde-44483d141297"
+              "structurizr.dsl.identifier" : "1b91736a-77d1-42c0-9f3e-41a5f47aeff8"
             },
-            "sourceId" : "66",
+            "sourceId" : "34",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1163,19 +864,19 @@
           "description" : "Lecture recordings/notes/transcripts",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "67",
+          "id" : "35",
           "name" : "Lecture material",
           "properties" : {
             "structurizr.dsl.identifier" : "lecturematerial"
           },
           "relationships" : [ {
             "description" : "Delegates requests",
-            "destinationId" : "69",
-            "id" : "78",
+            "destinationId" : "37",
+            "id" : "46",
             "properties" : {
-              "structurizr.dsl.identifier" : "0197adc1-32dd-4219-a545-b00e8fb3698b"
+              "structurizr.dsl.identifier" : "05a67589-22f2-4c4f-847f-2a99686d98a8"
             },
-            "sourceId" : "67",
+            "sourceId" : "35",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1183,37 +884,37 @@
           "description" : "Verifies requests acording to buisness logic",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "68",
+          "id" : "36",
           "name" : "Homework Controller",
           "properties" : {
             "structurizr.dsl.identifier" : "homeworkcontroller"
           },
           "relationships" : [ {
             "description" : "Delegates file verification",
-            "destinationId" : "70",
-            "id" : "75",
+            "destinationId" : "38",
+            "id" : "43",
             "properties" : {
-              "structurizr.dsl.identifier" : "133d4d70-1495-4499-9611-f7b13d425524"
+              "structurizr.dsl.identifier" : "b01f1c2a-b717-4ff5-a149-dbb15b4460fd"
             },
-            "sourceId" : "68",
+            "sourceId" : "36",
             "tags" : "Relationship"
           }, {
             "description" : "Delegates that request is (create, teacher) or (submit, student)",
-            "destinationId" : "71",
-            "id" : "76",
+            "destinationId" : "39",
+            "id" : "44",
             "properties" : {
-              "structurizr.dsl.identifier" : "b5cbdea9-1bfa-4fd2-85e2-8573ee99c126"
+              "structurizr.dsl.identifier" : "35517c5d-3238-446c-afe4-a19cf5a33577"
             },
-            "sourceId" : "68",
+            "sourceId" : "36",
             "tags" : "Relationship"
           }, {
             "description" : "Stores submited homework/ stores record of `new homework`",
-            "destinationId" : "72",
-            "id" : "77",
+            "destinationId" : "40",
+            "id" : "45",
             "properties" : {
-              "structurizr.dsl.identifier" : "32166c18-b652-49e4-8f8c-d6ad5e2fd474"
+              "structurizr.dsl.identifier" : "d195e69e-40e6-4f90-aa61-e62f54ef9fc8"
             },
-            "sourceId" : "68",
+            "sourceId" : "36",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1221,28 +922,28 @@
           "description" : "Verifies buisness logic about lecture material",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "69",
+          "id" : "37",
           "name" : "lecture material controller",
           "properties" : {
             "structurizr.dsl.identifier" : "lecturematerialcontroller"
           },
           "relationships" : [ {
             "description" : "Verifies user is teacher",
-            "destinationId" : "71",
-            "id" : "79",
+            "destinationId" : "39",
+            "id" : "47",
             "properties" : {
-              "structurizr.dsl.identifier" : "e9d5b485-1ec7-49be-92ff-55cebe0980b4"
+              "structurizr.dsl.identifier" : "af7de020-a028-4c73-8ad5-99bf8889e945"
             },
-            "sourceId" : "69",
+            "sourceId" : "37",
             "tags" : "Relationship"
           }, {
             "description" : "Verifies teacher teaches given subject",
-            "destinationId" : "73",
-            "id" : "80",
+            "destinationId" : "41",
+            "id" : "48",
             "properties" : {
-              "structurizr.dsl.identifier" : "b9723088-72e6-4a71-9776-efc432f52388"
+              "structurizr.dsl.identifier" : "abb40f51-8ddb-4489-a365-f2bfb4d81c90"
             },
-            "sourceId" : "69",
+            "sourceId" : "37",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1250,7 +951,7 @@
           "description" : "Verifies that uploaded files don't exceed maximum filesize have correct extensions ...",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "70",
+          "id" : "38",
           "name" : "Homework verifier",
           "properties" : {
             "structurizr.dsl.identifier" : "homeworksubmisionverifier"
@@ -1260,7 +961,7 @@
           "description" : "Authenticates teachers and students",
           "documentation" : { },
           "group" : "Business layer",
-          "id" : "71",
+          "id" : "39",
           "name" : "Class material authenticator",
           "properties" : {
             "structurizr.dsl.identifier" : "authenticator"
@@ -1270,19 +971,19 @@
           "description" : "Interface for comunicating with Class Material database",
           "documentation" : { },
           "group" : "Persistence Layer",
-          "id" : "72",
+          "id" : "40",
           "name" : "Class Material Database Comunicator",
           "properties" : {
             "structurizr.dsl.identifier" : "classmatdbcomm"
           },
           "relationships" : [ {
             "description" : "Builds requests + Querries database",
-            "destinationId" : "101",
-            "id" : "123",
+            "destinationId" : "11",
+            "id" : "92",
             "properties" : {
-              "structurizr.dsl.identifier" : "9f844d7f-cf96-4510-ad4d-8688384177f9"
+              "structurizr.dsl.identifier" : "61a7f21f-c5da-467b-9ece-a208825d8a90"
             },
-            "sourceId" : "72",
+            "sourceId" : "40",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1290,320 +991,305 @@
           "description" : "Interface for comunicating with course establishment database",
           "documentation" : { },
           "group" : "Persistence Layer",
-          "id" : "73",
+          "id" : "41",
           "name" : "Course establishment Database comunicator",
           "properties" : {
             "structurizr.dsl.identifier" : "courseestablismentdbcomm"
           },
-          "relationships" : [ {
-            "description" : "Builds requests + Querries database",
-            "destinationId" : "102",
-            "id" : "124",
-            "properties" : {
-              "structurizr.dsl.identifier" : "0fed7bb7-2a21-462e-91ae-37a42a7fb8e1"
-            },
-            "sourceId" : "73",
-            "tags" : "Relationship"
-          } ],
           "tags" : "Element,Component"
         } ],
         "description" : "Handles howmework and other class material",
         "documentation" : { },
-        "id" : "65",
+        "id" : "33",
         "name" : "Class Material Manager",
         "properties" : {
           "structurizr.dsl.identifier" : "classmat"
         },
         "relationships" : [ {
           "description" : "Write and Read",
-          "destinationId" : "101",
-          "id" : "108",
+          "destinationId" : "11",
+          "id" : "84",
           "properties" : {
-            "structurizr.dsl.identifier" : "5f4bb238-d3c3-4948-a776-fd45b04e917a"
+            "structurizr.dsl.identifier" : "7800e0c8-8022-4585-855a-0b2dbf553b61"
           },
-          "sourceId" : "65",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Read from",
-          "destinationId" : "102",
-          "id" : "109",
-          "properties" : {
-            "structurizr.dsl.identifier" : "923b794d-67e3-4085-85cf-514a1b280751"
-          },
-          "sourceId" : "65",
+          "sourceId" : "33",
           "tags" : "Relationship"
         }, {
           "description" : "send notification to student",
           "destinationId" : "5",
-          "id" : "110",
+          "id" : "85",
           "properties" : {
-            "structurizr.dsl.identifier" : "94072efa-e04c-4f27-b77d-c88d86bdfa3a"
+            "structurizr.dsl.identifier" : "e9c5f49e-29a0-4413-9c88-daa65993b712"
           },
-          "sourceId" : "65",
+          "sourceId" : "33",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
         "components" : [ {
-          "description" : "Provides public API for course creation",
+          "description" : "Process user request to manage course enrollment",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "82",
-          "name" : "Course creation Interface",
+          "id" : "50",
+          "name" : "Course Enrollment Controller",
           "properties" : {
-            "structurizr.dsl.identifier" : "coursecreationinterface"
+            "structurizr.dsl.identifier" : "courseenrollmentcontroller"
           },
           "relationships" : [ {
-            "description" : "Delegates request",
-            "destinationId" : "84",
-            "id" : "90",
+            "description" : "get and update data",
+            "destinationId" : "53",
+            "id" : "62",
             "properties" : {
-              "structurizr.dsl.identifier" : "cf40d8c1-3810-4250-9843-4cbadc8e52a2"
+              "structurizr.dsl.identifier" : "3d2e19e3-b65c-4d4b-a30e-95561845997c"
             },
-            "sourceId" : "82",
+            "sourceId" : "50",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Provides public API for course change",
+          "description" : "Process user request to manage unenrollment",
           "documentation" : { },
           "group" : "Presentation Layer",
-          "id" : "83",
-          "name" : "Course changer Interface",
+          "id" : "51",
+          "name" : "Unenrollment Controller",
           "properties" : {
-            "structurizr.dsl.identifier" : "coursechangerinterface"
+            "structurizr.dsl.identifier" : "unenrollmentcontroller"
           },
           "relationships" : [ {
-            "description" : "Delegates request",
-            "destinationId" : "85",
-            "id" : "91",
+            "description" : "Gets and update data",
+            "destinationId" : "54",
+            "id" : "63",
             "properties" : {
-              "structurizr.dsl.identifier" : "6d823cee-75a0-41e1-9929-c60ced10d1c0"
+              "structurizr.dsl.identifier" : "c3f6a790-b09f-4e76-a689-fe1dd074824f"
             },
-            "sourceId" : "83",
+            "sourceId" : "51",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Creates courses",
+          "description" : "Process user request to manage enrollment history",
           "documentation" : { },
-          "group" : "Business layer",
-          "id" : "84",
-          "name" : "CourseCreator",
+          "group" : "Presentation Layer",
+          "id" : "52",
+          "name" : "Enrollment History Controller",
           "properties" : {
-            "structurizr.dsl.identifier" : "coursecreator"
+            "structurizr.dsl.identifier" : "enrollmenthistorycontroller"
           },
           "relationships" : [ {
-            "description" : "Checks course info",
-            "destinationId" : "86",
-            "id" : "92",
+            "description" : "get and update data",
+            "destinationId" : "55",
+            "id" : "64",
             "properties" : {
-              "structurizr.dsl.identifier" : "13f5f42a-f43b-4429-b152-18f41e01af76"
+              "structurizr.dsl.identifier" : "1fe88758-4c48-4e0a-8efc-550aa9d00fa6"
             },
-            "sourceId" : "84",
+            "sourceId" : "52",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "business logic for enrollemnt service",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "53",
+          "name" : "Course Enrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "courseenrollment"
+          },
+          "relationships" : [ {
+            "description" : "uses to persist course enrollment data",
+            "destinationId" : "56",
+            "id" : "65",
+            "properties" : {
+              "structurizr.dsl.identifier" : "0fafc914-5448-4dfc-9b91-e6b6bee74d0e"
+            },
+            "sourceId" : "53",
             "tags" : "Relationship"
           }, {
-            "description" : "Gives command to create course",
-            "destinationId" : "89",
-            "id" : "95",
+            "description" : "reads for course data",
+            "destinationId" : "14",
+            "id" : "66",
             "properties" : {
-              "structurizr.dsl.identifier" : "7267175f-c0a5-4b6f-8365-1759c2e641b9"
+              "structurizr.dsl.identifier" : "f8e0a1ce-ed92-4361-bb28-9ace2d99aa0c"
             },
-            "sourceId" : "84",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Controll courses",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "85",
-          "name" : "CourseController",
-          "properties" : {
-            "structurizr.dsl.identifier" : "coursecontroller"
-          },
-          "relationships" : [ {
-            "description" : "Checks course change info",
-            "destinationId" : "86",
-            "id" : "93",
-            "properties" : {
-              "structurizr.dsl.identifier" : "224c161b-d01f-401f-819b-e58be628727b"
-            },
-            "sourceId" : "85",
+            "sourceId" : "53",
             "tags" : "Relationship"
           }, {
-            "description" : "Gives command to notify subscribed students about enroll opening",
-            "destinationId" : "88",
-            "id" : "94",
+            "description" : "retrieve student information",
+            "destinationId" : "4",
+            "id" : "68",
             "properties" : {
-              "structurizr.dsl.identifier" : "b44737e5-4222-4134-89c1-960472767789"
+              "structurizr.dsl.identifier" : "f0193c02-c11b-4c08-b5b1-82f9d61baa3c"
             },
-            "sourceId" : "85",
+            "sourceId" : "53",
             "tags" : "Relationship"
           }, {
-            "description" : "Gives command to change course",
-            "destinationId" : "89",
-            "id" : "96",
-            "properties" : {
-              "structurizr.dsl.identifier" : "ef6b9188-7ba7-4939-9dd5-5790830abe72"
-            },
-            "sourceId" : "85",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Validates course data",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "86",
-          "name" : "CourseValidator",
-          "properties" : {
-            "structurizr.dsl.identifier" : "coursevalidator"
-          },
-          "relationships" : [ {
-            "description" : "Sends error",
-            "destinationId" : "87",
-            "id" : "97",
-            "properties" : {
-              "structurizr.dsl.identifier" : "2ced8e13-6161-4603-9497-2d61e9f087d4"
-            },
-            "sourceId" : "86",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Sends request to get proper data",
-            "destinationId" : "89",
-            "id" : "98",
-            "properties" : {
-              "structurizr.dsl.identifier" : "b1721115-4738-4a76-91df-6ef48252fcf1"
-            },
-            "sourceId" : "86",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Detect and handle any errors that occur",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "87",
-          "name" : "Course Error Handler",
-          "properties" : {
-            "structurizr.dsl.identifier" : "courseerrorhandler"
-          },
-          "relationships" : [ {
-            "description" : "Send error to",
-            "destinationId" : "88",
-            "id" : "99",
-            "properties" : {
-              "structurizr.dsl.identifier" : "d2c22c34-67f5-48a9-898f-78ab8d867311"
-            },
-            "sourceId" : "87",
-            "tags" : "Relationship"
-          } ],
-          "tags" : "Element,Component"
-        }, {
-          "description" : "Send notification to notif container",
-          "documentation" : { },
-          "group" : "Business layer",
-          "id" : "88",
-          "name" : "Course Enroll Status Notifier",
-          "properties" : {
-            "structurizr.dsl.identifier" : "coursenotifer"
-          },
-          "relationships" : [ {
-            "description" : "Send notification request",
+            "description" : "send notification",
             "destinationId" : "5",
-            "id" : "128",
+            "id" : "71",
             "properties" : {
-              "structurizr.dsl.identifier" : "15ec82b8-755d-436e-bc0d-5fade20fad17"
+              "structurizr.dsl.identifier" : "224c7cac-f01a-43de-94e1-c3c01362cd2e"
             },
-            "sourceId" : "88",
+            "sourceId" : "53",
+            "tags" : "Relationship"
+          }, {
+            "description" : "log event",
+            "destinationId" : "57",
+            "id" : "74",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f0dabf6e-cdab-4769-8e06-fd08231d6b40"
+            },
+            "sourceId" : "53",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
-          "description" : "Interface for communicating with course establishment database",
+          "description" : "business logic for unenrollemnt service",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "54",
+          "name" : "Unenrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "unenrollment"
+          },
+          "relationships" : [ {
+            "description" : "uses to update course enrollment data",
+            "destinationId" : "56",
+            "id" : "75",
+            "properties" : {
+              "structurizr.dsl.identifier" : "bfae96fe-64a5-4109-9f32-17545422c00c"
+            },
+            "sourceId" : "54",
+            "tags" : "Relationship"
+          }, {
+            "description" : "logs event",
+            "destinationId" : "57",
+            "id" : "76",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2d623c35-4cdc-4365-ae2a-68ac5f9e6891"
+            },
+            "sourceId" : "54",
+            "tags" : "Relationship"
+          }, {
+            "description" : "send notification",
+            "destinationId" : "5",
+            "id" : "77",
+            "properties" : {
+              "structurizr.dsl.identifier" : "121ae186-a00f-4a0f-a9af-aeb5dc029033"
+            },
+            "sourceId" : "54",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "business logic for enrollemnt history service",
+          "documentation" : { },
+          "group" : "Business layer",
+          "id" : "55",
+          "name" : "Enrollment History",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollmenthistory"
+          },
+          "relationships" : [ {
+            "description" : "reads for course data",
+            "destinationId" : "14",
+            "id" : "78",
+            "properties" : {
+              "structurizr.dsl.identifier" : "cd836e53-d765-4a7c-a2d8-f4cf8fb0cf08"
+            },
+            "sourceId" : "55",
+            "tags" : "Relationship"
+          }, {
+            "description" : "uses to get student course enrollment data",
+            "destinationId" : "56",
+            "id" : "79",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f02d0c96-ef5b-4c69-aaee-16e7129e4bf6"
+            },
+            "sourceId" : "55",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "persistes enrollemnt data into the database",
           "documentation" : { },
           "group" : "Persistence Layer",
-          "id" : "89",
-          "name" : "Course database communicator",
+          "id" : "56",
+          "name" : "Enrollment Repository",
           "properties" : {
-            "structurizr.dsl.identifier" : "coursedatabasecommunicator"
+            "structurizr.dsl.identifier" : "enrollmentrepository"
           },
           "relationships" : [ {
-            "description" : "Writes/reads data",
-            "destinationId" : "102",
-            "id" : "127",
+            "description" : "read from and writes to",
+            "destinationId" : "10",
+            "id" : "80",
             "properties" : {
-              "structurizr.dsl.identifier" : "028c74b9-1001-4080-93e7-026df82927df"
+              "structurizr.dsl.identifier" : "405bb4a6-c706-4b8d-a0c2-ab05a02ff754"
             },
-            "sourceId" : "89",
+            "sourceId" : "56",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "persistes log event into the database",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "57",
+          "name" : "Audit Log Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "auditlogrepository"
+          },
+          "relationships" : [ {
+            "description" : "writes to",
+            "destinationId" : "13",
+            "id" : "82",
+            "properties" : {
+              "structurizr.dsl.identifier" : "887fdc2a-083c-4c56-91cb-8959132cca84"
+            },
+            "sourceId" : "57",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         } ],
-        "description" : "add",
+        "description" : "Provides functionality for enrollment in course with appropriate validation",
         "documentation" : { },
-        "id" : "81",
-        "name" : "Course Establishment Manager",
+        "id" : "49",
+        "name" : "Enrollment Manager",
         "properties" : {
-          "structurizr.dsl.identifier" : "courseesta"
+          "structurizr.dsl.identifier" : "enrollmanager"
         },
         "relationships" : [ {
-          "description" : "Write to",
-          "destinationId" : "102",
-          "id" : "111",
-          "properties" : {
-            "structurizr.dsl.identifier" : "dd04053d-1095-4d28-a371-f98ef3b438ad"
-          },
-          "sourceId" : "81",
-          "tags" : "Relationship"
+          "description" : "reads for course data",
+          "destinationId" : "14",
+          "id" : "67",
+          "linkedRelationshipId" : "66",
+          "sourceId" : "49"
         }, {
-          "description" : "send notification to user",
+          "description" : "retrieve student information",
+          "destinationId" : "4",
+          "id" : "69",
+          "linkedRelationshipId" : "68",
+          "sourceId" : "49"
+        }, {
+          "description" : "send notification",
           "destinationId" : "5",
-          "id" : "112",
-          "properties" : {
-            "structurizr.dsl.identifier" : "22117f77-254d-4d14-9d26-c30ebbfb19bc"
-          },
-          "sourceId" : "81",
-          "tags" : "Relationship"
+          "id" : "72",
+          "linkedRelationshipId" : "71",
+          "sourceId" : "49"
+        }, {
+          "description" : "read from and writes to",
+          "destinationId" : "10",
+          "id" : "81",
+          "linkedRelationshipId" : "80",
+          "sourceId" : "49"
+        }, {
+          "description" : "writes to",
+          "destinationId" : "13",
+          "id" : "83",
+          "linkedRelationshipId" : "82",
+          "sourceId" : "49"
         } ],
-        "tags" : "Element,Container"
-      }, {
-        "description" : "Store register enrollment for each student's user",
-        "documentation" : { },
-        "id" : "100",
-        "name" : "Enroll Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "enrolldb"
-        },
-        "tags" : "Element,Container,Database"
-      }, {
-        "description" : "Holds files such as student homeworks, lecture recordings, notes etc.",
-        "documentation" : { },
-        "id" : "101",
-        "name" : "ClassMaterial Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "classmatdb"
-        },
-        "tags" : "Element,Container,Database"
-      }, {
-        "description" : "do something",
-        "documentation" : { },
-        "id" : "102",
-        "name" : "CourseEstablisment Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "courseestadb"
-        },
-        "tags" : "Element,Container,Database"
-      }, {
-        "description" : "store events...",
-        "documentation" : { },
-        "id" : "103",
-        "name" : "AuditLog Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "auditlogdb"
-        },
-        "tags" : "Element,Container,Database"
+        "tags" : "Element,Container",
+        "technology" : "Spring Boot"
       } ],
       "description" : "manage the process of registering individuals for courses, class material, unenroll, course establishment",
       "documentation" : { },
@@ -1614,16 +1300,16 @@
         "structurizr.dsl.identifier" : "enrollmentsys"
       },
       "relationships" : [ {
-        "description" : "Send notification",
-        "destinationId" : "5",
-        "id" : "53",
-        "linkedRelationshipId" : "51",
+        "description" : "retrieve student information",
+        "destinationId" : "4",
+        "id" : "70",
+        "linkedRelationshipId" : "68",
         "sourceId" : "6"
       }, {
-        "description" : "Read from",
-        "destinationId" : "4",
-        "id" : "56",
-        "linkedRelationshipId" : "54",
+        "description" : "send notification",
+        "destinationId" : "5",
+        "id" : "73",
+        "linkedRelationshipId" : "71",
         "sourceId" : "6"
       } ],
       "tags" : "Element,Software System"
@@ -1631,138 +1317,77 @@
   },
   "name" : "Enrollment Workspace",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlICJFbnJvbGxtZW50IFdvcmtzcGFjZSIgIlRoaXMgd29ya3NwYWNlIGRvY3VtZW50cyB0aGUgYXJjaGl0ZWN0dXJlIG9mIHRoZSBFbnJvbGxtZW50IiB7CiAgICBtb2RlbCB7CgogICAgICAgIHN0dWRlbnQgPSBwZXJzb24gIlN0dWRlbnQiICJBY2Nlc3MgY291cnNlcyBhdmFpbGFibGUgdG8gZW5yb2xsLCBjaGVjayBjbGFzcyBtYXRlcmlhbCwgb3IgdW5lbnJvbGwiCiAgICAgICAgdGVhY2hlciA9IHBlcnNvbiAiVGVhY2hlciIgIkFjY2VzcyB0aGVpciBvd24gdXBsb2FkIGNvdXJzZXMsIGNsYXNzIG1hdGVyaWFsLCBlbnJvbGwgYSBzdHVkZW50IG9yIHVuZW5yb2xsIGEgc3R1ZGVudCBmcm9tIHRoZWlyIGNvdXJzZSIKICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQnVzaW5lc3MgYWRtaW5pc3RyYXRvciIgIkFkbWluaXN0ZXJzIHRoZSB3aG9sZSBwcm9jZXNzIG9mIGVucm9sbCBhbmQgdW5lbnJvbGwiCiAgICAgICAgIyBzb2Z0d2FyZSBzeXN0ZW1zCiAgICAgICAgc2lzQXBpID0gc29mdHdhcmVTeXN0ZW0gIlN0dWRlbnQgSW5mb3JtYXRpb24gU3lzdGVtIChTSVMpIiAiUHJvdmlkZXMgdXNlciBwcm9maWxlIGRhdGEiCiAgICAgICAgbm90aWYgPSBzb2Z0d2FyZVN5c3RlbSAiRW1haWwvU01TIE5vdGlmaWNhdGlvbiBTeXN0ZW0iICJVc2VkIHRvIHNlbmQgdXBkYXRlcyB0byBzdHVkZW50LCB0ZWFjaGVyLCBvciBhZG1pbiIKICAgICAgICBlbnJvbGxtZW50U3lzID0gc29mdHdhcmVTeXN0ZW0gIkVucm9sbG1lbnQgU3lzdGVtIiAibWFuYWdlIHRoZSBwcm9jZXNzIG9mIHJlZ2lzdGVyaW5nIGluZGl2aWR1YWxzIGZvciBjb3Vyc2VzLCBjbGFzcyBtYXRlcmlhbCwgdW5lbnJvbGwsIGNvdXJzZSBlc3RhYmxpc2htZW50InsKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBmcm9udC1lbmQgY29udGFpbmVycwogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MID0gY29udGFpbmVyICJFbnJvbGxtZW50IERhc2hib2FyZCBIVE1MIiAiUHJvdmlkZSBmdW5jdGlvbmFsaXR5IGZvciBlbnJvbGxtZW50IHBhZ2UgaW4gYSB3ZWIgYnJvd3Nlci4iICJIVE1MK1JlYWNoLmpzIiAiV2ViIEZyb250LUVuZCIKICAgICAgICAgICAgZW5yb2xsZGFzaGJvYXJkQXBwID0gY29udGFpbmVyICJFbnJvbGxtZW50IERhc2hib2FyZCBXZWIgQXBwbGljYXRpb24iICJEZWxpdmVyIEhUTUwgY29udGVudCB0byB0ZWFjaGVyLCBzdHVkZW50LCBhZG1pbiBhY2Nlc3NpbmcgbW9kdWxlLiIgewogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiBMYXllciIgewogICAgICAgICAgICAgICAgICAgIGVucm9sbFdlYlVJID0gY29tcG9uZW50ICJFbnJvbGxtZW50IFVzZXIgSW50ZXJmYWNlIiAiUHJvdmlkZXMgSFRNTCBvZiB0aGUgVUkiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsQ29udHJvbGxlciA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBDb250cm9sbGVyIiAiUHJvY2VzcyB1c2VyJ3MgcmVxdWVzdCB0byBtYW5hZ2UgZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICBjbGFzc01hdFdlYlVJID0gY29tcG9uZW50ICJDbGFzcyBNYXRlcmlhbCBVc2VyIEludGVyZmFjZSIgIlByb3ZpZGVzIEhUTUwgb2YgdGhlIFVJIgogICAgICAgICAgICAgICAgICAgIGNsYXNzTWF0Q29udHJvbGxlciA9IGNvbXBvbmVudCAiQ2xhc3MgTWF0ZXJpYWwgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlcidzIHJlcXVlc3QgdG8gbWFuYWdlIGNsYXNzIE1hdGVyaWFsIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGFXZWJVSSA9IGNvbXBvbmVudCAiQ291cnNlIEVzdGFibGlzaG1lbnQgVXNlciBJbnRlcmZhY2UiICJQcm92aWRlcyBIVE1MIG9mIHRoZSBVSSIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFc3RhQ29udHJvbGxlciA9IGNvbXBvbmVudCAiQ291cnNlIEVzdGFibGlzaG1lbnQgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlcidzIHJlcXVlc3QgdG8gbWFuYWdlIGNvdXJzZSBlc3RhYmxpc2htZW50IgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlJlcXVlc3QgaGFuZGxpbmcgdG8gYXBwcm9wcmlhdGUgQnVzaW5lc3MgbG9naWMiIHsKICAgICAgICAgICAgICAgICAgICBlbnJvbGxNb2RlbCA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBNYW5hZ2VyIiAiQnVzaW5lc3MgbG9naWMgZm9yIGVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICAgICAgY2xhc3NNYXRNb2RlbCA9IGNvbXBvbmVudCAiQ2xhc3MgTWF0ZXJpYWwgTWFuYWdlciIgIkJ1c2luZXNzIGxvZ2ljIGZvciBDbGFzc01hdGVyaWFsIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGFNb2RlbCA9IGNvbXBvbmVudCAiQ291cnNlRXN0YWJsaXNobWVudCIgIkJ1c2luZXNzIGxvZ2ljIGZvciBDb3Vyc2VFc3RhYmxpc2htZW50IgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgLy8gZ3JvdXAgIlBlcnNpc3RlbmNlIExheWVyIiB7CiAgICAgICAgICAgICAgICAvLyAgICAgZW5yb2xsUmVwb3NpdG9yeSA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBSZXBvc2l0b3J5IiAiUGVyc2lzdHMgZW5yb2xsbWVudCBpbiBkYXRhYmFzZSIKICAgICAgICAgICAgICAgIC8vICAgICBjbGFzc01hdFJlcG9zaXRvcnkgPSBjb21wb25lbnQgIkNsYXNzIE1hdGVyaWFsIERhdGFiYXNlIENvbXVuaWNhdG9yIiAiUGVyc2lzdHMgQ2xhc3NNYXRlcmlhbCBpbiBkYXRhYmFzZSIKICAgICAgICAgICAgICAgIC8vICAgICBjb3Vyc2VFc3RhUmVwb3NpdG9yeSA9IGNvbXBvbmVudCAiQ291cnNlIEVzdGFibGlzaG1lbnQgUmVwb3NpdG9yeSIgIlBlcnNpc3RzIENvdXJzZSBFc3RhYmxpc2htZW50IGluIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgLy8gfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICAjIHJlbGF0aW9uc2hpcHMgb2YgZW5yb2xsZGFzaGJvYXJkIEFwcGxpY2F0aW9uIGNvbXBvbmVudHMKICAgICAgICAgICAgCiAgICAgICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gZW5yb2xsV2ViVUkgIlNlbmRzIHJlcXVlc3RzIHRvIgogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MIC0+IGNsYXNzTWF0V2ViVUkgIlNlbmRzIHJlcXVlc3RzIHRvIgogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MIC0+IGNvdXJzZUVzdGFXZWJVSSAiU2VuZHMgcmVxdWVzdHMgdG8iCiAgICAgICAgICAgIGVucm9sbFdlYlVJIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIkRlbGl2ZXIgY29udGVudCB0byIKICAgICAgICAgICAgY2xhc3NNYXRXZWJVSSAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGNvbnRlbnQgdG8iCiAgICAgICAgICAgIGNvdXJzZUVzdGFXZWJVSSAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGNvbnRlbnQgdG8iCiAgICAgICAgICAgIAogICAgICAgICAgICBlbnJvbGxDb250cm9sbGVyIC0+IGVucm9sbFdlYlVJICJVc2UgdG8gcmVuZGVyIGNvbnRlbnQgZm9yIGVucm9sbG1lbnQgbWFuYWdlbWVudCIKICAgICAgICAgICAgZW5yb2xsQ29udHJvbGxlciAtPiBlbnJvbGxNb2RlbCAiR2V0IGFuZCB1cGRhdGUgZW5yb2xsbWVudCBkYXRhIgogICAgICAgICAgICBlbnJvbGxXZWJVSSAtPiBlbnJvbGxDb250cm9sbGVyICJSZXF1ZXN0IGFjY2VzcyB0byBIVE1MIGNvbnRlbnQiCiAgICAgICAgICAgIGNsYXNzTWF0Q29udHJvbGxlciAtPiBjbGFzc01hdFdlYlVJICJVc2UgdG8gcmVuZGVyIGNvbnRlbnQgZm9yIGNsYXNzTWF0ZXJpYWwgbWFuYWdlbWVudCIKICAgICAgICAgICAgY2xhc3NNYXRDb250cm9sbGVyIC0+IGNsYXNzTWF0TW9kZWwgIkdldCBhbmQgdXBkYXRlIENsYXNzTWF0ZXJpYWwgZGF0YSIKICAgICAgICAgICAgY2xhc3NNYXRXZWJVSSAtPiBjbGFzc01hdENvbnRyb2xsZXIgIlJlcXVlc3QgYWNjZXNzIHRvIEhUTUwgY29udGVudCIKICAgICAgICAgICAgY291cnNlRXN0YUNvbnRyb2xsZXIgLT4gY291cnNlRXN0YVdlYlVJICJVc2UgdG8gcmVuZGVyIGNvbnRlbnQgZm9yIGNvdXJzZUVzdGFibGlzaG1lbnQgbWFuYWdlbWVudCIKICAgICAgICAgICAgY291cnNlRXN0YUNvbnRyb2xsZXIgLT4gY291cnNlRXN0YU1vZGVsICJHZXQgYW5kIHVwZGF0ZSBDb3Vyc2VFc3RhYmxpc2htZW50IGRhdGEiCiAgICAgICAgICAgIGNvdXJzZUVzdGFXZWJVSSAtPiBjb3Vyc2VFc3RhQ29udHJvbGxlciAiUmVxdWVzdCBhY2Nlc3MgdG8gSFRNTCBjb250ZW50IgogICAgICAgICAgICAKICAgICAgICAgICAgLy8gZW5yb2xsTW9kZWwgLT4gZW5yb2xsUmVwb3NpdG9yeSAiVXNlcyB0byBwZXJzaXN0IGVucm9sbG1lbnQgZGF0YSIKICAgICAgICAgICAgLy8gY2xhc3NNYXRNb2RlbCAtPiBjbGFzc01hdFJlcG9zaXRvcnkgIlVzZXMgdG8gcGVyc2lzdCBjbGFzc01hdGVyaWFsIGRhdGEiCiAgICAgICAgICAgIC8vIGNvdXJzZUVzdGFNb2RlbCAtPiBjb3Vyc2VFc3RhUmVwb3NpdG9yeSAiVXNlcyB0byBwZXJzaXN0IGNvdXJzZUVzdGFibGlzaG1lbnQgZGF0YSIKICAgICAgICAKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBiYWNrLWVuZCBjb250YWluZXJzCiAgICAgICAgICAgIGVucm9sbE1hbmFnZXIgPSBjb250YWluZXIgIkVucm9sbG1lbnQgTWFuYWdlciIgIlByb3ZpZGVzIGZ1bmN0aW9uYWxpdHkgZm9yIGVucm9sbG1lbnQgaW4gY291cnNlIHdpdGggYXBwcm9wcmlhdGUgdmFsaWRhdGlvbiIgewogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiBMYXllciIgewogICAgICAgICAgICAgICAgICAgIGVucm9sbEludGVyZmFjZSA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBJbnRlcmZhY2UiICJIYW5kbGUgbW9kdWxlIGFjY2VzcyB0byBlbnJvbGwgTWFuYWdlciIKICAgICAgICAgICAgICAgICAgICBoaXN0b3J5SW50ZXJmYWNlID0gY29tcG9uZW50ICJFbnJvbGxtZW50IEhpc3RvcnkgSW50ZXJmYWNlIiAiSGFuZGxlIG1vZHVsZSBhY2Nlc3MgdG8gZW5yb2xsIGhpc3RvcnkgaW4gZW5yb2xsIE1hbmFnZXIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgbGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBlbnJvbGxWYWxpZGF0aW9uID0gY29tcG9uZW50ICJFbnJvbGxtZW50IFZhbGlkYXRpb24iICJDaGVjayBmb3IgcmVxdWlyZW1lbnQgb24gY291cnNlcyIKICAgICAgICAgICAgICAgICAgICBlbnJvbGxIaXN0b3J5ID0gY29tcG9uZW50ICJFbnJvbGxtZW50IEhpc3RvcnkiICJTdG9yZSBlbnJvbGxtZW50IGRhdGEgdG8gaGlzdG9yeSIKICAgICAgICAgICAgICAgICAgICBlbnJvbGxJbiA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBMb2dpYyIgIk1ha2UgZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICB1bmVucm9sbEluID0gY29tcG9uZW50ICJVbnJvbGxtZW50IExvZ2ljIiAiTWFrZSB1bmVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICAgICAgbm90aWZlciA9IGNvbXBvbmVudCAiTm90aWZpZXIiICJTZW5kIG5vdGlmaWNhdGlvbiB0byBub3RpZiBjb250YWluZXIiCiAgICAgICAgICAgICAgICAgICAgZXJyb3JIYW5kbGVyID0gY29tcG9uZW50ICJFcnJvciBIYW5kbGVyIiAiRGV0ZWN0IGFuZCBoYW5kbGUgYW55IGVycm9ycyB0aGF0IG9jY3VyIgogICAgICAgICAgICAgICAgICAgIGVucm9sbExvZyA9IGNvbXBvbmVudCAiRW5yb2xsbWVudCBMb2dnZXIiICJMb2dzIGFsbCBlbnJvbGxtZW50IGFjdGlvbnMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBkYXRhU3luYyA9IGNvbXBvbmVudCAiRGF0YVN5bmMiICJoYW5kbGUgZGF0YSByZXRyaWV2YWwgYW5kIHN5bmNocm9uaWNhdGlvbiB3aXRoIFNJUyBBUEkiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsUmVwID0gY29tcG9uZW50ICJFbnJvbGxtZW50IFJlcG9zaXRvcnkiICJTdG9yZSBkYXRhIHRvIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICAjIHJlbGF0aW9uc2hpcHMgb2YgRW5yb2xsbWVudCBNYW5hZ2VyIGNvbXBvbmVudHMKICAgICAgICAgICAgZW5yb2xsSW50ZXJmYWNlIC0+IGVucm9sbEluICJTZW5kIGVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgogICAgICAgICAgICBlbnJvbGxJbnRlcmZhY2UgLT4gdW5lbnJvbGxJbiAiU2VuZCB1bmVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgogICAgICAgICAgICBoaXN0b3J5SW50ZXJmYWNlIC0+IGVucm9sbEhpc3RvcnkgIlNlbmQgZW5yb2xsbWVudCBoaXN0b3J5IGluZm9ybWF0aW9uIGZyb20gdXNlciB0byBnZXQgaW5mb3JtYXRpb24iCiAgICAgICAgICAgIAogICAgICAgICAgICBlbnJvbGxWYWxpZGF0aW9uIC0+IGRhdGFTeW5jICJSZWFkIGZyb20iCiAgICAgICAgICAgIG5vdGlmZXIgLT4gbm90aWYgIlNlbmQgbm90aWZpY2F0aW9uIgogICAgICAgICAgICBkYXRhU3luYyAtPiBzaXNBcGkgIlJlYWQgZnJvbSIKICAgICAgICAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBlcnJvckhhbmRsZXIgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgICAgIGVycm9ySGFuZGxlciAtPiBub3RpZmVyICJTZW5kIGVycm9yIHRvIgogICAgICAgICAgICBlcnJvckhhbmRsZXIgLT4gZW5yb2xsTG9nICJTZW5kIGVycm9yIHRvIgogICAgICAgICAgICBlbnJvbGxJbiAtPiBlbnJvbGxWYWxpZGF0aW9uICJSZXF1ZXN0IHZhbGlkYXRpb24gZm9yIGVucm9sbG1lbnQiCiAgICAgICAgICAgIHVuZW5yb2xsSW4gLT4gZW5yb2xsVmFsaWRhdGlvbiAiUmVxdWVzdCB2YWxpZGF0aW9uIGZvciB1bmVucm9sbG1lbnQiCiAgICAgICAgICAgIGVucm9sbFZhbGlkYXRpb24gLT4gZW5yb2xsSGlzdG9yeSAiU2VuZCBlbnJvbGwvdW5lbnJvbGwgdG8gaGlzdG9yeSIKICAgICAgICAgICAgZW5yb2xsSGlzdG9yeSAtPiBlbnJvbGxSZXAgIlNlbmQgZGF0YSB0byByZXBvc2l0b3J5IgogICAgICAgICAgICBlbnJvbGxMb2cgLT4gZW5yb2xsUmVwICJTZW5kIGRhdGEgdG8gcmVwb3NpdG9yeSIKICAgICAgICAgICAgLy8gdW5lbnJvbGwgPSBjb250YWluZXIgIlVuZW5yb2xsbWVudCBNYW5hZ2VyIiAiYWRkIgogICAgICAgICAgICBjbGFzc01hdCA9IGNvbnRhaW5lciAiQ2xhc3MgTWF0ZXJpYWwgTWFuYWdlciIgIkhhbmRsZXMgaG93bWV3b3JrIGFuZCBvdGhlciBjbGFzcyBtYXRlcmlhbCIgewogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiBMYXllciIgewogICAgICAgICAgICAgICAgICAgIGhvbWV3b3JrQVBJID0gY29tcG9uZW50ICJIb21ld29yayBzdWJtaXNzaW9uL2NyZWF0aW9uIEludGVyZmFjZSIgIlByb3ZpZGVzIHB1YmxpYyBBUEkgZm9yIGhvbWV3b3JrIHN1Ym1pc3Npb24vdmlld2luZyIKICAgICAgICAgICAgICAgICAgICBsZWN0dXJlTWF0ZXJpYWwgPSBjb21wb25lbnQgIkxlY3R1cmUgbWF0ZXJpYWwiICJMZWN0dXJlIHJlY29yZGluZ3Mvbm90ZXMvdHJhbnNjcmlwdHMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgbGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBob21ld29ya0NvbnRyb2xsZXIgPSBjb21wb25lbnQgIkhvbWV3b3JrIENvbnRyb2xsZXIiICJWZXJpZmllcyByZXF1ZXN0cyBhY29yZGluZyB0byBidWlzbmVzcyBsb2dpYyIKICAgICAgICAgICAgICAgICAgICBsZWN0dXJlTWF0ZXJpYWxDb250cm9sbGVyID0gY29tcG9uZW50ICJsZWN0dXJlIG1hdGVyaWFsIGNvbnRyb2xsZXIiICJWZXJpZmllcyBidWlzbmVzcyBsb2dpYyBhYm91dCBsZWN0dXJlIG1hdGVyaWFsIgogICAgICAgICAgICAgICAgICAgIGhvbWV3b3JrU3VibWlzaW9uVmVyaWZpZXIgPSBjb21wb25lbnQgIkhvbWV3b3JrIHZlcmlmaWVyIiAiVmVyaWZpZXMgdGhhdCB1cGxvYWRlZCBmaWxlcyBkb24ndCBleGNlZWQgbWF4aW11bSBmaWxlc2l6ZSBoYXZlIGNvcnJlY3QgZXh0ZW5zaW9ucyAuLi4iCiAgICAgICAgICAgICAgICAgICAgYXV0aGVudGljYXRvciA9IGNvbXBvbmVudCAiQ2xhc3MgbWF0ZXJpYWwgYXV0aGVudGljYXRvciIgIkF1dGhlbnRpY2F0ZXMgdGVhY2hlcnMgYW5kIHN0dWRlbnRzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlBlcnNpc3RlbmNlIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgY2xhc3NNYXREQkNvbW0gPSBjb21wb25lbnQgIkNsYXNzIE1hdGVyaWFsIERhdGFiYXNlIENvbXVuaWNhdG9yIiAiSW50ZXJmYWNlIGZvciBjb211bmljYXRpbmcgd2l0aCBDbGFzcyBNYXRlcmlhbCBkYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFc3RhYmxpc21lbnREQkNvbW0gPSBjb21wb25lbnQgIkNvdXJzZSBlc3RhYmxpc2htZW50IERhdGFiYXNlIGNvbXVuaWNhdG9yIiAiSW50ZXJmYWNlIGZvciBjb211bmljYXRpbmcgd2l0aCBjb3Vyc2UgZXN0YWJsaXNobWVudCBkYXRhYmFzZSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgaG9tZXdvcmtBUEkgLT4gaG9tZXdvcmtDb250cm9sbGVyICJEZWxlZ2F0ZXMgcmVxdWVzdHMiCiAgICAgICAgICAgIGhvbWV3b3JrQ29udHJvbGxlciAtPiBob21ld29ya1N1Ym1pc2lvblZlcmlmaWVyICJEZWxlZ2F0ZXMgZmlsZSB2ZXJpZmljYXRpb24iCiAgICAgICAgICAgIGhvbWV3b3JrQ29udHJvbGxlciAtPiBhdXRoZW50aWNhdG9yICJEZWxlZ2F0ZXMgdGhhdCByZXF1ZXN0IGlzIChjcmVhdGUsIHRlYWNoZXIpIG9yIChzdWJtaXQsIHN0dWRlbnQpIgogICAgICAgICAgICBob21ld29ya0NvbnRyb2xsZXIgLT4gY2xhc3NNYXREQkNvbW0gIlN0b3JlcyBzdWJtaXRlZCBob21ld29yay8gc3RvcmVzIHJlY29yZCBvZiBgbmV3IGhvbWV3b3JrYCIKICAgICAgICAgICAgCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbCAtPiBsZWN0dXJlTWF0ZXJpYWxDb250cm9sbGVyICJEZWxlZ2F0ZXMgcmVxdWVzdHMiCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgLT4gYXV0aGVudGljYXRvciAiVmVyaWZpZXMgdXNlciBpcyB0ZWFjaGVyIgogICAgICAgICAgICBsZWN0dXJlTWF0ZXJpYWxDb250cm9sbGVyIC0+IGNvdXJzZUVzdGFibGlzbWVudERCQ29tbSAiVmVyaWZpZXMgdGVhY2hlciB0ZWFjaGVzIGdpdmVuIHN1YmplY3QiCiAgICAgICAgICAgIAogICAgICAgICAgICBjb3Vyc2VFc3RhID0gY29udGFpbmVyICJDb3Vyc2UgRXN0YWJsaXNobWVudCBNYW5hZ2VyIiAiYWRkIiB7CiAgICAgICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiBMYXllciIgewogICAgICAgICAgICAgICAgICAgIGNvdXJzZUNyZWF0aW9uSW50ZXJmYWNlID0gY29tcG9uZW50ICJDb3Vyc2UgY3JlYXRpb24gSW50ZXJmYWNlIiAiUHJvdmlkZXMgcHVibGljIEFQSSBmb3IgY291cnNlIGNyZWF0aW9uIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUNoYW5nZXJJbnRlcmZhY2UgPSBjb21wb25lbnQgIkNvdXJzZSBjaGFuZ2VyIEludGVyZmFjZSIgIlByb3ZpZGVzIHB1YmxpYyBBUEkgZm9yIGNvdXJzZSBjaGFuZ2UiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgbGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VDcmVhdG9yID0gY29tcG9uZW50ICJDb3Vyc2VDcmVhdG9yIiAiQ3JlYXRlcyBjb3Vyc2VzIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUNvbnRyb2xsZXIgPSBjb21wb25lbnQgIkNvdXJzZUNvbnRyb2xsZXIiICJDb250cm9sbCBjb3Vyc2VzIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZVZhbGlkYXRvciA9IGNvbXBvbmVudCAiQ291cnNlVmFsaWRhdG9yIiAiVmFsaWRhdGVzIGNvdXJzZSBkYXRhIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVycm9ySGFuZGxlciA9IGNvbXBvbmVudCAiQ291cnNlIEVycm9yIEhhbmRsZXIiICJEZXRlY3QgYW5kIGhhbmRsZSBhbnkgZXJyb3JzIHRoYXQgb2NjdXIiCiAgICAgICAgICAgICAgICAgICAgY291cnNlTm90aWZlciA9IGNvbXBvbmVudCAiQ291cnNlIEVucm9sbCBTdGF0dXMgTm90aWZpZXIiICJTZW5kIG5vdGlmaWNhdGlvbiB0byBub3RpZiBjb250YWluZXIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvciA9IGNvbXBvbmVudCAiQ291cnNlIGRhdGFiYXNlIGNvbW11bmljYXRvciIgIkludGVyZmFjZSBmb3IgY29tbXVuaWNhdGluZyB3aXRoIGNvdXJzZSBlc3RhYmxpc2htZW50IGRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBjb3Vyc2VDcmVhdGlvbkludGVyZmFjZSAtPiBjb3Vyc2VDcmVhdG9yICJEZWxlZ2F0ZXMgcmVxdWVzdCIKICAgICAgICAgICAgY291cnNlQ2hhbmdlckludGVyZmFjZSAtPiBjb3Vyc2VDb250cm9sbGVyICJEZWxlZ2F0ZXMgcmVxdWVzdCIKICAgICAgICAgICAgY291cnNlQ3JlYXRvciAtPiBjb3Vyc2VWYWxpZGF0b3IgIkNoZWNrcyBjb3Vyc2UgaW5mbyIKICAgICAgICAgICAgY291cnNlQ29udHJvbGxlciAtPiBjb3Vyc2VWYWxpZGF0b3IgIkNoZWNrcyBjb3Vyc2UgY2hhbmdlIGluZm8iCiAgICAgICAgICAgIGNvdXJzZUNvbnRyb2xsZXIgLT4gY291cnNlTm90aWZlciAiR2l2ZXMgY29tbWFuZCB0byBub3RpZnkgc3Vic2NyaWJlZCBzdHVkZW50cyBhYm91dCBlbnJvbGwgb3BlbmluZyIKICAgICAgICAgICAgY291cnNlQ3JlYXRvciAtPiBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvciAiR2l2ZXMgY29tbWFuZCB0byBjcmVhdGUgY291cnNlIgogICAgICAgICAgICBjb3Vyc2VDb250cm9sbGVyIC0+IGNvdXJzZURhdGFiYXNlQ29tbXVuaWNhdG9yICJHaXZlcyBjb21tYW5kIHRvIGNoYW5nZSBjb3Vyc2UiCiAgICAgICAgICAgIGNvdXJzZVZhbGlkYXRvciAtPiBjb3Vyc2VFcnJvckhhbmRsZXIgIlNlbmRzIGVycm9yIgogICAgICAgICAgICBjb3Vyc2VWYWxpZGF0b3IgLT4gY291cnNlRGF0YWJhc2VDb21tdW5pY2F0b3IgIlNlbmRzIHJlcXVlc3QgdG8gZ2V0IHByb3BlciBkYXRhIgogICAgICAgICAgICBjb3Vyc2VFcnJvckhhbmRsZXIgLT4gY291cnNlTm90aWZlciAiU2VuZCBlcnJvciB0byIKICAgICAgICAKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBkYXRhYmFzZXMKICAgICAgICAgICAgZW5yb2xsREIgPSBjb250YWluZXIgIkVucm9sbCBEYXRhYmFzZSIgIlN0b3JlIHJlZ2lzdGVyIGVucm9sbG1lbnQgZm9yIGVhY2ggc3R1ZGVudCdzIHVzZXIiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGNsYXNzTWF0REIgPSBjb250YWluZXIgIkNsYXNzTWF0ZXJpYWwgRGF0YWJhc2UiICJIb2xkcyBmaWxlcyBzdWNoIGFzIHN0dWRlbnQgaG9tZXdvcmtzLCBsZWN0dXJlIHJlY29yZGluZ3MsIG5vdGVzIGV0Yy4gIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBjb3Vyc2VFc3RhREIgPSBjb250YWluZXIgIkNvdXJzZUVzdGFibGlzbWVudCBEYXRhYmFzZSIgImRvIHNvbWV0aGluZyIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAKICAgICAgICAgICAgYXVkaXRMb2dEQiA9IGNvbnRhaW5lciAiQXVkaXRMb2cgRGF0YWJhc2UiICJzdG9yZSBldmVudHMuLi4iIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIAogICAgICAgICMgPT09PT09PT09PT09PT09IENvbnRhaW5lciA8LT4gQ29udGFpbmVyIHJlbGF0aW9uc2hpcHMgPT09PT09PT09PT09PT09CiAgICAgICAgCiAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBlbnJvbGxEQiAiV3JpdGUgdG8iCiAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBjb3Vyc2VFc3RhREIgIlJlYWQgZm9yIGNvdXJzZXMgZGF0YSIKICAgICAgICBlbnJvbGxNYW5hZ2VyIC0+IHNpc0FwaSAiQVBJIGNhbGwgZm9yIGluZm9ybWF0aW9uIgogICAgICAgIGVucm9sbE1hbmFnZXIgLT4gbm90aWYgIlNlbmQgbm90aWZpY2F0aW9uIHRvIHN0dWRlbnQiCiAgICAgICAgCiAgICAgICAgY2xhc3NNYXQgLT4gY2xhc3NNYXREQiAiV3JpdGUgYW5kIFJlYWQiCiAgICAgICAgY2xhc3NNYXQgLT4gY291cnNlRXN0YURCICJSZWFkIGZyb20iCiAgICAgICAgY2xhc3NNYXQgLT4gbm90aWYgInNlbmQgbm90aWZpY2F0aW9uIHRvIHN0dWRlbnQiCiAgICAgICAgCiAgICAgICAgY291cnNlRXN0YSAtPiBjb3Vyc2VFc3RhREIgIldyaXRlIHRvIgogICAgICAgIGNvdXJzZUVzdGEgLT4gbm90aWYgInNlbmQgbm90aWZpY2F0aW9uIHRvIHVzZXIiCiAgICAgICAgCiAgICAgICAgCiAgICAgICAgIyByZWxhdGlvbnNoaXBzIG9mIEVucm9sbG1lbnQgc3lzdGVtIGNvbnRhaW5lcnMKICAgICAgICAKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsZGFzaGJvYXJkSFRNTCAiRGVsaXZlcnMgY29udGVudCB0byIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsTWFuYWdlciAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIGVucm9sbGRhc2hib2FyZEFwcCAtPiBjbGFzc01hdCAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIGVucm9sbGRhc2hib2FyZEFwcCAtPiBjb3Vyc2VFc3RhICJBUEkgY2FsbCByZWFkL3dyaXRlIGVucm9sbG1lbnQgaW5mb3JtYXRpb24iCiAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBhdWRpdExvZ0RCICJXcml0ZSB0byIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsSW50ZXJmYWNlICJFbnJvbGwgb3IgdW5lbnJvbGwgY291cnNlcyIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gaGlzdG9yeUludGVyZmFjZSAiQWNjZXNzIEVucm9sbCBoaXN0b3J5IgogICAgICAgIAogICAgICAgICMgPT09PT09PT09PT09PT09IENvbXBvbmVudCA8LT4gQ29udGFpbmVyIHJlbGF0aW9uc2hpcHMgPT09PT09PT09PT09PT09CiAgICAgICAgIyBlbnJvbGxtZW50IG1hbmFnZXIgb3V0c2lkZSByZWxhdGlvbnNzaGlwcwogICAgICAgIGVucm9sbFJlcCAtPiBlbnJvbGxEQiAiU2VuZCBkYXRhIHRvIGRhdGFiYXNlIgogICAgICAgIGRhdGFTeW5jIC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBmcm9tIgogICAgICAgIGVucm9sbFJlcCAtPiBhdWRpdExvZ0RCICJXcml0ZSB0byIKICAgICAgICAKICAgICAgICAjIGVucm9sbGRhc2hib2FyZGFwcCBvdXRzaWRlIHJlbGF0aW9uc3NoaXBzCiAgICAgICAgLy8gZW5yb2xsUmVwb3NpdG9yeSAtPiBlbnJvbGxEQiAiUmVhZHMgYW5kIHdyaXRlIHRvIgogICAgICAgIC8vIGNvdXJzZUVzdGFSZXBvc2l0b3J5IC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBhbmQgd3JpdGUgdG8iCiAgICAgICAgLy8gY2xhc3NNYXRSZXBvc2l0b3J5IC0+IGNsYXNzTWF0REIgIlJlYWQgYW5kIHdyaXRlIHRvIgogICAgICAgIAogICAgICAgICMgY2xhc3MgTWF0ZXJpYWwKICAgICAgICBjbGFzc01hdERCQ29tbSAtPiBjbGFzc01hdERCICJCdWlsZHMgcmVxdWVzdHMgKyBRdWVycmllcyBkYXRhYmFzZSIKICAgICAgICBjb3Vyc2VFc3RhYmxpc21lbnREQkNvbW0gLT4gY291cnNlRXN0YURCICJCdWlsZHMgcmVxdWVzdHMgKyBRdWVycmllcyBkYXRhYmFzZSIKICAgICAgICAKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gaG9tZXdvcmtBUEkgIkNyZWF0ZS9zdWJtaXQgaG9tZXdvcmsiCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGxlY3R1cmVNYXRlcmlhbCAiQWRkIGNvdXJzZSBtYXRlcmlhbCIKICAgICAgICAKICAgICAgICAjIENsYXNzIEVzdGFibGlzaG1lbnQKICAgICAgICBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvciAtPiBjb3Vyc2VFc3RhREIgIldyaXRlcy9yZWFkcyBkYXRhIgogICAgICAgIGNvdXJzZU5vdGlmZXIgLT4gbm90aWYgIlNlbmQgbm90aWZpY2F0aW9uIHJlcXVlc3QiCiAgICAgICAgZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGNvdXJzZUNoYW5nZXJJbnRlcmZhY2UgIkdpdmVzIGRhdGEgdG8gY2hhbmdlIGNvdXJzZSIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gY291cnNlQ3JlYXRpb25JbnRlcmZhY2UgIkdpdmVzIGRhdGEgZm9yIGNyZWF0aW5nIG5ldyBjb3Vyc2UiCgogICAgICAgIGRlcGxveW1lbnRFbnZpcm9ubWVudCAiTGl2ZSIgICAgewogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiVXNlcidzIHdlYiBicm93c2VyIiAiIiAiIiAgICB7CiAgICAgICAgICAgICAgICBkYXNoYm9hcmRIVE1MSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBlbnJvbGxkYXNoYm9hcmRIVE1MCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFwcGxpY2F0aW9uIFNlcnZlciIgIiIgIlJlZCBIYXQgRW50ZXJwcmlzZSBMaW51eCA5LjQiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIldlYiBzZXJ2ZXIiICIiICJXaWxkZmx5IDM0IiAgewogICAgICAgICAgICAgICAgICAgIGRhc2hib2FyZEFwcEluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZW5yb2xsZGFzaGJvYXJkQXBwCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJFbnJvbGxtZW50IFNlcnZlciIgIiIgIlJlZCBIYXQgRW50ZXJwcmlzZSBMaW51eCA5LjQiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgImVucm9sbEJhY2tlbmQgc2VydmVyIiAiIiAiV2lsZGZseSAzNCIgIHsKICAgICAgICAgICAgICAgICAgICBlbnJvbGxJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGVucm9sbE1hbmFnZXIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQ2xhc3MgTWF0ZXJpYWwgU2VydmVyIiAiIiAiUmVkIEhhdCBFbnRlcnByaXNlIExpbnV4IDkuNCIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiY2xhc3NNYXRCYWNrZW5kIHNlcnZlciIgIiIgIldpbGRmbHkgMzQiICB7CiAgICAgICAgICAgICAgICAgICAgY2xhc3NNYXRJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGNsYXNzTWF0CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkNvdXJzZSBFc3RhYmxpc2htZW50IFNlcnZlciIgIiIgIlJlZCBIYXQgRW50ZXJwcmlzZSBMaW51eCA5LjQiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgImNvdXJzZUVzdGFCYWNrZW5kIHNlcnZlciIgIiIgIldpbGRmbHkgMzQiICB7CiAgICAgICAgICAgICAgICAgICAgY291cnNlRXN0YUluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgY291cnNlRXN0YQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkRhdGFiYXNlIFNlcnZlciIgIiIgIlJlZCBIYXQgRW50ZXJwcmlzZSBMaW51eCA5LjQiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlJlbGF0aW9uYWwgREIgc2VydmVyIiAiIiAiUG9zdGdyZVNRTCAxNyIgewogICAgICAgICAgICAgICAgICAgIGVucm9sbERCSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBlbnJvbGxEQgogICAgICAgICAgICAgICAgICAgIGRldmljZURCSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBjb3Vyc2VFc3RhREIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJGaWxlIHN0b3JhZ2UiICIiICJNb25nb0RCIDguMTUiICB7CiAgICAgICAgICAgICAgICAgICAgY2xhc3NNYXREQkluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgY2xhc3NNYXREQiAjIEdyaWRGUwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkxvZyBzdG9yYWdlIiAiIiAiRWxhc3RpY3NlYXJjaCA4LjE1IiAgewogICAgICAgICAgICAgICAgICAgIGF1ZGl0TG9nREJJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGF1ZGl0TG9nREIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICB9CgogICAgICAgICMgdXNlciByZWxhdGlvbnNoaXAgLSBzeXN0ZW0gbGV2ZWwKICAgICAgICBzdHVkZW50IC0+IGVucm9sbG1lbnRTeXMgIlZpZXcsIGVucm9sbCwgdW5lbnJvbGwgaW4gY291cnNlcyBhbmQgY2xhc3MgbWF0ZXJpYWwiCiAgICAgICAgdGVhY2hlciAtPiBlbnJvbGxtZW50U3lzICJFc3RhYmxpc2ggY291cnNlLCB1bmVucm9sbCBvciBlbnJvbGwgc3R1ZGVudCBiYXNlIG9uIHJlcXVlc3QsIGFuZCB1cGxvYWQgY2xhc3MgbWF0ZXJpYWwiCiAgICAgICAgYWRtaW4gLT4gZW5yb2xsbWVudFN5cyAiYWRtaW5pc3RlciBlbnJvbGwsIHVuZW5yb2xsIGZvciBzdHVkZW50IGluIGNvdXJzZXMiCiAgICAgICAgbm90aWYgLT4gc3R1ZGVudCAiTm90aWZ5IHN0dWRlbmQgYWJvdXQgY2hhbmdlc2UgaW4gY291cnNlcyIKICAgICAgICBub3RpZiAtPiB0ZWFjaGVyICJOb3RpZnkgdGVhY2hlciBvbiB0aGUgY291cnNlcyBlc3RhYmxpc2hlZCIKCiAgICAgICAgIyB1c2VyIHJlbGF0aW9uc2hpcCAtIGNvbnRhaW5lciBsZXZlbAogICAgICAgIGFkbWluIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIk1hbmFnZSBlbnJvbGwgYW5kIHVuZW5yb2xsIgogICAgICAgIHN0dWRlbnQgLT4gZW5yb2xsZGFzaGJvYXJkSFRNTCAiVmlldywgZW5yb2xsIGluIGNvdXJzZXMuIENoZWNrIGZvciBjbGFzcyBtYXRlcmlhbCIKICAgICAgICB0ZWFjaGVyIC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIlZpZXcsIGVzdGFibGlzaCBjb3Vyc2VzLiBWaWV3IGFuZCBtYW5hZ2UgY2xhc3MgbWF0ZXJpYWwiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgZW5yb2xsbWVudFN5cyAiZW5yb2xsbWVudFN5c3RlbUNvbnRleHREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIGVucm9sbG1lbnRTeXMgImVucm9sbG1lbnRTeXN0ZW1Db250YWluZXJEaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGVucm9sbE1hbmFnZXIgImVucm9sbG1lbnRTeXN0ZW1Db21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGNvdXJzZUVzdGEgImNvdXJzZUVzdGFTeXN0ZW1Db21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCgogICAgICAgIGR5bmFtaWMgZW5yb2xsTWFuYWdlciAiZW5yb2xsRHluYW1pY1ZpZXciIHsKICAgICAgICAgICAgZW5yb2xsSW50ZXJmYWNlIC0+IGVucm9sbEluICJTZW5kIGVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgogICAgICAgICAgICBlbnJvbGxJbnRlcmZhY2UgLT4gdW5lbnJvbGxJbiAiU2VuZCB1bmVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgoKICAgICAgICAgICAgZW5yb2xsSW4gLT4gZW5yb2xsVmFsaWRhdGlvbiAiUmVxdWVzdCB2YWxpZGF0aW9uIGZvciBlbnJvbGxtZW50IgogICAgICAgICAgICB1bmVucm9sbEluIC0+IGVucm9sbFZhbGlkYXRpb24gIlJlcXVlc3QgdmFsaWRhdGlvbiBmb3IgdW5lbnJvbGxtZW50IgoKICAgICAgICAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBkYXRhU3luYyAiUmVhZCBmcm9tIgogICAgICAgICAgICBkYXRhU3luYyAtPiBzaXNBcGkgIlJlYWQgZnJvbSIKICAgICAgICAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBlcnJvckhhbmRsZXIgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgICAgIGVycm9ySGFuZGxlciAtPiBlbnJvbGxMb2cgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgICAgIGVycm9ySGFuZGxlciAtPiBub3RpZmVyICJTZW5kIGVycm9yIHRvIgogICAgICAgICAgICBub3RpZmVyIC0+IG5vdGlmICJTZW5kIG5vdGlmaWNhdGlvbiIKCiAgICAgICAgICAgIGVucm9sbFZhbGlkYXRpb24gLT4gZW5yb2xsSGlzdG9yeSAiU2VuZCBlbnJvbGwvdW5lbnJvbGwgdG8gaGlzdG9yeSIKICAgICAgICAgICAgZW5yb2xsSGlzdG9yeSAtPiBlbnJvbGxSZXAgIlNlbmQgZGF0YSB0byByZXBvc2l0b3J5IgogICAgICAgICAgICBlbnJvbGxMb2cgLT4gZW5yb2xsUmVwICJTZW5kIGRhdGEgdG8gcmVwb3NpdG9yeSIKICAgICAgICAgICAgZW5yb2xsUmVwIC0+IGVucm9sbERCICJTdG9yZSBkYXRhIGluIGRhdGFiYXNlIgoKICAgICAgICB9CgogICAgICAgIGR5bmFtaWMgZW5yb2xsTWFuYWdlciAiZW5yb2xsSGlzdG9yeUR5bmFtaWNWaWV3InsKICAgICAgICAgICAgaGlzdG9yeUludGVyZmFjZSAtPiBlbnJvbGxIaXN0b3J5ICJTZW5kIGVucm9sbG1lbnQgaGlzdG9yeSBpbmZvcm1hdGlvbiBmcm9tIHVzZXIgdG8gZ2V0IGluZm9ybWF0aW9uIgogICAgICAgICAgICBlbnJvbGxIaXN0b3J5IC0+IGVucm9sbFJlcCAiU2VuZCBkYXRhIHRvIHJlcG9zaXRvcnkiCiAgICAgICAgICAgIGVucm9sbFJlcCAtPiBlbnJvbGxEQiAicmVhZCBEYXRhIGZyb20gZGF0YWJhc2UiCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgZW5yb2xsZGFzaGJvYXJkQXBwICJlbnJvbGxkYXNoYm9hcmRBcHBDb21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGNsYXNzTWF0ICJjbGFzc01hdGVyaWFsQ29tcG9uZW50RGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgIyBpbmNsdWRlIGVucm9sbGRhc2hib2FyZEFwcCAtPgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBjbGFzc01hdCAiY2xhc3NNYXRlcmlhbER5bmFtaWNWaWV3IiB7CiAgICAgICAgICAgICMgaW5jbHVkZSAqCgogICAgICAgICAgICBob21ld29ya0FQSSAtPiBob21ld29ya0NvbnRyb2xsZXIgIkZvcndhcmQgcmVxdWVzdCIKICAgICAgICAgICAgaG9tZXdvcmtDb250cm9sbGVyIC0+IGhvbWV3b3JrU3VibWlzaW9uVmVyaWZpZXIKICAgICAgICAgICAgaG9tZXdvcmtDb250cm9sbGVyIC0+IGF1dGhlbnRpY2F0b3IgIjMiCiAgICAgICAgICAgIGhvbWV3b3JrQ29udHJvbGxlciAtPiBjbGFzc01hdERCQ29tbSAiNCIKCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbCAtPiBsZWN0dXJlTWF0ZXJpYWxDb250cm9sbGVyICIxIgogICAgICAgICAgICBsZWN0dXJlTWF0ZXJpYWxDb250cm9sbGVyIC0+IGF1dGhlbnRpY2F0b3IgIjIiCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgLT4gY291cnNlRXN0YWJsaXNtZW50REJDb21tICIzIgoKICAgICAgICB9CgogICAgICAgIGRlcGxveW1lbnQgZW5yb2xsbWVudFN5cyAiTGl2ZSIgIkxpdmVfRGVwbG95bWVudCIgICB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgdGhlbWUgZGVmYXVsdAoKICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJFeGlzdGluZyBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5OTk5OQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CgogICAgICAgICAgICBlbGVtZW50ICJXZWIgRnJvbnQtRW5kIiAgewogICAgICAgICAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICAgICAgICB9CgogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgIHsKICAgICAgICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgfQoKCn0="
+    "structurizr.dsl" : "d29ya3NwYWNlICJFbnJvbGxtZW50IFdvcmtzcGFjZSIgIlRoaXMgd29ya3NwYWNlIGRvY3VtZW50cyB0aGUgYXJjaGl0ZWN0dXJlIG9mIHRoZSBFbnJvbGxtZW50IiB7CiAgICBtb2RlbCB7CgogICAgICAgIHN0dWRlbnQgPSBwZXJzb24gIlN0dWRlbnQiICJBY2Nlc3MgY291cnNlcyBhdmFpbGFibGUgdG8gZW5yb2xsLCBjaGVjayBjbGFzcyBtYXRlcmlhbCwgb3IgdW5lbnJvbGwiCiAgICAgICAgdGVhY2hlciA9IHBlcnNvbiAiVGVhY2hlciIgIkFjY2VzcyB0aGVpciBvd24gdXBsb2FkIGNvdXJzZXMsIGNsYXNzIG1hdGVyaWFsLCBlbnJvbGwgYSBzdHVkZW50IG9yIHVuZW5yb2xsIGEgc3R1ZGVudCBmcm9tIHRoZWlyIGNvdXJzZSIKICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQnVzaW5lc3MgYWRtaW5pc3RyYXRvciIgIkFkbWluaXN0ZXJzIHRoZSB3aG9sZSBwcm9jZXNzIG9mIGVucm9sbCBhbmQgdW5lbnJvbGwiCiAgICAgICAgIyBzb2Z0d2FyZSBzeXN0ZW1zCiAgICAgICAgc2lzQXBpID0gc29mdHdhcmVTeXN0ZW0gIlN0dWRlbnQgSW5mb3JtYXRpb24gU3lzdGVtIChTSVMpIiAiUHJvdmlkZXMgdXNlciBwcm9maWxlIGRhdGEiCiAgICAgICAgbm90aWYgPSBzb2Z0d2FyZVN5c3RlbSAiRW1haWwvU01TIE5vdGlmaWNhdGlvbiBTeXN0ZW0iICJVc2VkIHRvIHNlbmQgdXBkYXRlcyB0byBzdHVkZW50LCB0ZWFjaGVyLCBvciBhZG1pbiIKICAgICAgICBlbnJvbGxtZW50U3lzID0gc29mdHdhcmVTeXN0ZW0gIkVucm9sbG1lbnQgU3lzdGVtIiAibWFuYWdlIHRoZSBwcm9jZXNzIG9mIHJlZ2lzdGVyaW5nIGluZGl2aWR1YWxzIGZvciBjb3Vyc2VzLCBjbGFzcyBtYXRlcmlhbCwgdW5lbnJvbGwsIGNvdXJzZSBlc3RhYmxpc2htZW50InsKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBmcm9udC1lbmQgY29udGFpbmVycwogICAgICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MID0gY29udGFpbmVyICJEYXNoYm9hcmQgSFRNTCIgIlByb3ZpZGUgZnVuY3Rpb25hbGl0eSBmb3IgZW5yb2xsbWVudCBwYWdlIGluIGEgd2ViIGJyb3dzZXIuIiAiSFRNTCtSZWFjaC5qcyIgIldlYiBGcm9udC1FbmQiCiAgICAgICAgICAgIHdlYlNlcnZlciA9IGNvbnRhaW5lciAiV2ViIFNlcnZlciIgIkhvc3RzIHRoZSBzdGF0aWMgYXNzZXRzIGZvciBEYXNoYm9hcmQgSFRNTCAoSFRNTCwgQ1NTLCBKYXZhU2NyaXB0KSIgIkFwYWNoZS9OZ2lueCBTdGF0aWMgQ29udGVudCBIb3N0aW5nIiAiU3RhdGljIEhvc3RpbmciCiAgICAgICAgICAgIGFwaUdhdGVXYXkgPSBjb250YWluZXIgIkFQSSBHYXRlIFdheSIgIkhhbmRsZXMgcm91dGluZywgbG9hZCBiYWxhbmNpbmcgYW5kIEFQSSBzZWN1cml0eSIgIlNwcmluZyBCb290LCBTcHJpbmcgQ2xvdWQgR2F0ZXdheSIKICAgICAgICAgIAogICAgICAgICAgICAKICAgICAgICAKICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBkYXRhYmFzZXMKICAgICAgICAgICAgZW5yb2xsREIgPSBjb250YWluZXIgIkVucm9sbCBEYXRhYmFzZSIgIlN0b3JlIHJlZ2lzdGVyIGVucm9sbG1lbnQgZm9yIGVhY2ggc3R1ZGVudCdzIHVzZXIiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGNsYXNzTWF0REIgPSBjb250YWluZXIgIkNsYXNzTWF0ZXJpYWwgRGF0YWJhc2UiICJIb2xkcyBmaWxlcyBzdWNoIGFzIHN0dWRlbnQgaG9tZXdvcmtzLCBsZWN0dXJlIHJlY29yZGluZ3MsIG5vdGVzIGV0Yy4gIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBjb3Vyc2VFc3RhREIgPSBjb250YWluZXIgIkNvdXJzZUVzdGFibGlzbWVudCBEYXRhYmFzZSIgImRvIHNvbWV0aGluZyIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAKICAgICAgICAgICAgYXVkaXRMb2dEQiA9IGNvbnRhaW5lciAiQXVkaXRMb2cgRGF0YWJhc2UiICJzdG9yZSBldmVudHMuLi4iIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgICAgICAgIyBFbnJvbGxtZW50IFN5c3RlbSBiYWNrLWVuZCBjb250YWluZXJzCiAgICAgICAgICAgIGNvdXJzZUVzdGEgPSBjb250YWluZXIgIkNvdXJzZSBFc3RhYmxpc2htZW50IE1hbmFnZXIiICJhZGQiIHsKICAgICAgICAgICAgICAgICAgICBncm91cCAiUHJlc2VudGF0aW9uIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgY291cnNlQ3JlYXRpb25BcGlDb25uZWN0b3IgPSBjb21wb25lbnQgIkNvdXJzZSBjcmVhdGlvbiBBUEkgY29ubmVjdG9yIiAiUHJvdmlkZXMgcHVibGljIEFQSSBmb3IgY291cnNlIGNyZWF0aW9uIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUNoYW5nZXJBcGlDb25uZWN0b3IgPSBjb21wb25lbnQgIkNvdXJzZSBjaGFuZ2VyIEFQSSBjb25uZWN0b3IiICJQcm92aWRlcyBwdWJsaWMgQVBJIGZvciBjb3Vyc2UgY2hhbmdlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIkJ1c2luZXNzIGxheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgY291cnNlQ3JlYXRvciA9IGNvbXBvbmVudCAiQ291cnNlQ3JlYXRvciIgIkNyZWF0ZXMgY291cnNlcyIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VDb250cm9sbGVyID0gY29tcG9uZW50ICJDb3Vyc2VDb250cm9sbGVyIiAiQ29udHJvbGwgY291cnNlcyIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VWYWxpZGF0b3IgPSBjb21wb25lbnQgIkNvdXJzZVZhbGlkYXRvciIgIlZhbGlkYXRlcyBjb3Vyc2UgZGF0YSIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFcnJvckhhbmRsZXIgPSBjb21wb25lbnQgIkNvdXJzZSBFcnJvciBIYW5kbGVyIiAiRGV0ZWN0IGFuZCBoYW5kbGUgYW55IGVycm9ycyB0aGF0IG9jY3VyIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZU5vdGlmZXIgPSBjb21wb25lbnQgIkNvdXJzZSBFbnJvbGwgU3RhdHVzIE5vdGlmaWVyIiAiU2VuZCBub3RpZmljYXRpb24gdG8gbm90aWYgY29udGFpbmVyIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlBlcnNpc3RlbmNlIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgY291cnNlRGF0YWJhc2VDb21tdW5pY2F0b3IgPSBjb21wb25lbnQgIkNvdXJzZSBkYXRhYmFzZSBjb21tdW5pY2F0b3IiICJJbnRlcmZhY2UgZm9yIGNvbW11bmljYXRpbmcgd2l0aCBjb3Vyc2UgZXN0YWJsaXNobWVudCBkYXRhYmFzZSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgY291cnNlQ3JlYXRpb25BcGlDb25uZWN0b3IgLT4gY291cnNlQ3JlYXRvciAiRGVsZWdhdGVzIHJlcXVlc3QiCiAgICAgICAgICAgIGNvdXJzZUNoYW5nZXJBcGlDb25uZWN0b3IgLT4gY291cnNlQ29udHJvbGxlciAiRGVsZWdhdGVzIHJlcXVlc3QiCiAgICAgICAgICAgIGNvdXJzZUNyZWF0b3IgLT4gY291cnNlVmFsaWRhdG9yICJDaGVja3MgY291cnNlIGluZm8iCiAgICAgICAgICAgIGNvdXJzZUNvbnRyb2xsZXIgLT4gY291cnNlVmFsaWRhdG9yICJDaGVja3MgY291cnNlIGNoYW5nZSBpbmZvIgogICAgICAgICAgICBjb3Vyc2VDb250cm9sbGVyIC0+IGNvdXJzZU5vdGlmZXIgIkdpdmVzIGNvbW1hbmQgdG8gbm90aWZ5IHN1YnNjcmliZWQgc3R1ZGVudHMgYWJvdXQgZW5yb2xsIG9wZW5pbmciCiAgICAgICAgICAgIGNvdXJzZUNyZWF0b3IgLT4gY291cnNlRGF0YWJhc2VDb21tdW5pY2F0b3IgIkdpdmVzIGNvbW1hbmQgdG8gY3JlYXRlIGNvdXJzZSIKICAgICAgICAgICAgY291cnNlQ29udHJvbGxlciAtPiBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvciAiR2l2ZXMgY29tbWFuZCB0byBjaGFuZ2UgY291cnNlIgogICAgICAgICAgICBjb3Vyc2VWYWxpZGF0b3IgLT4gY291cnNlRXJyb3JIYW5kbGVyICJTZW5kcyBlcnJvciIKICAgICAgICAgICAgY291cnNlVmFsaWRhdG9yIC0+IGNvdXJzZURhdGFiYXNlQ29tbXVuaWNhdG9yICJTZW5kcyByZXF1ZXN0IHRvIGdldCBwcm9wZXIgZGF0YSIKICAgICAgICAgICAgY291cnNlRXJyb3JIYW5kbGVyIC0+IGNvdXJzZU5vdGlmZXIgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgICAgIGNsYXNzTWF0ID0gY29udGFpbmVyICJDbGFzcyBNYXRlcmlhbCBNYW5hZ2VyIiAiSGFuZGxlcyBob3dtZXdvcmsgYW5kIG90aGVyIGNsYXNzIG1hdGVyaWFsIiB7CiAgICAgICAgICAgICAgICBncm91cCAiUHJlc2VudGF0aW9uIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgaG9tZXdvcmtBUEkgPSBjb21wb25lbnQgIkhvbWV3b3JrIHN1Ym1pc3Npb24vY3JlYXRpb24gSW50ZXJmYWNlIiAiUHJvdmlkZXMgcHVibGljIEFQSSBmb3IgaG9tZXdvcmsgc3VibWlzc2lvbi92aWV3aW5nIgogICAgICAgICAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbCA9IGNvbXBvbmVudCAiTGVjdHVyZSBtYXRlcmlhbCIgIkxlY3R1cmUgcmVjb3JkaW5ncy9ub3Rlcy90cmFuc2NyaXB0cyIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJCdXNpbmVzcyBsYXllciIgewogICAgICAgICAgICAgICAgICAgIGhvbWV3b3JrQ29udHJvbGxlciA9IGNvbXBvbmVudCAiSG9tZXdvcmsgQ29udHJvbGxlciIgIlZlcmlmaWVzIHJlcXVlc3RzIGFjb3JkaW5nIHRvIGJ1aXNuZXNzIGxvZ2ljIgogICAgICAgICAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgPSBjb21wb25lbnQgImxlY3R1cmUgbWF0ZXJpYWwgY29udHJvbGxlciIgIlZlcmlmaWVzIGJ1aXNuZXNzIGxvZ2ljIGFib3V0IGxlY3R1cmUgbWF0ZXJpYWwiCiAgICAgICAgICAgICAgICAgICAgaG9tZXdvcmtTdWJtaXNpb25WZXJpZmllciA9IGNvbXBvbmVudCAiSG9tZXdvcmsgdmVyaWZpZXIiICJWZXJpZmllcyB0aGF0IHVwbG9hZGVkIGZpbGVzIGRvbid0IGV4Y2VlZCBtYXhpbXVtIGZpbGVzaXplIGhhdmUgY29ycmVjdCBleHRlbnNpb25zIC4uLiIKICAgICAgICAgICAgICAgICAgICBhdXRoZW50aWNhdG9yID0gY29tcG9uZW50ICJDbGFzcyBtYXRlcmlhbCBhdXRoZW50aWNhdG9yIiAiQXV0aGVudGljYXRlcyB0ZWFjaGVycyBhbmQgc3R1ZGVudHMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBjbGFzc01hdERCQ29tbSA9IGNvbXBvbmVudCAiQ2xhc3MgTWF0ZXJpYWwgRGF0YWJhc2UgQ29tdW5pY2F0b3IiICJJbnRlcmZhY2UgZm9yIGNvbXVuaWNhdGluZyB3aXRoIENsYXNzIE1hdGVyaWFsIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGFibGlzbWVudERCQ29tbSA9IGNvbXBvbmVudCAiQ291cnNlIGVzdGFibGlzaG1lbnQgRGF0YWJhc2UgY29tdW5pY2F0b3IiICJJbnRlcmZhY2UgZm9yIGNvbXVuaWNhdGluZyB3aXRoIGNvdXJzZSBlc3RhYmxpc2htZW50IGRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBob21ld29ya0FQSSAtPiBob21ld29ya0NvbnRyb2xsZXIgIkRlbGVnYXRlcyByZXF1ZXN0cyIKICAgICAgICAgICAgaG9tZXdvcmtDb250cm9sbGVyIC0+IGhvbWV3b3JrU3VibWlzaW9uVmVyaWZpZXIgIkRlbGVnYXRlcyBmaWxlIHZlcmlmaWNhdGlvbiIKICAgICAgICAgICAgaG9tZXdvcmtDb250cm9sbGVyIC0+IGF1dGhlbnRpY2F0b3IgIkRlbGVnYXRlcyB0aGF0IHJlcXVlc3QgaXMgKGNyZWF0ZSwgdGVhY2hlcikgb3IgKHN1Ym1pdCwgc3R1ZGVudCkiCiAgICAgICAgICAgIGhvbWV3b3JrQ29udHJvbGxlciAtPiBjbGFzc01hdERCQ29tbSAiU3RvcmVzIHN1Ym1pdGVkIGhvbWV3b3JrLyBzdG9yZXMgcmVjb3JkIG9mIGBuZXcgaG9tZXdvcmtgIgogICAgICAgICAgICAKICAgICAgICAgICAgbGVjdHVyZU1hdGVyaWFsIC0+IGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgIkRlbGVnYXRlcyByZXF1ZXN0cyIKICAgICAgICAgICAgbGVjdHVyZU1hdGVyaWFsQ29udHJvbGxlciAtPiBhdXRoZW50aWNhdG9yICJWZXJpZmllcyB1c2VyIGlzIHRlYWNoZXIiCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgLT4gY291cnNlRXN0YWJsaXNtZW50REJDb21tICJWZXJpZmllcyB0ZWFjaGVyIHRlYWNoZXMgZ2l2ZW4gc3ViamVjdCIKICAgICAgICAgICAgCiAgICAgICAgICAgIGVucm9sbE1hbmFnZXIgPSBjb250YWluZXIgIkVucm9sbG1lbnQgTWFuYWdlciIgIlByb3ZpZGVzIGZ1bmN0aW9uYWxpdHkgZm9yIGVucm9sbG1lbnQgaW4gY291cnNlIHdpdGggYXBwcm9wcmlhdGUgdmFsaWRhdGlvbiIgewogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJTcHJpbmcgQm9vdCIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiBMYXllciIgewogICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50Q29udHJvbGxlciA9IGNvbXBvbmVudCAiQ291cnNlIEVucm9sbG1lbnQgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlciByZXF1ZXN0IHRvIG1hbmFnZSBjb3Vyc2UgZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICB1bkVucm9sbG1lbnRDb250cm9sbGVyID0gY29tcG9uZW50ICJVbmVucm9sbG1lbnQgQ29udHJvbGxlciIgIlByb2Nlc3MgdXNlciByZXF1ZXN0IHRvIG1hbmFnZSB1bmVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsbWVudEhpc3RvcnlDb250cm9sbGVyID0gY29tcG9uZW50ICAiRW5yb2xsbWVudCBIaXN0b3J5IENvbnRyb2xsZXIiICJQcm9jZXNzIHVzZXIgcmVxdWVzdCB0byBtYW5hZ2UgZW5yb2xsbWVudCBoaXN0b3J5IgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgbGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50ID0gY29tcG9uZW50ICJDb3Vyc2UgRW5yb2xsbWVudCIgImJ1c2luZXNzIGxvZ2ljIGZvciBlbnJvbGxlbW50IHNlcnZpY2UiCiAgICAgICAgICAgICAgICAgICAgdW5FbnJvbGxtZW50ID0gY29tcG9uZW50ICJVbmVucm9sbG1lbnQiICJidXNpbmVzcyBsb2dpYyBmb3IgdW5lbnJvbGxlbW50IHNlcnZpY2UiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsbWVudEhpc3RvcnkgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgSGlzdG9yeSIgImJ1c2luZXNzIGxvZ2ljIGZvciBlbnJvbGxlbW50IGhpc3Rvcnkgc2VydmljZSIKICAgICAgICAgICAgICAgICAgICAjd2FpdGluZ0xpc3QgPSBjb21wb25lbnQgIldhaXRpbmcgTGlzdCIgImJ1c2luZXNzIGxvZ2ljIGZvciB3YWl0aW5nIGxpc3Qgc2VydmljZSIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlBlcnNpc3RlbmNlIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsbWVudFJlcG9zaXRvcnkgPSBjb21wb25lbnQgIkVucm9sbG1lbnQgUmVwb3NpdG9yeSIgInBlcnNpc3RlcyBlbnJvbGxlbW50IGRhdGEgaW50byB0aGUgZGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgYXVkaXRMb2dSZXBvc2l0b3J5ID0gY29tcG9uZW50ICJBdWRpdCBMb2cgUmVwb3NpdG9yeSIgInBlcnNpc3RlcyBsb2cgZXZlbnQgaW50byB0aGUgZGF0YWJhc2UiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgIyByZWxhdGlvbnNoaXBzIG9mIEVucm9sbG1lbnQgTWFuYWdlciBjb21wb25lbnRzCiAgICAgICAgICAgIGFwaUdhdGVXYXkgLT4gY291cnNlRW5yb2xsbWVudENvbnRyb2xsZXIgIlJvdXRlcyBlbnJvbGxtZW50IHJlcXVlc3RzIgogICAgICAgICAgICBhcGlHYXRlV2F5IC0+IEVucm9sbG1lbnRIaXN0b3J5Q29udHJvbGxlciAiUm91dGVzIGVucm9sbG1lbnQgaGlzdG9yeSByZXF1ZXN0cyIgCiAgICAgICAgICAgIGFwaUdhdGVXYXkgLT4gdW5FbnJvbGxtZW50Q29udHJvbGxlciAiUm91dGVzIHVuZW5yb2xsbWVudCByZXF1ZXN0cyIKICAgICAgICAgICAgCiAgICAgICAgICAgIAogICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50Q29udHJvbGxlciAtPiBjb3Vyc2VFbnJvbGxtZW50ICJnZXQgYW5kIHVwZGF0ZSBkYXRhIgogICAgICAgICAgICB1bkVucm9sbG1lbnRDb250cm9sbGVyIC0+IHVuRW5yb2xsbWVudCAiR2V0cyBhbmQgdXBkYXRlIGRhdGEiCiAgICAgICAgICAgIGVucm9sbG1lbnRIaXN0b3J5Q29udHJvbGxlciAtPiBlbnJvbGxtZW50SGlzdG9yeSAiZ2V0IGFuZCB1cGRhdGUgZGF0YSIKICAgICAgICAgICAgCiAgICAgICAgICAgIGNvdXJzZUVucm9sbG1lbnQgLT4gZW5yb2xsbWVudFJlcG9zaXRvcnkgInVzZXMgdG8gcGVyc2lzdCBjb3Vyc2UgZW5yb2xsbWVudCBkYXRhIgogICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50IC0+IGNvdXJzZUVzdGEgInJlYWRzIGZvciBjb3Vyc2UgZGF0YSIgCiAgICAgICAgICAgIGNvdXJzZUVucm9sbG1lbnQgLT4gc2lzQXBpICJyZXRyaWV2ZSBzdHVkZW50IGluZm9ybWF0aW9uIgogICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50IC0+IG5vdGlmICJzZW5kIG5vdGlmaWNhdGlvbiIKICAgICAgICAgICAgY291cnNlRW5yb2xsbWVudCAtPiBhdWRpdExvZ1JlcG9zaXRvcnkgImxvZyBldmVudCIKICAgICAgICAgICAgLy8gY291cnNlRW5yb2xsbWVudCAtPiB3YWl0aW5nTGlzdCAiYWRkIHRvIHdhaXRpbmcgbGlzdCIKICAgICAgICAgICAgCiAgICAgICAgICAgIHVuRW5yb2xsbWVudCAtPiBlbnJvbGxtZW50UmVwb3NpdG9yeSAidXNlcyB0byB1cGRhdGUgY291cnNlIGVucm9sbG1lbnQgZGF0YSIgICAgCiAgICAgICAgICAgIHVuRW5yb2xsbWVudCAtPiBhdWRpdExvZ1JlcG9zaXRvcnkgImxvZ3MgZXZlbnQiCiAgICAgICAgICAgIC8vIHVuRW5yb2xsbWVudCAtPiB3YWl0aW5nTGlzdCAicmVtb3ZlIGZyb20gd2FpdGluZyBsaXN0IgogICAgICAgICAgICB1bkVucm9sbG1lbnQgLT4gbm90aWYgInNlbmQgbm90aWZpY2F0aW9uIgogICAgICAgICAgICAKICAgICAgICAgICAgZW5yb2xsbWVudEhpc3RvcnkgLT4gY291cnNlRXN0YSAicmVhZHMgZm9yIGNvdXJzZSBkYXRhIgogICAgICAgICAgICBlbnJvbGxtZW50SGlzdG9yeSAtPiBlbnJvbGxtZW50UmVwb3NpdG9yeSAidXNlcyB0byBnZXQgc3R1ZGVudCBjb3Vyc2UgZW5yb2xsbWVudCBkYXRhIgogICAgICAgICAgICAKICAgICAgICAgICAgLy8gd2FpdGluZ0xpc3QgLT4gZW5yb2xsbWVudFJlcG9zaXRvcnkgInJlYWQgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICAKICAgICAgICAgICAgZW5yb2xsbWVudFJlcG9zaXRvcnkgLT4gZW5yb2xsREIgInJlYWQgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICBhdWRpdExvZ1JlcG9zaXRvcnkgLT4gYXVkaXRMb2dEQiAid3JpdGVzIHRvIgogICAgICAgIH0KICAgICAgICAKICAgICAgICAjID09PT09PT09PT09PT09PSBDb250YWluZXIgPC0+IENvbnRhaW5lciByZWxhdGlvbnNoaXBzID09PT09PT09PT09PT09PQogICAgICAgIAogICAgICAgIAogICAgICAgIAogICAgICAgIC8vIGVucm9sbE1hbmFnZXIgLT4gZW5yb2xsREIgIldyaXRlIHRvIgogICAgICAgIC8vIGVucm9sbE1hbmFnZXIgLT4gc2lzQXBpICJBUEkgY2FsbCBmb3IgaW5mb3JtYXRpb24iCiAgICAgICAgLy8gZW5yb2xsTWFuYWdlciAtPiBub3RpZiAiU2VuZCBub3RpZmljYXRpb24gdG8gc3R1ZGVudCIKICAgICAgICAKICAgICAgICBjbGFzc01hdCAtPiBjbGFzc01hdERCICJXcml0ZSBhbmQgUmVhZCIKICAgICAgICBjbGFzc01hdCAtPiBub3RpZiAic2VuZCBub3RpZmljYXRpb24gdG8gc3R1ZGVudCIKICAgICAgICAKICAgICAgICBjb3Vyc2VFc3RhIC0+IGNvdXJzZUVzdGFEQiAiV3JpdGUgdG8iCiAgICAgICAgY291cnNlRXN0YSAtPiBub3RpZiAic2VuZCBub3RpZmljYXRpb24gdG8gdXNlciIKICAgICAgICAKICAgICAgICAKICAgICAgICAjIHJlbGF0aW9uc2hpcHMgb2YgRW5yb2xsbWVudCBzeXN0ZW0gY29udGFpbmVycwogICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gd2ViU2VydmVyICJTZXJ2ZWQgZnJvbSIKICAgICAgICBlbnJvbGxkYXNoYm9hcmRIVE1MIC0+IGFwaUdhdGVXYXkgIk1ha2UgQVBJIGNhbGxzIHRvIgogICAgICAgICAKICAgICAgICBhcGlHYXRlV2F5IC0+IGNsYXNzTWF0ICJSb3V0ZXMgY2xhc3MgbWF0ZXJpYWwgcmVxdWVzdHMiCiAgICAgICAgYXBpR2F0ZVdheSAtPiBjb3Vyc2VFc3RhICJSb3V0ZSBjb3Vyc2UgZXN0YWJsaXNobWVudCByZXF1ZXN0cyIKICAgICAgICAKICAgICAgICAvLyBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsZGFzaGJvYXJkSFRNTCAiRGVsaXZlcnMgY29udGVudCB0byIKICAgICAgICAvLyBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsTWFuYWdlciAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIC8vIGVucm9sbGRhc2hib2FyZEFwcCAtPiBjbGFzc01hdCAiQVBJIGNhbGwgcmVhZC93cml0ZSBlbnJvbGxtZW50IGluZm9ybWF0aW9uIgogICAgICAgIC8vIGVucm9sbGRhc2hib2FyZEFwcCAtPiBjb3Vyc2VFc3RhICJBUEkgY2FsbCByZWFkL3dyaXRlIGVucm9sbG1lbnQgaW5mb3JtYXRpb24iCiAgICAgICAgLy8gZW5yb2xsTWFuYWdlciAtPiBhdWRpdExvZ0RCICJXcml0ZSB0byIKICAgICAgICAvLyBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gZW5yb2xsSW50ZXJmYWNlICJFbnJvbGwgb3IgdW5lbnJvbGwgY291cnNlcyIKICAgICAgICAvLyBlbnJvbGxkYXNoYm9hcmRBcHAgLT4gaGlzdG9yeUludGVyZmFjZSAiQWNjZXNzIEVucm9sbCBoaXN0b3J5IgogICAgICAgIAogICAgICAgICMgPT09PT09PT09PT09PT09IENvbXBvbmVudCA8LT4gQ29udGFpbmVyIHJlbGF0aW9uc2hpcHMgPT09PT09PT09PT09PT09CiAgICAgICAgIyBlbnJvbGxtZW50IG1hbmFnZXIgb3V0c2lkZSByZWxhdGlvbnNzaGlwcwogICAgICAgIC8vIGVucm9sbFJlcCAtPiBlbnJvbGxEQiAiU2VuZCBkYXRhIHRvIGRhdGFiYXNlIgogICAgICAgIC8vIGRhdGFTeW5jIC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBmcm9tIgogICAgICAgIC8vIGVucm9sbFJlcCAtPiBhdWRpdExvZ0RCICJXcml0ZSB0byIKICAgICAgICAKICAgICAgICAjIGVucm9sbGRhc2hib2FyZGFwcCBvdXRzaWRlIHJlbGF0aW9uc3NoaXBzCiAgICAgICAgLy8gZW5yb2xsUmVwb3NpdG9yeSAtPiBlbnJvbGxEQiAiUmVhZHMgYW5kIHdyaXRlIHRvIgogICAgICAgIC8vIGNvdXJzZUVzdGFSZXBvc2l0b3J5IC0+IGNvdXJzZUVzdGFEQiAiUmVhZCBhbmQgd3JpdGUgdG8iCiAgICAgICAgLy8gY2xhc3NNYXRSZXBvc2l0b3J5IC0+IGNsYXNzTWF0REIgIlJlYWQgYW5kIHdyaXRlIHRvIgogICAgICAgIAogICAgICAgICMgY2xhc3MgTWF0ZXJpYWwKICAgICAgICBjbGFzc01hdERCQ29tbSAtPiBjbGFzc01hdERCICJCdWlsZHMgcmVxdWVzdHMgKyBRdWVycmllcyBkYXRhYmFzZSIKICAgICAgICAjY291cnNlRXN0YWJsaXNtZW50REJDb21tIC0+IGNvdXJzZUVzdGFEQiAiQnVpbGRzIHJlcXVlc3RzICsgUXVlcnJpZXMgZGF0YWJhc2UiCiAgICAgICAgCiAgICAgICAgLy8gZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGhvbWV3b3JrQVBJICJDcmVhdGUvc3VibWl0IGhvbWV3b3JrIgogICAgICAgIC8vIGVucm9sbGRhc2hib2FyZEFwcCAtPiBsZWN0dXJlTWF0ZXJpYWwgIkFkZCBjb3Vyc2UgbWF0ZXJpYWwiCiAgICAgICAgCiAgICAgICAgIyBDbGFzcyBFc3RhYmxpc2htZW50CiAgICAgICAgY291cnNlRGF0YWJhc2VDb21tdW5pY2F0b3IgLT4gY291cnNlRXN0YURCICJXcml0ZXMvcmVhZHMgZGF0YSIKICAgICAgICBjb3Vyc2VOb3RpZmVyIC0+IG5vdGlmICJTZW5kIG5vdGlmaWNhdGlvbiByZXF1ZXN0IgogICAgICAgIC8vIGVucm9sbGRhc2hib2FyZEFwcCAtPiBjb3Vyc2VDaGFuZ2VyQXBpQ29ubmVjdG9yICJHaXZlcyBkYXRhIHRvIGNoYW5nZSBjb3Vyc2UiCiAgICAgICAgLy8gZW5yb2xsZGFzaGJvYXJkQXBwIC0+IGNvdXJzZUNyZWF0aW9uQXBpQ29ubmVjdG9yICJHaXZlcyBkYXRhIGZvciBjcmVhdGluZyBuZXcgY291cnNlIgoKICAgICAgICBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkxpdmUiICAgIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIldlYiBTZXJ2ZXIiICIiICJSZWQgSGF0IEVudGVycHJpc2UgTGludXggOS40IiAgIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJOZ2lueCIgIiIgIk5naW54IDEuMjcuMiIgIHsKICAgICAgICAgICAgICAgICAgICB3ZWJTZXJ2ZXJJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHdlYlNlcnZlcgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJVc2VycydzIERldmljZSIgIk9TOiAoV2luZG93cywgTGludXgsIE1hYykiICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiVXNlcidzIHdlYiBicm93c2VyIiAiIiAiQ2hyb21lLCBGaXJlZm94LCBTYWZhcmksIEVkZ2UiICAgIHsKICAgICAgICAgICAgICAgICAgICBkYXNoYm9hcmRIVE1MSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBlbnJvbGxkYXNoYm9hcmRIVE1MCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0gICAgCiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBUEkgR2F0ZXdheSBTZXJ2ZXIiICIiICJSZWQgSGF0IEVudGVycHJpc2UgTGludXggOS40IiAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFQSSBHYXRld2F5IFNlcnZpY2UiICJSZXF1ZXN0IFJvdXRpbmciICJBcGFjaGUgVG9tYWN0IDExLjAuMCIgewogICAgICAgICAgICAgICAgICAgIGFwaUdhdGVXYXlJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGFwaUdhdGVXYXkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZ3JvdXAgIkFwcGxpY2F0aW9uIFNlcnZlciIgewogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRW5yb2xsbWVudCBTZXJ2ZXIiICIiICJSZWQgSGF0IEVudGVycHJpc2UgTGludXggOS40IiAgIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJlbnJvbGxCYWNrZW5kIHNlcnZlciIgIiIgIlNwcmluZyBCb290IDMuMCIgIHsKICAgICAgICAgICAgICAgICAgICBlbnJvbGxJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGVucm9sbE1hbmFnZXIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQ2xhc3MgTWF0ZXJpYWwgU2VydmVyIiAiIiAiUmVkIEhhdCBFbnRlcnByaXNlIExpbnV4IDkuNCIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiY2xhc3NNYXRCYWNrZW5kIHNlcnZlciIgIiIgIlNwcmluZyBCb290IDMuMCIgIHsKICAgICAgICAgICAgICAgICAgICBjbGFzc01hdEluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgY2xhc3NNYXQKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQ291cnNlIEVzdGFibGlzaG1lbnQgU2VydmVyIiAiIiAiUmVkIEhhdCBFbnRlcnByaXNlIExpbnV4IDkuNCIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiY291cnNlRXN0YUJhY2tlbmQgc2VydmVyIiAiIiAiU3ByaW5nIEJvb3QgMy4wIiAgewogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGFJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGNvdXJzZUVzdGEKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgCiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJEYXRhYmFzZSBTZXJ2ZXIiICIiICJSZWQgSGF0IEVudGVycHJpc2UgTGludXggOS40IiAgIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJSZWxhdGlvbmFsIERCIHNlcnZlciIgIiIgIlBvc3RncmVTUUwgMTciIHsKICAgICAgICAgICAgICAgICAgICBlbnJvbGxEQkluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZW5yb2xsREIKICAgICAgICAgICAgICAgICAgICBkZXZpY2VEQkluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgY291cnNlRXN0YURCCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRmlsZSBzdG9yYWdlIiAiIiAiTW9uZ29EQiA4LjE1IiAgewogICAgICAgICAgICAgICAgICAgIGNsYXNzTWF0REJJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGNsYXNzTWF0REIgIyBHcmlkRlMKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJMb2cgc3RvcmFnZSIgIiIgIkVsYXN0aWNzZWFyY2ggOC4xNSIgIHsKICAgICAgICAgICAgICAgICAgICBhdWRpdExvZ0RCSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBhdWRpdExvZ0RCCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICAjIHVzZXIgcmVsYXRpb25zaGlwIC0gc3lzdGVtIGxldmVsCiAgICAgICAgc3R1ZGVudCAtPiBlbnJvbGxtZW50U3lzICJWaWV3LCBlbnJvbGwsIHVuZW5yb2xsIGluIGNvdXJzZXMgYW5kIGNsYXNzIG1hdGVyaWFsIgogICAgICAgIHRlYWNoZXIgLT4gZW5yb2xsbWVudFN5cyAiRXN0YWJsaXNoIGNvdXJzZSwgdW5lbnJvbGwgb3IgZW5yb2xsIHN0dWRlbnQgYmFzZSBvbiByZXF1ZXN0LCBhbmQgdXBsb2FkIGNsYXNzIG1hdGVyaWFsIgogICAgICAgIGFkbWluIC0+IGVucm9sbG1lbnRTeXMgImFkbWluaXN0ZXIgZW5yb2xsLCB1bmVucm9sbCBmb3Igc3R1ZGVudCBpbiBjb3Vyc2VzIgogICAgICAgIG5vdGlmIC0+IHN0dWRlbnQgIk5vdGlmeSBzdHVkZW5kIGFib3V0IGNoYW5nZXNlIGluIGNvdXJzZXMiCiAgICAgICAgbm90aWYgLT4gdGVhY2hlciAiTm90aWZ5IHRlYWNoZXIgb24gdGhlIGNvdXJzZXMgZXN0YWJsaXNoZWQiCgogICAgICAgICMgdXNlciByZWxhdGlvbnNoaXAgLSBjb250YWluZXIgbGV2ZWwKICAgICAgICBhZG1pbiAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJNYW5hZ2UgZW5yb2xsIGFuZCB1bmVucm9sbCIKICAgICAgICBzdHVkZW50IC0+IGVucm9sbGRhc2hib2FyZEhUTUwgIlZpZXcsIGVucm9sbCBpbiBjb3Vyc2VzLiBDaGVjayBmb3IgY2xhc3MgbWF0ZXJpYWwiCiAgICAgICAgdGVhY2hlciAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJWaWV3LCBlc3RhYmxpc2ggY291cnNlcy4gVmlldyBhbmQgbWFuYWdlIGNsYXNzIG1hdGVyaWFsIgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGVucm9sbG1lbnRTeXMgImVucm9sbG1lbnRTeXN0ZW1Db250ZXh0RGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBlbnJvbGxtZW50U3lzICJlbnJvbGxtZW50U3lzdGVtQ29udGFpbmVyRGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSAibm90aWYgLT4gdGVhY2hlciIKICAgICAgICAgICAgZXhjbHVkZSAibm90aWYgLT4gc3R1ZGVudCIKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBlbnJvbGxNYW5hZ2VyICJlbnJvbGxtZW50U3lzdGVtQ29tcG9uZW50RGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSAiYXBpR2F0ZVdheSAtPiBjb3Vyc2VFc3RhIgogICAgICAgICAgICBleGNsdWRlICJjb3Vyc2VFc3RhIC0+IG5vdGlmIgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGNvdXJzZUVzdGEgImNvdXJzZUVzdGFTeXN0ZW1Db21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBlbnJvbGxtZW50U3lzICJTdHVkZW50X0Vucm9sbG1lbnRfQ29udGFpbmVyX0R5bmFtaWMiICJTdHVkZW50IHRvIGVucm9sbCBpbiBhIGNvdXJzZSAtIENvbnRhaW5lciBEeW5hbWljcyIgewogICAgICAgICAgICAgICAgICAgIHN0dWRlbnQgLT4gZW5yb2xsZGFzaGJvYXJkSFRNTCAiQWNjZXNzIGVucm9sbG1lbnQgcGFnZSBhbmQgc3VibWl0IGNvdXJzZSBlbnJvbGxtZW50IHJlcXVlc3QiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsZGFzaGJvYXJkSFRNTCAtPiBhcGlHYXRlV2F5ICJTZW5kIGVucm9sbG1lbnQgQVBJIHJlcXVlc3QiCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgYXBpR2F0ZVdheSAtPiBlbnJvbGxNYW5hZ2VyICJSb3V0ZSByZXF1ZXN0IHRvIHByb2Nlc3MgZW5yb2xsbWVudCIKICAgICAgICAgICAgICAgICAgICBlbnJvbGxNYW5hZ2VyIC0+IGNvdXJzZUVzdGEgIkNoZWNrIGNvdXJzZSBhdmFpbGFiaWxpdHkiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRXN0YSAtPiBjb3Vyc2VFc3RhREIgIlF1ZXJ5IGNvdXJzZSBkZXRhaWwiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRXN0YURCIC0+IGNvdXJzZUVzdGEgIlJldHVybnMgY291cnNlIGRldGFpbCIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFc3RhIC0+IGVucm9sbE1hbmFnZXIgIlJldHVybiBjb3Vyc2UgYXZhaWxhYmlsaXR5IGFuZCBkZXRhaWwiCiAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBlbnJvbGxEQiAiVmFsaWRhdGUgYW5kIHN0b3JlIGVucm9sbG1lbnQgZGF0YSIKICAgICAgICAgICAgICAgICAgICBlbnJvbGxNYW5hZ2VyIC0+IGF1ZGl0TG9nREIgIkxvZyBlbnJvbGxtZW50IGV2ZW50IgogICAgICAgICAgICAgICAgICAgIGVucm9sbE1hbmFnZXIgLT4gbm90aWYgIlNlbmQgY29uZmlybWF0aW9uIHRvIHN0dWRlbnQiCiAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsTWFuYWdlciAtPiBhcGlHYXRlV2F5ICJSZXR1cm4gZW5yb2xsbWVudCBzdGF0dXMiCiAgICAgICAgICAgICAgICAgICAgYXBpR2F0ZVdheSAtPiBlbnJvbGxkYXNoYm9hcmRIVE1MICJEZWxpdmVyIGVucm9sbG1lbnQgc3RhdHVzIgogICAgICAgICAgICAgICAgICAgIGVucm9sbGRhc2hib2FyZEhUTUwgLT4gc3R1ZGVudCAiRGlzcGxheXMgZW5yb2xsbWVudCBjb25maXJtYXRpb24gbWVzc2FnZSIKICAgICAgICAKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBlbnJvbGxNYW5hZ2VyICJTdHVkZW50X0Vucm9sbG1lbnRfQ29tcG9uZW50X0R5bmFtaWMiICJTdHVkZW50IHRvIGVucm9sbCBpbiBhIGNvdXJzZSAtIENvbnRhaW5lciBEeW5hbWljcyJ7CiAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlNob3dzIHRoZSBjb21wb25lbnQgaW50ZXJhY3Rpb25zIHdpdGhpbiBFbnJvbGxtZW50IE1hbmFnZXIgd2hlbiBhIHN0dWRlbnQgZW5yb2xscyBpbiBhIGNvdXJzZS4iCiAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgYXBpR2F0ZVdheSAtPiBjb3Vyc2VFbnJvbGxtZW50Q29udHJvbGxlciAiUm91dGVzIGVucm9sbG1lbnQgcmVxdWVzdCB0byBtYW5hZ2UgY291cnNlIGVucm9sbG1lbnQiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRW5yb2xsbWVudENvbnRyb2xsZXIgLT4gY291cnNlRW5yb2xsbWVudCAiQ2FsbHMgYnVzaW5lc3MgbG9naWMgdG8gcHJvY2VzcyBlbnJvbGxtZW50IHJlcXVlc3QiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRW5yb2xsbWVudCAtPiBzaXNBcGkgIlJldHJpZXZlIHN0dWRlbnQgcHJvZmlsZSBpbmZvcm1hdGlvbiIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50IC0+IGNvdXJzZUVzdGEgIkZldGNoIGNvdXJzZSBkZXRhaWxzIGZvciBlbnJvbGxtZW50IHZlcmlmaWNhdGlvbiIKICAgICAgICAgICAgICAgICAgICBjb3Vyc2VFbnJvbGxtZW50IC0+IGVucm9sbG1lbnRSZXBvc2l0b3J5ICJTYXZlcyBlbnJvbGxtZW50IGRhdGEiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsbWVudFJlcG9zaXRvcnkgLT4gZW5yb2xsREIgIlBlcnNpc3RlcyBkYXRhIGludG8gdGhlIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVucm9sbG1lbnQgLT4gYXVkaXRMb2dSZXBvc2l0b3J5ICJMb2dzIGVucm9sbG1lbnQgZXZlbnQgZm9yIGF1ZGl0aW5nIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVucm9sbG1lbnQgLT4gbm90aWYgIlNlbmQgY29uZmlybWF0aW9uIG5vdGlmaWNhdGlvbiB0byBzdHVkZW50IgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVucm9sbG1lbnQgLT4gY291cnNlRW5yb2xsbWVudENvbnRyb2xsZXIgIlJldHVybnMgZW5yb2xsbWVudCBzdGF0dXMiCiAgICAgICAgICAgICAgICAgICAgY291cnNlRW5yb2xsbWVudENvbnRyb2xsZXIgLT4gYXBpR2F0ZVdheSAiUmV0dXJucyBlbnJvbGxtZW50IHJlc3BvbnNlIgogICAgICAgIAogICAgICAgICAgICAgICAgfQoKICAgICAgICBkeW5hbWljIGVucm9sbE1hbmFnZXIgIkVucm9sbG1lbnRIaXN0b3J5X0NvbnRhaW5lcl9EeW5hbWljIiAiU3R1ZGVudCB2aWV3IGVucm9sbG1lbnQgaGlzdG9yeSAtIENvbnRhaW5lciBEeW5hbWljcyIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJTaG93cyB0aGUgY29tcG9uZW50IGludGVyYWN0aW9ucyB3aXRoaW4gRW5yb2xsbWVudCBNYW5hZ2VyIHdoZW4gYSBzdHVkZW50IHJlcXVlc3RzIHRvIHZpZXcgdGhlaXIgZW5yb2xsbWVudCBoaXN0b3J5LiIKICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICBhcGlHYXRlV2F5IC0+IGVucm9sbG1lbnRIaXN0b3J5Q29udHJvbGxlciAiUm91dGVzIHJlcXVlc3QgdG8gcmV0cmlldmUgZW5yb2xsbWVudCBoaXN0b3J5IgogICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsbWVudEhpc3RvcnlDb250cm9sbGVyIC0+IGVucm9sbG1lbnRIaXN0b3J5ICJDYWxscyBidXNpbmVzcyBsb2dpYyB0byBwcm9jZXNzIGVucm9sbG1lbnQgaGlzdG9yeSByZXF1ZXN0IgogICAgICAgIAogICAgICAgICAgICAgICAgICAgIGVucm9sbG1lbnRIaXN0b3J5IC0+IGVucm9sbG1lbnRSZXBvc2l0b3J5ICJGZXRjaGVzIHN0dWRlbnQgZW5yb2xsbWVudCBkYXRhIgogICAgICAgICAgICAgICAgICAgIGVucm9sbG1lbnRSZXBvc2l0b3J5IC0+IGVucm9sbERCICJRdWVyaWVzIGRhdGFiYXNlIGZvciBlbnJvbGxtZW50IHJlY29yZHMiCiAgICAgICAgICAgICAgICAgICAgZW5yb2xsREIgLT4gZW5yb2xsbWVudFJlcG9zaXRvcnkgIlJldHVybnMgZW5yb2xsbWVudCByZWNvcmRzIgogICAgICAgICAgICAgICAgICAgIGVucm9sbG1lbnRSZXBvc2l0b3J5IC0+IGVucm9sbG1lbnRIaXN0b3J5ICJSZXR1cm5zIGVucm9sbG1lbnQgZGF0YSIKICAgICAgICAKICAgICAgICAgICAgICAgICAgICBlbnJvbGxtZW50SGlzdG9yeSAtPiBjb3Vyc2VFc3RhICJGZXRjaGVzIGNvdXJzZSBtZXRhZGF0YSAobmFtZXMsIGNvZGVzLCBldGMpIgogICAgICAgICAgICAgICAgICAgIGNvdXJzZUVzdGEgLT4gZW5yb2xsbWVudEhpc3RvcnkgIlJldHVybnMgY291cnNlIG1ldGFkYXRhIgogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIGVucm9sbG1lbnRIaXN0b3J5IC0+IGVucm9sbG1lbnRIaXN0b3J5Q29udHJvbGxlciAiUmV0dXJucyBjb21waWxlZCBlbnJvbGxtZW50IGhpc3RvcnkgZGF0YSIKICAgICAgICAKICAgICAgICAgICAgICAgICAgICBlbnJvbGxtZW50SGlzdG9yeUNvbnRyb2xsZXIgLT4gYXBpR2F0ZVdheSAiUmV0dXJucyBlbnJvbGxtZW50IGhpc3RvcnkgcmVzcG9uc2UiCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgCiAgICAgICAgICAgICAgICB9CgogICAgICAgIC8vIGR5bmFtaWMgZW5yb2xsTWFuYWdlciAiZW5yb2xsRHluYW1pY1ZpZXciIHsKICAgICAgICAvLyAgICAgZW5yb2xsSW50ZXJmYWNlIC0+IGVucm9sbEluICJTZW5kIGVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgogICAgICAgIC8vICAgICBlbnJvbGxJbnRlcmZhY2UgLT4gdW5lbnJvbGxJbiAiU2VuZCB1bmVucm9sbG1lbnQgaW5mb3JtYXRpb24gZnJvbSB1c2VyIHRvIHZhbGlkYXRlIgoKICAgICAgICAvLyAgICAgZW5yb2xsSW4gLT4gZW5yb2xsVmFsaWRhdGlvbiAiUmVxdWVzdCB2YWxpZGF0aW9uIGZvciBlbnJvbGxtZW50IgogICAgICAgIC8vICAgICB1bmVucm9sbEluIC0+IGVucm9sbFZhbGlkYXRpb24gIlJlcXVlc3QgdmFsaWRhdGlvbiBmb3IgdW5lbnJvbGxtZW50IgoKICAgICAgICAvLyAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBkYXRhU3luYyAiUmVhZCBmcm9tIgogICAgICAgIC8vICAgICBkYXRhU3luYyAtPiBzaXNBcGkgIlJlYWQgZnJvbSIKICAgICAgICAvLyAgICAgZW5yb2xsVmFsaWRhdGlvbiAtPiBlcnJvckhhbmRsZXIgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgLy8gICAgIGVycm9ySGFuZGxlciAtPiBlbnJvbGxMb2cgIlNlbmQgZXJyb3IgdG8iCiAgICAgICAgLy8gICAgIGVycm9ySGFuZGxlciAtPiBub3RpZmVyICJTZW5kIGVycm9yIHRvIgogICAgICAgIC8vICAgICBub3RpZmVyIC0+IG5vdGlmICJTZW5kIG5vdGlmaWNhdGlvbiIKCiAgICAgICAgLy8gICAgIGVucm9sbFZhbGlkYXRpb24gLT4gZW5yb2xsSGlzdG9yeSAiU2VuZCBlbnJvbGwvdW5lbnJvbGwgdG8gaGlzdG9yeSIKICAgICAgICAvLyAgICAgZW5yb2xsSGlzdG9yeSAtPiBlbnJvbGxSZXAgIlNlbmQgZGF0YSB0byByZXBvc2l0b3J5IgogICAgICAgIC8vICAgICBlbnJvbGxMb2cgLT4gZW5yb2xsUmVwICJTZW5kIGRhdGEgdG8gcmVwb3NpdG9yeSIKICAgICAgICAvLyAgICAgZW5yb2xsUmVwIC0+IGVucm9sbERCICJTdG9yZSBkYXRhIGluIGRhdGFiYXNlIgoKICAgICAgICAvLyB9CgogICAgICAgIC8vIGR5bmFtaWMgZW5yb2xsTWFuYWdlciAiZW5yb2xsSGlzdG9yeUR5bmFtaWNWaWV3InsKICAgICAgICAvLyAgICAgaGlzdG9yeUludGVyZmFjZSAtPiBlbnJvbGxIaXN0b3J5ICJTZW5kIGVucm9sbG1lbnQgaGlzdG9yeSBpbmZvcm1hdGlvbiBmcm9tIHVzZXIgdG8gZ2V0IGluZm9ybWF0aW9uIgogICAgICAgIC8vICAgICBlbnJvbGxIaXN0b3J5IC0+IGVucm9sbFJlcCAiU2VuZCBkYXRhIHRvIHJlcG9zaXRvcnkiCiAgICAgICAgLy8gICAgIGVucm9sbFJlcCAtPiBlbnJvbGxEQiAicmVhZCBEYXRhIGZyb20gZGF0YWJhc2UiCiAgICAgICAgLy8gfQoKICAgICAgICBkeW5hbWljIGNvdXJzZUVzdGEgImNvdXJzZUVzdGFEeW5hbWljVmlldyJ7CiAgICAgICAgICAgIGNvdXJzZUNoYW5nZXJBcGlDb25uZWN0b3IgLT4gY291cnNlQ29udHJvbGxlciAiU2VuZHMgcmVxdWVzdCB0byBjaGFuZ2UgY291cnNlIGVucm9sbCBzdGF0dXMiCiAgICAgICAgICAgIGNvdXJzZUNvbnRyb2xsZXIgLT4gY291cnNlVmFsaWRhdG9yCiAgICAgICAgICAgIGNvdXJzZVZhbGlkYXRvciAtPiBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvcgogICAgICAgICAgICBjb3Vyc2VEYXRhYmFzZUNvbW11bmljYXRvciAtPiBjb3Vyc2VFc3RhREIKICAgICAgICAgICAgY291cnNlQ29udHJvbGxlciAtPiBjb3Vyc2VOb3RpZmVyCiAgICAgICAgICAgIGNvdXJzZU5vdGlmZXIgLT4gbm90aWYKICAgICAgICB9CgogICAgICAgIC8vIGNvbXBvbmVudCBlbnJvbGxkYXNoYm9hcmRBcHAgImVucm9sbGRhc2hib2FyZEFwcENvbXBvbmVudERpYWdyYW0iIHsKICAgICAgICAvLyAgICAgaW5jbHVkZSAqCiAgICAgICAgLy8gfQoKICAgICAgICBjb21wb25lbnQgY2xhc3NNYXQgImNsYXNzTWF0ZXJpYWxDb21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAjIGluY2x1ZGUgZW5yb2xsZGFzaGJvYXJkQXBwIC0+CiAgICAgICAgfQoKICAgICAgICBkeW5hbWljIGNsYXNzTWF0ICJjbGFzc01hdGVyaWFsRHluYW1pY1ZpZXciIHsKICAgICAgICAgICAgIyBpbmNsdWRlICoKCiAgICAgICAgICAgIGhvbWV3b3JrQVBJIC0+IGhvbWV3b3JrQ29udHJvbGxlciAiRm9yd2FyZCByZXF1ZXN0IgogICAgICAgICAgICBob21ld29ya0NvbnRyb2xsZXIgLT4gaG9tZXdvcmtTdWJtaXNpb25WZXJpZmllcgogICAgICAgICAgICBob21ld29ya0NvbnRyb2xsZXIgLT4gYXV0aGVudGljYXRvciAiMyIKICAgICAgICAgICAgaG9tZXdvcmtDb250cm9sbGVyIC0+IGNsYXNzTWF0REJDb21tICI0IgoKICAgICAgICAgICAgbGVjdHVyZU1hdGVyaWFsIC0+IGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgIjEiCiAgICAgICAgICAgIGxlY3R1cmVNYXRlcmlhbENvbnRyb2xsZXIgLT4gYXV0aGVudGljYXRvciAiMiIKICAgICAgICAgICAgbGVjdHVyZU1hdGVyaWFsQ29udHJvbGxlciAtPiBjb3Vyc2VFc3RhYmxpc21lbnREQkNvbW0gIjMiCgogICAgICAgIH0KCiAgICAgICAgZGVwbG95bWVudCBlbnJvbGxtZW50U3lzICJMaXZlIiAiTGl2ZV9EZXBsb3ltZW50IiAgIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBGcm9udC1FbmQiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiAgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICB9CgoKfQ=="
   },
   "views" : {
     "componentViews" : [ {
-      "containerId" : "35",
+      "containerId" : "49",
       "dimensions" : {
-        "height" : 4916,
-        "width" : 4329
+        "height" : 3001,
+        "width" : 4085
       },
       "elements" : [ {
         "id" : "4",
-        "x" : 208,
-        "y" : 4408
+        "x" : 1730,
+        "y" : 2500
       }, {
         "id" : "5",
-        "x" : 2608,
-        "y" : 3808
+        "x" : 2345,
+        "y" : 2500
       }, {
-        "id" : "8",
-        "x" : 2567,
-        "y" : 208
+        "id" : "9",
+        "x" : 1818,
+        "y" : 199
       }, {
-        "id" : "36",
-        "x" : 1096,
-        "y" : 808
+        "id" : "10",
+        "x" : 1165,
+        "y" : 2510
       }, {
-        "id" : "37",
-        "x" : 1846,
-        "y" : 808
+        "id" : "13",
+        "x" : 3435,
+        "y" : 1965
       }, {
-        "id" : "38",
-        "x" : 892,
-        "y" : 2008
+        "id" : "14",
+        "x" : 355,
+        "y" : 1845
       }, {
-        "id" : "39",
-        "x" : 892,
-        "y" : 2608
+        "id" : "50",
+        "x" : 1778,
+        "y" : 824
       }, {
-        "id" : "40",
-        "x" : 1642,
-        "y" : 1408
+        "id" : "51",
+        "x" : 2633,
+        "y" : 814
       }, {
-        "id" : "41",
-        "x" : 892,
-        "y" : 1408
+        "id" : "52",
+        "x" : 923,
+        "y" : 819
       }, {
-        "id" : "42",
-        "x" : 1846,
-        "y" : 3208
+        "id" : "53",
+        "x" : 1865,
+        "y" : 1355
       }, {
-        "id" : "43",
-        "x" : 1642,
-        "y" : 2608
+        "id" : "54",
+        "x" : 2907,
+        "y" : 1366
       }, {
-        "id" : "44",
-        "x" : 1096,
-        "y" : 3208
+        "id" : "55",
+        "x" : 887,
+        "y" : 1391
       }, {
-        "id" : "45",
-        "x" : 583,
-        "y" : 3808
+        "id" : "56",
+        "x" : 1200,
+        "y" : 1990
       }, {
-        "id" : "46",
-        "x" : 1333,
-        "y" : 3808
-      }, {
-        "id" : "100",
-        "x" : 2987,
-        "y" : 4408
-      }, {
-        "id" : "102",
-        "x" : 958,
-        "y" : 4408
-      }, {
-        "id" : "103",
-        "x" : 1708,
-        "y" : 4408
+        "id" : "57",
+        "x" : 2310,
+        "y" : 1960
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "enrollmentSystemComponentDiagram",
       "order" : 3,
-      "paperSize" : "A2_Portrait",
       "relationships" : [ {
-        "id" : "118",
-        "vertices" : [ {
-          "x" : 1696,
-          "y" : 600
-        } ]
-      }, {
-        "id" : "119"
-      }, {
-        "id" : "120",
-        "vertices" : [ {
-          "x" : 2458,
-          "y" : 4317
-        } ]
-      }, {
-        "id" : "121"
-      }, {
-        "id" : "122"
-      }, {
-        "id" : "47"
-      }, {
-        "id" : "48"
-      }, {
-        "id" : "49",
-        "vertices" : [ {
-          "x" : 2242,
-          "y" : 1304
-        }, {
-          "x" : 2242,
-          "y" : 1708
-        } ]
-      }, {
-        "id" : "50",
-        "vertices" : [ {
-          "x" : 742,
-          "y" : 2608
-        }, {
-          "x" : 742,
-          "y" : 2908
-        } ]
-      }, {
-        "id" : "51"
-      }, {
-        "id" : "54"
-      }, {
-        "id" : "57"
-      }, {
         "id" : "58"
-      }, {
-        "id" : "59"
       }, {
         "id" : "60"
       }, {
@@ -1770,22 +1395,56 @@
       }, {
         "id" : "62"
       }, {
-        "id" : "63",
-        "vertices" : [ {
-          "x" : 946,
-          "y" : 3208
-        }, {
-          "x" : 946,
-          "y" : 3612
-        }, {
-          "x" : 1183,
-          "y" : 3704
-        } ]
+        "id" : "63"
       }, {
         "id" : "64"
+      }, {
+        "id" : "65",
+        "vertices" : [ {
+          "x" : 1793,
+          "y" : 1574
+        } ]
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "71",
+        "vertices" : [ {
+          "x" : 2135,
+          "y" : 2250
+        } ]
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75",
+        "vertices" : [ {
+          "x" : 2978,
+          "y" : 1549
+        } ]
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77",
+        "vertices" : [ {
+          "x" : 3130,
+          "y" : 2280
+        } ]
+      }, {
+        "id" : "78",
+        "vertices" : [ {
+          "x" : 680,
+          "y" : 1635
+        } ]
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "80"
+      }, {
+        "id" : "82"
       } ]
     }, {
-      "containerId" : "81",
+      "containerId" : "14",
       "dimensions" : {
         "height" : 4316,
         "width" : 3383
@@ -1795,84 +1454,68 @@
         "x" : 741,
         "y" : 3808
       }, {
-        "id" : "8",
-        "x" : 1183,
-        "y" : 208
+        "id" : "12",
+        "x" : 2720,
+        "y" : 2845
       }, {
-        "id" : "82",
+        "id" : "15",
         "x" : 1183,
         "y" : 808
       }, {
-        "id" : "83",
+        "id" : "16",
         "x" : 433,
         "y" : 808
       }, {
-        "id" : "84",
+        "id" : "17",
         "x" : 1183,
         "y" : 1408
       }, {
-        "id" : "85",
+        "id" : "18",
         "x" : 433,
         "y" : 1408
       }, {
-        "id" : "86",
+        "id" : "19",
         "x" : 1041,
         "y" : 2008
       }, {
-        "id" : "87",
+        "id" : "20",
         "x" : 1008,
         "y" : 2608
       }, {
-        "id" : "88",
+        "id" : "21",
         "x" : 741,
         "y" : 3208
       }, {
-        "id" : "89",
+        "id" : "22",
         "x" : 1945,
         "y" : 2608
-      }, {
-        "id" : "102",
-        "x" : 2708,
-        "y" : 3208
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "courseEstaSystemComponentDiagram",
       "order" : 4,
       "paperSize" : "A3_Portrait",
       "relationships" : [ {
-        "id" : "127"
+        "id" : "23"
       }, {
-        "id" : "128"
+        "id" : "24"
       }, {
-        "id" : "129",
-        "vertices" : [ {
-          "x" : 1033,
-          "y" : 600
-        } ]
+        "id" : "25"
       }, {
-        "id" : "130"
+        "id" : "26"
       }, {
-        "id" : "90"
-      }, {
-        "id" : "91"
-      }, {
-        "id" : "92"
-      }, {
-        "id" : "93"
-      }, {
-        "id" : "94",
+        "id" : "27",
         "vertices" : [ {
           "x" : 858,
           "y" : 3012
         } ]
       }, {
-        "id" : "95",
+        "id" : "28",
         "vertices" : [ {
           "x" : 1912,
           "y" : 2008
         } ]
       }, {
-        "id" : "96",
+        "id" : "29",
         "vertices" : [ {
           "x" : 1641,
           "y" : 2008
@@ -1881,220 +1524,75 @@
           "y" : 2308
         } ]
       }, {
-        "id" : "97"
+        "id" : "30"
       }, {
-        "id" : "98",
+        "id" : "31",
         "vertices" : [ {
           "x" : 1812,
           "y" : 2504
         } ]
       }, {
-        "id" : "99"
+        "id" : "32"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "94"
       } ]
     }, {
-      "containerId" : "8",
-      "dimensions" : {
-        "height" : 4900,
-        "width" : 2430
-      },
-      "elements" : [ {
-        "id" : "7",
-        "x" : 990,
-        "y" : 199
-      }, {
-        "id" : "9",
-        "x" : 240,
-        "y" : 1099
-      }, {
-        "id" : "10",
-        "x" : 240,
-        "y" : 1699
-      }, {
-        "id" : "11",
-        "x" : 990,
-        "y" : 1099
-      }, {
-        "id" : "12",
-        "x" : 990,
-        "y" : 1699
-      }, {
-        "id" : "13",
-        "x" : 1740,
-        "y" : 1099
-      }, {
-        "id" : "14",
-        "x" : 1740,
-        "y" : 1699
-      }, {
-        "id" : "15",
-        "x" : 240,
-        "y" : 2599
-      }, {
-        "id" : "16",
-        "x" : 990,
-        "y" : 2599
-      }, {
-        "id" : "17",
-        "x" : 1740,
-        "y" : 2599
-      } ],
-      "externalContainerBoundariesVisible" : false,
-      "key" : "enrolldashboardAppComponentDiagram",
-      "order" : 7,
-      "relationships" : [ {
-        "id" : "18",
-        "vertices" : [ {
-          "x" : 724,
-          "y" : 702
-        } ]
-      }, {
-        "id" : "20",
-        "vertices" : [ {
-          "x" : 1065,
-          "y" : 799
-        } ]
-      }, {
-        "id" : "21",
-        "vertices" : [ {
-          "x" : 1474,
-          "y" : 895
-        } ]
-      }, {
-        "id" : "22",
-        "vertices" : [ {
-          "x" : 955,
-          "y" : 895
-        } ]
-      }, {
-        "id" : "24",
-        "vertices" : [ {
-          "x" : 1365,
-          "y" : 799
-        } ]
-      }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 1705,
-          "y" : 702
-        } ]
-      }, {
-        "id" : "26",
-        "vertices" : [ {
-          "x" : 615,
-          "y" : 1549
-        } ]
-      }, {
-        "id" : "27"
-      }, {
-        "id" : "28",
-        "vertices" : [ {
-          "x" : 315,
-          "y" : 1549
-        } ]
-      }, {
-        "id" : "29",
-        "vertices" : [ {
-          "x" : 1365,
-          "y" : 1549
-        } ]
-      }, {
-        "id" : "30"
-      }, {
-        "id" : "31",
-        "vertices" : [ {
-          "x" : 1065,
-          "y" : 1549
-        } ]
-      }, {
-        "id" : "32",
-        "vertices" : [ {
-          "x" : 2115,
-          "y" : 1549
-        } ]
-      }, {
-        "id" : "33"
-      }, {
-        "id" : "34",
-        "vertices" : [ {
-          "x" : 1815,
-          "y" : 1549
-        } ]
-      } ]
-    }, {
-      "containerId" : "65",
+      "containerId" : "33",
       "dimensions" : {
         "height" : 3116,
         "width" : 3716
       },
       "elements" : [ {
-        "id" : "8",
-        "x" : 808,
-        "y" : 208
-      }, {
-        "id" : "66",
-        "x" : 433,
-        "y" : 808
-      }, {
-        "id" : "67",
-        "x" : 1183,
-        "y" : 808
-      }, {
-        "id" : "68",
-        "x" : 433,
-        "y" : 1408
-      }, {
-        "id" : "69",
-        "x" : 1183,
-        "y" : 1408
-      }, {
-        "id" : "70",
-        "x" : 433,
-        "y" : 2008
-      }, {
-        "id" : "71",
-        "x" : 1183,
-        "y" : 2008
-      }, {
-        "id" : "72",
-        "x" : 1945,
-        "y" : 2008
-      }, {
-        "id" : "73",
-        "x" : 2695,
-        "y" : 2008
-      }, {
-        "id" : "101",
+        "id" : "11",
         "x" : 1191,
         "y" : 2608
       }, {
-        "id" : "102",
-        "x" : 3041,
-        "y" : 2608
+        "id" : "34",
+        "x" : 433,
+        "y" : 808
+      }, {
+        "id" : "35",
+        "x" : 1183,
+        "y" : 808
+      }, {
+        "id" : "36",
+        "x" : 433,
+        "y" : 1408
+      }, {
+        "id" : "37",
+        "x" : 1183,
+        "y" : 1408
+      }, {
+        "id" : "38",
+        "x" : 433,
+        "y" : 2008
+      }, {
+        "id" : "39",
+        "x" : 1183,
+        "y" : 2008
+      }, {
+        "id" : "40",
+        "x" : 1945,
+        "y" : 2008
+      }, {
+        "id" : "41",
+        "x" : 2695,
+        "y" : 2008
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "classMaterialComponentDiagram",
-      "order" : 8,
+      "order" : 9,
       "paperSize" : "A3_Landscape",
       "relationships" : [ {
-        "id" : "123",
-        "vertices" : [ {
-          "x" : 1812,
-          "y" : 2517
-        } ]
+        "id" : "42"
       }, {
-        "id" : "124"
+        "id" : "43"
       }, {
-        "id" : "125"
+        "id" : "44"
       }, {
-        "id" : "126"
-      }, {
-        "id" : "74"
-      }, {
-        "id" : "75"
-      }, {
-        "id" : "76"
-      }, {
-        "id" : "77",
+        "id" : "45",
         "vertices" : [ {
           "x" : 1033,
           "y" : 1708
@@ -2103,20 +1601,26 @@
           "y" : 1904
         } ]
       }, {
-        "id" : "78"
+        "id" : "46"
       }, {
-        "id" : "79"
+        "id" : "47"
       }, {
-        "id" : "80",
+        "id" : "48",
         "vertices" : [ {
           "x" : 2545,
           "y" : 1904
+        } ]
+      }, {
+        "id" : "92",
+        "vertices" : [ {
+          "x" : 1812,
+          "y" : 2517
         } ]
       } ]
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Live_Deployment",
+      "lastSavedView" : "enrollmentSystemComponentDiagram",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -2136,532 +1640,738 @@
     },
     "containerViews" : [ {
       "dimensions" : {
-        "height" : 2654,
-        "width" : 6550
+        "height" : 3120,
+        "width" : 4062
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 4804,
-        "y" : 2129
+        "x" : 981,
+        "y" : 204
       }, {
         "id" : "2",
-        "x" : 5875,
-        "y" : 2129
+        "x" : 1816,
+        "y" : 94
       }, {
         "id" : "3",
-        "x" : 4162,
-        "y" : 329
+        "x" : 2566,
+        "y" : 194
       }, {
         "id" : "4",
-        "x" : 4912,
-        "y" : 1529
+        "x" : 155,
+        "y" : 910
       }, {
         "id" : "5",
-        "x" : 4162,
-        "y" : 1529
+        "x" : 3285,
+        "y" : 1215
       }, {
         "id" : "7",
-        "x" : 3504,
-        "y" : 929
+        "x" : 1766,
+        "y" : 874
       }, {
         "id" : "8",
-        "x" : 2004,
-        "y" : 329
+        "x" : 991,
+        "y" : 894
       }, {
-        "id" : "35",
-        "x" : 2754,
-        "y" : 929
+        "id" : "9",
+        "x" : 1811,
+        "y" : 1349
       }, {
-        "id" : "65",
-        "x" : 945,
-        "y" : 929
+        "id" : "10",
+        "x" : 735,
+        "y" : 2585
       }, {
-        "id" : "81",
-        "x" : 2004,
-        "y" : 929
+        "id" : "11",
+        "x" : 2500,
+        "y" : 2590
       }, {
-        "id" : "100",
-        "x" : 1191,
-        "y" : 1529
+        "id" : "12",
+        "x" : 1865,
+        "y" : 2590
       }, {
-        "id" : "101",
-        "x" : 354,
-        "y" : 1529
+        "id" : "13",
+        "x" : 1295,
+        "y" : 2580
       }, {
-        "id" : "102",
-        "x" : 1983,
-        "y" : 1529
+        "id" : "14",
+        "x" : 1841,
+        "y" : 1894
       }, {
-        "id" : "103",
-        "x" : 2754,
-        "y" : 1529
+        "id" : "33",
+        "x" : 2526,
+        "y" : 1889
+      }, {
+        "id" : "49",
+        "x" : 1116,
+        "y" : 1859
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "enrollmentSystemContainerDiagram",
       "order" : 2,
-      "paperSize" : "A2_Landscape",
       "relationships" : [ {
-        "id" : "104",
+        "id" : "136"
+      }, {
+        "id" : "137"
+      }, {
+        "id" : "138"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "85",
         "vertices" : [ {
-          "x" : 2604,
-          "y" : 1229
+          "x" : 2806,
+          "y" : 2014
         } ]
       }, {
-        "id" : "105"
+        "id" : "86"
       }, {
-        "id" : "106",
+        "id" : "87",
         "vertices" : [ {
-          "x" : 4612,
-          "y" : 1529
-        } ]
-      }, {
-        "id" : "107",
-        "vertices" : [ {
-          "x" : 3983,
-          "y" : 1529
-        } ]
-      }, {
-        "id" : "108"
-      }, {
-        "id" : "109"
-      }, {
-        "id" : "110",
-        "vertices" : [ {
-          "x" : 1854,
-          "y" : 1229
-        } ]
-      }, {
-        "id" : "111"
-      }, {
-        "id" : "112",
-        "vertices" : [ {
-          "x" : 2604,
-          "y" : 1229
-        } ]
-      }, {
-        "id" : "113",
-        "vertices" : [ {
-          "x" : 2979,
-          "y" : 779
-        } ]
-      }, {
-        "id" : "114"
-      }, {
-        "id" : "115"
-      }, {
-        "id" : "116"
-      }, {
-        "id" : "117"
-      }, {
-        "id" : "168"
-      }, {
-        "id" : "169",
-        "vertices" : [ {
-          "x" : 4762,
-          "y" : 1933
-        } ]
-      }, {
-        "id" : "170"
-      }, {
-        "id" : "171",
-        "vertices" : [ {
-          "x" : 5512,
-          "y" : 1933
+          "x" : 2056,
+          "y" : 2024
         }, {
-          "x" : 5512,
-          "y" : 1529
+          "x" : 2166,
+          "y" : 2079
         } ]
       }, {
-        "id" : "172",
-        "vertices" : [ {
-          "x" : 5741,
-          "y" : 1529
-        } ]
+        "id" : "88"
       }, {
-        "id" : "19",
-        "vertices" : [ {
-          "x" : 3034,
-          "y" : 639
-        } ]
+        "id" : "89"
       }, {
-        "id" : "23",
-        "vertices" : [ {
-          "x" : 2923,
-          "y" : 918
-        } ]
+        "id" : "90"
       }, {
-        "id" : "52",
+        "id" : "91",
         "vertices" : [ {
-          "x" : 3504,
-          "y" : 1229
-        } ]
-      }, {
-        "id" : "55",
-        "vertices" : [ {
-          "x" : 3504,
-          "y" : 1229
+          "x" : 2056,
+          "y" : 1774
         } ]
       } ],
       "softwareSystemId" : "6"
     } ],
     "deploymentViews" : [ {
       "dimensions" : {
-        "height" : 2666,
-        "width" : 4966
+        "height" : 2948,
+        "width" : 3680
       },
       "elements" : [ {
-        "id" : "131",
-        "x" : 175,
-        "y" : 175
+        "id" : "95",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "132",
-        "x" : 1470,
-        "y" : -75
+        "id" : "96",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "133",
-        "x" : 175,
-        "y" : 175
+        "id" : "97",
+        "x" : 750,
+        "y" : 75
       }, {
-        "id" : "134",
-        "x" : 175,
-        "y" : 175
+        "id" : "98",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "135",
-        "x" : 1540,
-        "y" : 470
+        "id" : "99",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "139",
-        "x" : 175,
-        "y" : 175
+        "id" : "100",
+        "x" : 1655,
+        "y" : 80
       }, {
-        "id" : "140",
-        "x" : 175,
-        "y" : 175
+        "id" : "102",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "141",
-        "x" : 537,
-        "y" : 1079
+        "id" : "103",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "143",
-        "x" : 175,
-        "y" : 175
+        "id" : "104",
+        "x" : 1680,
+        "y" : 695
       }, {
-        "id" : "144",
-        "x" : 175,
-        "y" : 175
+        "id" : "106",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "145",
-        "x" : 1508,
-        "y" : 1079
+        "id" : "107",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "147",
-        "x" : 175,
-        "y" : 175
+        "id" : "108",
+        "x" : 634,
+        "y" : 1500
       }, {
-        "id" : "148",
-        "x" : 175,
-        "y" : 175
+        "id" : "110",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "149",
-        "x" : 2479,
-        "y" : 1079
+        "id" : "111",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "151",
-        "x" : 175,
-        "y" : 175
+        "id" : "112",
+        "x" : 2634,
+        "y" : 1470
       }, {
-        "id" : "152",
-        "x" : 175,
-        "y" : 175
+        "id" : "114",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "153",
-        "x" : 1965,
-        "y" : 1900
+        "id" : "115",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "155",
-        "x" : 1215,
-        "y" : 1900
+        "id" : "116",
+        "x" : 1735,
+        "y" : 1505
       }, {
-        "id" : "159",
-        "x" : 175,
-        "y" : 175
+        "id" : "119",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "160",
-        "x" : 2727,
-        "y" : 1900
+        "id" : "120",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "162",
-        "x" : 175,
-        "y" : 175
+        "id" : "121",
+        "x" : 1240,
+        "y" : 2205
       }, {
-        "id" : "163",
-        "x" : 452,
-        "y" : 1900
+        "id" : "123",
+        "x" : 1830,
+        "y" : 2220
+      }, {
+        "id" : "125",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "126",
+        "x" : 2680,
+        "y" : 2200
+      }, {
+        "id" : "128",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "129",
+        "x" : 510,
+        "y" : 2215
       } ],
       "environment" : "Live",
       "key" : "Live_Deployment",
-      "order" : 10,
-      "paperSize" : "A2_Landscape",
+      "order" : 11,
       "relationships" : [ {
-        "id" : "136",
+        "id" : "101"
+      }, {
+        "id" : "105"
+      }, {
+        "id" : "109",
         "vertices" : [ {
-          "x" : 1730,
-          "y" : 347
+          "x" : 1470,
+          "y" : 1205
         } ]
       }, {
-        "id" : "137",
+        "id" : "113",
         "vertices" : [ {
-          "x" : 1581,
-          "y" : 366
+          "x" : 2340,
+          "y" : 1185
         } ]
       }, {
-        "id" : "138",
+        "id" : "117"
+      }, {
+        "id" : "118",
         "vertices" : [ {
-          "x" : 1878,
-          "y" : 328
+          "x" : 1925,
+          "y" : 1335
         } ]
       }, {
-        "id" : "142",
-        "vertices" : [ {
-          "x" : 1329,
-          "y" : 870
-        } ]
+        "id" : "122"
       }, {
-        "id" : "146"
+        "id" : "124"
       }, {
-        "id" : "150"
+        "id" : "127"
       }, {
-        "id" : "154",
-        "vertices" : [ {
-          "x" : 1329,
-          "y" : 1691
-        }, {
-          "x" : 2108,
-          "y" : 1725
-        } ]
-      }, {
-        "id" : "156"
-      }, {
-        "id" : "157",
-        "vertices" : [ {
-          "x" : 2108,
-          "y" : 1725
-        } ]
-      }, {
-        "id" : "158",
-        "vertices" : [ {
-          "x" : 1329,
-          "y" : 1691
-        }, {
-          "x" : 1375,
-          "y" : 1725
-        } ]
-      }, {
-        "id" : "161",
-        "vertices" : [ {
-          "x" : 2300,
-          "y" : 1691
-        }, {
-          "x" : 2887,
-          "y" : 1725
-        } ]
-      }, {
-        "id" : "164"
+        "id" : "130"
       } ],
       "softwareSystemId" : "6"
     } ],
     "dynamicViews" : [ {
+      "description" : "Student to enroll in a course - Container Dynamics",
       "dimensions" : {
-        "height" : 4558,
-        "width" : 3133
+        "height" : 2624,
+        "width" : 3257
       },
-      "elementId" : "35",
+      "elementId" : "6",
       "elements" : [ {
-        "id" : "4",
-        "x" : 433,
-        "y" : 4033
+        "id" : "1",
+        "x" : 200,
+        "y" : 232
       }, {
         "id" : "5",
-        "x" : 2458,
-        "y" : 3433
+        "x" : 2607,
+        "y" : 993
       }, {
-        "id" : "36",
-        "x" : 1320,
-        "y" : 433
+        "id" : "7",
+        "x" : 950,
+        "y" : 232
       }, {
-        "id" : "38",
-        "x" : 945,
-        "y" : 1633
+        "id" : "9",
+        "x" : 1700,
+        "y" : 232
       }, {
-        "id" : "39",
-        "x" : 945,
-        "y" : 2233
+        "id" : "10",
+        "x" : 962,
+        "y" : 1478
       }, {
-        "id" : "40",
-        "x" : 1695,
-        "y" : 1033
+        "id" : "12",
+        "x" : 950,
+        "y" : 2032
       }, {
-        "id" : "41",
-        "x" : 945,
-        "y" : 1033
+        "id" : "13",
+        "x" : 957,
+        "y" : 988
       }, {
-        "id" : "42",
-        "x" : 1695,
-        "y" : 2833
+        "id" : "14",
+        "x" : 1852,
+        "y" : 2003
       }, {
-        "id" : "43",
-        "x" : 1695,
-        "y" : 2233
-      }, {
-        "id" : "44",
-        "x" : 945,
-        "y" : 2833
-      }, {
-        "id" : "45",
-        "x" : 433,
-        "y" : 3433
-      }, {
-        "id" : "46",
-        "x" : 1183,
-        "y" : 3433
-      }, {
-        "id" : "100",
-        "x" : 1183,
-        "y" : 4033
+        "id" : "49",
+        "x" : 1797,
+        "y" : 993
       } ],
       "externalBoundariesVisible" : false,
-      "key" : "enrollDynamicView",
+      "key" : "Student_Enrollment_Container_Dynamic",
       "order" : 5,
-      "paperSize" : "A3_Portrait",
       "relationships" : [ {
-        "description" : "Send enrollment information from user to validate",
-        "id" : "47",
+        "description" : "Access enrollment page and submit course enrollment request",
+        "id" : "137",
         "order" : "1",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 797,
+          "y" : 556
+        } ]
       }, {
-        "description" : "Send unenrollment information from user to validate",
-        "id" : "48",
+        "description" : "Send enrollment API request",
+        "id" : "89",
         "order" : "2",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1550,
+          "y" : 532
+        } ]
       }, {
-        "description" : "Request validation for enrollment",
-        "id" : "60",
+        "description" : "Route request to process enrollment",
+        "id" : "59",
         "order" : "3",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1802,
+          "y" : 733
+        } ]
       }, {
-        "description" : "Request validation for unenrollment",
-        "id" : "61",
+        "description" : "Check course availability",
+        "id" : "67",
         "order" : "4",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1897,
+          "y" : 1638
+        } ]
       }, {
-        "description" : "Read from",
-        "id" : "50",
+        "description" : "Query course detail",
+        "id" : "86",
         "order" : "5",
         "response" : false,
         "vertices" : [ {
-          "x" : 795,
-          "y" : 2233
-        }, {
-          "x" : 720,
-          "y" : 2833
+          "x" : 1672,
+          "y" : 2033
         } ]
       }, {
-        "description" : "Read from",
-        "id" : "54",
+        "description" : "Returns course detail",
+        "id" : "86",
         "order" : "6",
-        "response" : false
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1637,
+          "y" : 2328
+        } ]
       }, {
-        "description" : "Send error to",
-        "id" : "57",
+        "description" : "Return course availability and detail",
+        "id" : "67",
         "order" : "7",
-        "response" : false
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2257,
+          "y" : 1623
+        } ]
       }, {
-        "description" : "Send error to",
-        "id" : "59",
+        "description" : "Validate and store enrollment data",
+        "id" : "81",
         "order" : "8",
         "response" : false
       }, {
-        "description" : "Send error to",
-        "id" : "58",
+        "description" : "Log enrollment event",
+        "id" : "83",
         "order" : "9",
         "response" : false
       }, {
-        "description" : "Send notification",
-        "id" : "51",
+        "description" : "Send confirmation to student",
+        "id" : "72",
         "order" : "10",
         "response" : false
       }, {
-        "description" : "Send enroll/unenroll to history",
-        "id" : "62",
+        "description" : "Return enrollment status",
+        "id" : "59",
         "order" : "11",
-        "response" : false
-      }, {
-        "description" : "Send data to repository",
-        "id" : "63",
-        "order" : "12",
-        "response" : false,
+        "response" : true,
         "vertices" : [ {
-          "x" : 795,
-          "y" : 2833
-        }, {
-          "x" : 795,
-          "y" : 3237
-        }, {
-          "x" : 1033,
-          "y" : 3329
+          "x" : 2147,
+          "y" : 743
         } ]
       }, {
-        "description" : "Send data to repository",
-        "id" : "64",
+        "description" : "Deliver enrollment status",
+        "id" : "89",
+        "order" : "12",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1550,
+          "y" : 232
+        } ]
+      }, {
+        "description" : "Displays enrollment confirmation message",
+        "id" : "137",
         "order" : "13",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 777,
+          "y" : 257
+        } ]
+      } ]
+    }, {
+      "description" : "Shows the component interactions within Enrollment Manager when a student enrolls in a course.",
+      "dimensions" : {
+        "height" : 2366,
+        "width" : 4883
+      },
+      "elementId" : "49",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 3040,
+        "y" : 1810
+      }, {
+        "id" : "5",
+        "x" : 1062,
+        "y" : 130
+      }, {
+        "id" : "9",
+        "x" : 3105,
+        "y" : 530
+      }, {
+        "id" : "10",
+        "x" : 305,
+        "y" : 1810
+      }, {
+        "id" : "14",
+        "x" : 3105,
+        "y" : 1045
+      }, {
+        "id" : "50",
+        "x" : 1864,
+        "y" : 543
+      }, {
+        "id" : "53",
+        "x" : 1087,
+        "y" : 1000
+      }, {
+        "id" : "56",
+        "x" : 1110,
+        "y" : 1755
+      }, {
+        "id" : "57",
+        "x" : 2145,
+        "y" : 1795
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "Student_Enrollment_Component_Dynamic",
+      "order" : 6,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "description" : "Routes enrollment request to manage course enrollment",
+        "id" : "58",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2755,
+          "y" : 560
+        } ]
+      }, {
+        "description" : "Calls business logic to process enrollment request",
+        "id" : "62",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1624,
+          "y" : 792
+        } ]
+      }, {
+        "description" : "Retrieve student profile information",
+        "id" : "68",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3010,
+          "y" : 1585
+        } ]
+      }, {
+        "description" : "Fetch course details for enrollment verification",
+        "id" : "66",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2520,
+          "y" : 1180
+        } ]
+      }, {
+        "description" : "Saves enrollment data",
+        "id" : "65",
+        "order" : "5",
         "response" : false
       }, {
-        "description" : "Store data in database",
-        "id" : "120",
-        "order" : "14",
+        "description" : "Persistes data into the database",
+        "id" : "80",
+        "order" : "6",
         "response" : false
+      }, {
+        "description" : "Logs enrollment event for auditing",
+        "id" : "74",
+        "order" : "7",
+        "response" : false
+      }, {
+        "description" : "Send confirmation notification to student",
+        "id" : "71",
+        "order" : "8",
+        "response" : false
+      }, {
+        "description" : "Returns enrollment status",
+        "id" : "62",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1776,
+          "y" : 1050
+        } ]
+      }, {
+        "description" : "Returns enrollment response",
+        "id" : "58",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2715,
+          "y" : 840
+        } ]
+      } ]
+    }, {
+      "description" : "Shows the component interactions within Enrollment Manager when a student requests to view their enrollment history.",
+      "dimensions" : {
+        "height" : 2925,
+        "width" : 2833
+      },
+      "elementId" : "49",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 170,
+        "y" : 905
+      }, {
+        "id" : "10",
+        "x" : 1975,
+        "y" : 2250
+      }, {
+        "id" : "14",
+        "x" : 1955,
+        "y" : 220
+      }, {
+        "id" : "52",
+        "x" : 1035,
+        "y" : 840
+      }, {
+        "id" : "55",
+        "x" : 1970,
+        "y" : 840
+      }, {
+        "id" : "56",
+        "x" : 1970,
+        "y" : 1530
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "EnrollmentHistory_Container_Dynamic",
+      "order" : 7,
+      "relationships" : [ {
+        "description" : "Routes request to retrieve enrollment history",
+        "id" : "60",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 760,
+          "y" : 840
+        } ]
+      }, {
+        "description" : "Calls business logic to process enrollment history request",
+        "id" : "64",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1725,
+          "y" : 870
+        } ]
+      }, {
+        "description" : "Fetches student enrollment data",
+        "id" : "79",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2045,
+          "y" : 1335
+        } ]
+      }, {
+        "description" : "Queries database for enrollment records",
+        "id" : "80",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2047,
+          "y" : 2041
+        } ]
+      }, {
+        "description" : "Returns enrollment records",
+        "id" : "80",
+        "order" : "5",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2347,
+          "y" : 2038
+        } ]
+      }, {
+        "description" : "Returns enrollment data",
+        "id" : "79",
+        "order" : "6",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2345,
+          "y" : 1335
+        } ]
+      }, {
+        "description" : "Fetches course metadata (names, codes, etc)",
+        "id" : "78",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2337,
+          "y" : 676
+        } ]
+      }, {
+        "description" : "Returns course metadata",
+        "id" : "78",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2037,
+          "y" : 683
+        } ]
+      }, {
+        "description" : "Returns compiled enrollment history data",
+        "id" : "64",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1720,
+          "y" : 1140
+        } ]
+      }, {
+        "description" : "Returns enrollment history response",
+        "id" : "60",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 825,
+          "y" : 1140
+        } ]
       } ]
     }, {
       "dimensions" : {
-        "height" : 2758,
-        "width" : 1316
+        "height" : 3358,
+        "width" : 2620
       },
-      "elementId" : "35",
+      "elementId" : "14",
       "elements" : [ {
-        "id" : "37",
+        "id" : "5",
+        "x" : 1945,
+        "y" : 2233
+      }, {
+        "id" : "12",
         "x" : 433,
+        "y" : 2833
+      }, {
+        "id" : "16",
+        "x" : 808,
         "y" : 433
       }, {
-        "id" : "39",
-        "x" : 433,
+        "id" : "18",
+        "x" : 808,
         "y" : 1033
       }, {
-        "id" : "46",
+        "id" : "19",
         "x" : 433,
         "y" : 1633
       }, {
-        "id" : "100",
+        "id" : "21",
+        "x" : 1183,
+        "y" : 1633
+      }, {
+        "id" : "22",
         "x" : 433,
         "y" : 2233
       } ],
       "externalBoundariesVisible" : false,
-      "key" : "enrollHistoryDynamicView",
-      "order" : 6,
-      "paperSize" : "A4_Portrait",
+      "key" : "courseEstaDynamicView",
+      "order" : 8,
+      "paperSize" : "A3_Portrait",
       "relationships" : [ {
-        "description" : "Send enrollment history information from user to get information",
-        "id" : "49",
+        "description" : "Sends request to change course enroll status",
+        "id" : "24",
         "order" : "1",
         "response" : false
       }, {
-        "description" : "Send data to repository",
-        "id" : "63",
+        "id" : "26",
         "order" : "2",
         "response" : false
       }, {
-        "description" : "read Data from database",
-        "id" : "120",
+        "id" : "31",
         "order" : "3",
+        "response" : false
+      }, {
+        "id" : "93",
+        "order" : "4",
+        "response" : false
+      }, {
+        "id" : "27",
+        "order" : "5",
+        "response" : false
+      }, {
+        "id" : "94",
+        "order" : "6",
         "response" : false
       } ]
     }, {
@@ -2669,61 +2379,61 @@
         "height" : 2366,
         "width" : 3579
       },
-      "elementId" : "65",
+      "elementId" : "33",
       "elements" : [ {
-        "id" : "66",
+        "id" : "34",
         "x" : 433,
         "y" : 433
       }, {
-        "id" : "67",
+        "id" : "35",
         "x" : 1183,
         "y" : 433
       }, {
-        "id" : "68",
+        "id" : "36",
         "x" : 433,
         "y" : 1033
       }, {
-        "id" : "69",
+        "id" : "37",
         "x" : 1183,
         "y" : 1033
       }, {
-        "id" : "70",
+        "id" : "38",
         "x" : 433,
         "y" : 1633
       }, {
-        "id" : "71",
+        "id" : "39",
         "x" : 1183,
         "y" : 1633
       }, {
-        "id" : "72",
+        "id" : "40",
         "x" : 1945,
         "y" : 1633
       }, {
-        "id" : "73",
+        "id" : "41",
         "x" : 2695,
         "y" : 1633
       } ],
       "externalBoundariesVisible" : false,
       "key" : "classMaterialDynamicView",
-      "order" : 9,
+      "order" : 10,
       "paperSize" : "A3_Landscape",
       "relationships" : [ {
         "description" : "Forward request",
-        "id" : "74",
+        "id" : "42",
         "order" : "1",
         "response" : false
       }, {
-        "id" : "75",
+        "id" : "43",
         "order" : "2",
         "response" : false
       }, {
         "description" : "3",
-        "id" : "76",
+        "id" : "44",
         "order" : "3",
         "response" : false
       }, {
         "description" : "4",
-        "id" : "77",
+        "id" : "45",
         "order" : "4",
         "response" : false,
         "vertices" : [ {
@@ -2735,17 +2445,17 @@
         } ]
       }, {
         "description" : "1",
-        "id" : "78",
+        "id" : "46",
         "order" : "5",
         "response" : false
       }, {
         "description" : "2",
-        "id" : "79",
+        "id" : "47",
         "order" : "6",
         "response" : false
       }, {
         "description" : "3",
-        "id" : "80",
+        "id" : "48",
         "order" : "7",
         "response" : false,
         "vertices" : [ {
@@ -2773,8 +2483,8 @@
         "y" : 208
       }, {
         "id" : "4",
-        "x" : 358,
-        "y" : 1408
+        "x" : 380,
+        "y" : 1550
       }, {
         "id" : "5",
         "x" : 1108,
@@ -2789,9 +2499,9 @@
       "order" : 1,
       "paperSize" : "A4_Portrait",
       "relationships" : [ {
-        "id" : "165"
+        "id" : "131"
       }, {
-        "id" : "166",
+        "id" : "132",
         "vertices" : [ {
           "x" : 208,
           "y" : 1708
@@ -2800,15 +2510,15 @@
           "y" : 1408
         } ]
       }, {
-        "id" : "167"
+        "id" : "133"
       }, {
-        "id" : "168"
+        "id" : "134"
       }, {
-        "id" : "169"
+        "id" : "135"
       }, {
-        "id" : "53"
+        "id" : "70"
       }, {
-        "id" : "56"
+        "id" : "73"
       } ],
       "softwareSystemId" : "6"
     } ]

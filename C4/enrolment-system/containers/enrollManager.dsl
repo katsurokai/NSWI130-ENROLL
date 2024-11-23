@@ -1,36 +1,56 @@
 enrollManager = container "Enrollment Manager" "Provides functionality for enrollment in course with appropriate validation" {
+    
+    technology "Spring Boot"
+    
     group "Presentation Layer" {
-        enrollInterface = component "Enrollment Interface" "Handle module access to enroll Manager"
-        historyInterface = component "Enrollment History Interface" "Handle module access to enroll history in enroll Manager"
+
+        courseEnrollmentController = component "Course Enrollment Controller" "Process user request to manage course enrollment"
+        unEnrollmentController = component "Unenrollment Controller" "Process user request to manage unenrollment"
+        enrollmentHistoryController = component  "Enrollment History Controller" "Process user request to manage enrollment history"
+    
     }
     group "Business layer" {
-        enrollValidation = component "Enrollment Validation" "Check for requirement on courses"
-        enrollHistory = component "Enrollment History" "Store enrollment data to history"
-        enrollIn = component "Enrollment Logic" "Make enrollment"
-        unenrollIn = component "Unrollment Logic" "Make unenrollment"
-        notifer = component "Notifier" "Send notification to notif container"
-        errorHandler = component "Error Handler" "Detect and handle any errors that occur"
-        enrollLog = component "Enrollment Logger" "Logs all enrollment actions"
+        
+        courseEnrollment = component "Course Enrollment" "business logic for enrollemnt service"
+        unEnrollment = component "Unenrollment" "business logic for unenrollemnt service"
+        enrollmentHistory = component "Enrollment History" "business logic for enrollemnt history service"
+        #waitingList = component "Waiting List" "business logic for waiting list service"
+    
     }
     group "Persistence Layer" {
-        dataSync = component "DataSync" "handle data retrieval and synchronication with SIS API"
-        enrollRep = component "Enrollment Repository" "Store data to database"
+        
+        enrollmentRepository = component "Enrollment Repository" "persistes enrollemnt data into the database"
+        auditLogRepository = component "Audit Log Repository" "persistes log event into the database"
+    
     }
 }
 
 # relationships of Enrollment Manager components
-enrollInterface -> enrollIn "Send enrollment information from user to validate"
-enrollInterface -> unenrollIn "Send unenrollment information from user to validate"
-historyInterface -> enrollHistory "Send enrollment history information from user to get information"
+apiGateWay -> courseEnrollmentController "Routes enrollment requests"
+apiGateWay -> EnrollmentHistoryController "Routes enrollment history requests" 
+apiGateWay -> unEnrollmentController "Routes unenrollment requests"
 
-enrollValidation -> dataSync "Read from"
-notifer -> notif "Send notification"
-dataSync -> sisApi "Read from"
-enrollValidation -> errorHandler "Send error to"
-errorHandler -> notifer "Send error to"
-errorHandler -> enrollLog "Send error to"
-enrollIn -> enrollValidation "Request validation for enrollment"
-unenrollIn -> enrollValidation "Request validation for unenrollment"
-enrollValidation -> enrollHistory "Send enroll/unenroll to history"
-enrollHistory -> enrollRep "Send data to repository"
-enrollLog -> enrollRep "Send data to repository"
+
+courseEnrollmentController -> courseEnrollment "get and update data"
+unEnrollmentController -> unEnrollment "Gets and update data"
+enrollmentHistoryController -> enrollmentHistory "get and update data"
+
+courseEnrollment -> enrollmentRepository "uses to persist course enrollment data"
+courseEnrollment -> courseEsta "reads for course data" 
+courseEnrollment -> sisApi "retrieve student information"
+courseEnrollment -> notif "send notification"
+courseEnrollment -> auditLogRepository "log event"
+// courseEnrollment -> waitingList "add to waiting list"
+
+unEnrollment -> enrollmentRepository "uses to update course enrollment data"    
+unEnrollment -> auditLogRepository "logs event"
+// unEnrollment -> waitingList "remove from waiting list"
+unEnrollment -> notif "send notification"
+
+enrollmentHistory -> courseEsta "reads for course data"
+enrollmentHistory -> enrollmentRepository "uses to get student course enrollment data"
+
+// waitingList -> enrollmentRepository "read from and writes to"
+
+enrollmentRepository -> enrollDB "read from and writes to"
+auditLogRepository -> auditLogDB "writes to"
