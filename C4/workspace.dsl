@@ -84,7 +84,7 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             courseValidator -> courseDatabaseCommunicator
             courseDatabaseCommunicator -> courseEstaDB
             courseController -> courseNotifer
-            courseNotifer -> courseEnrollment
+            courseNotifer -> enrollManager
             courseNotifer -> notif
         }
 
