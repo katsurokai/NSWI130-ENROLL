@@ -47,6 +47,8 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         !include /enrolment-system/dynamic/enrollment_component_dynamic.dsl
 
+        !include /enrolment-system/dynamic/unenrollment_component_dynamic.dsl
+
         !include /enrolment-system/dynamic/enrollmenthistory_component_dynamic.dsl
 
         // dynamic enrollManager "enrollDynamicView" {

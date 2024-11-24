@@ -24,6 +24,8 @@ enrollmentSys = softwareSystem "Enrollment System" "manage the process of regist
     !include containers/courseEstablishment.dsl
     !include containers/classMat.dsl
     !include containers/enrollManager.dsl
+
+    !docs docs
 }
 
 # =============== Container <-> Container relationships ===============
@@ -75,6 +77,7 @@ classMatDBComm -> classMatDB "Builds requests + Querries database"
 // enrolldashboardApp -> lectureMaterial "Add course material"
 
 # Class Establishment
+courseDatabaseCommunicator -> courseEstaDB "Writes/reads data"
 courseDatabaseCommunicator -> courseEstaDB "Writes/reads data"
 courseNotifer -> courseEnrollment "Gets list of subscribed users"
 courseNotifer -> notif "Send notification request"

@@ -42,9 +42,10 @@ courseEnrollment -> notif "send notification"
 courseEnrollment -> auditLogRepository "log event"
 // courseEnrollment -> waitingList "add to waiting list"
 
-unEnrollment -> enrollmentRepository "uses to update course enrollment data"    
+unEnrollment -> enrollmentRepository "uses to update course enrollment data"
+unEnrollment -> courseEsta "reads for course data"    
 unEnrollment -> auditLogRepository "logs event"
-// unEnrollment -> waitingList "remove from waiting list"
+unEnrollment -> sisApi "retrieve student information for validation"
 unEnrollment -> notif "send notification"
 
 enrollmentHistory -> courseEsta "reads for course data"
