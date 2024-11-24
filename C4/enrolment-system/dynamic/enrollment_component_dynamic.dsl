@@ -9,6 +9,7 @@ dynamic enrollManager "Student_Enrollment_Component_Dynamic" "Student to enroll 
             courseEnrollment -> enrollmentRepository "Saves enrollment data"
             enrollmentRepository -> enrollDB "Persistes data into the database"
             courseEnrollment -> auditLogRepository "Logs enrollment event for auditing"
+            auditLogRepository -> auditLogDB "Persistes data into database"
             courseEnrollment -> notif "Send confirmation notification to student"
             courseEnrollment -> courseEnrollmentController "Returns enrollment status"
             courseEnrollmentController -> apiGateWay "Returns enrollment response"
