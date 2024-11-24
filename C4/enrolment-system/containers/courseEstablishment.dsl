@@ -1,4 +1,4 @@
-courseEsta = container "Course Establishment Manager" "add" {
+courseEsta = container "Course Establishment Manager" "Provides functionality for creating courses and modifying their properties" {
         group "Presentation Layer" {
         apiCourseController = component "API Course Controller" "Handles course data operations"
     }
