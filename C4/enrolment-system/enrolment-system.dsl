@@ -76,6 +76,6 @@ classMatDBComm -> classMatDB "Builds requests + Querries database"
 
 # Class Establishment
 courseDatabaseCommunicator -> courseEstaDB "Writes/reads data"
+courseNotifer -> courseEnrollment "Gets list of subscribed users"
 courseNotifer -> notif "Send notification request"
-// enrolldashboardApp -> courseChangerApiConnector "Gives data to change course"
-// enrolldashboardApp -> courseCreationApiConnector "Gives data for creating new course"
+//enrolldashboardApp -> apiCourseController "Gives data to change course"

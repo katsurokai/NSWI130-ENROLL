@@ -77,11 +77,12 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         // }
 
         dynamic courseEsta "courseEstaDynamicView"{
-            courseChangerApiConnector -> courseController "Sends request to change course enroll status"
+            apiCourseController -> courseController "Sends request to change course enroll status"
             courseController -> courseValidator
             courseValidator -> courseDatabaseCommunicator
             courseDatabaseCommunicator -> courseEstaDB
             courseController -> courseNotifer
+            courseNotifer -> courseEnrollment
             courseNotifer -> notif
         }
 
