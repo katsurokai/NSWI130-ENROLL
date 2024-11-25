@@ -94,7 +94,10 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         component classMat "classMaterialComponentDiagram" {
             include *
-            # include enrolldashboardApp ->
+            include classMatDB
+            include classMatDB
+            include courseEstaDB
+            include apiGateWay
         }
 
         dynamic classMat "classMaterialDynamicView" {

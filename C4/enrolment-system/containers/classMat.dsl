@@ -5,7 +5,7 @@ classMat = container "Class Material Manager" "Handles howmework and other class
     }
     group "Business layer" {
         homeworkHandler = component "Homework Handler" "Verifies requests acording to buisness logic"
-        lectureMaterialHandler = component "lecture material controller" "Verifies buisness logic about lecture material"
+        lectureMaterialHandler = component "lecture material handler" "Verifies buisness logic about lecture material"
         homeworkSubmisionVerifier = component "Homework verifier" "Verifies that uploaded files don't exceed maximum filesize have correct extensions ..."
         authenticator = component "Class material authenticator" "Authenticates teachers and students"
     }
