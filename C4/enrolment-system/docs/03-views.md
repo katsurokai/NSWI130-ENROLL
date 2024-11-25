@@ -82,9 +82,9 @@ The following diagram below illustrates the interactions when an administrator w
 
 #### Class material Flow
 
-The following diagram below illustrates the interactions when a teacher wants to add homework material
+The following diagram below illustrates the interactions when a student wants to submit homework material
 
-![](embed:classMaterialDynamicView)
+![](embed:HomeworkSubmission)
 
 ---
 

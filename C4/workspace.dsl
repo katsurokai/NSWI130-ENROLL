@@ -100,9 +100,8 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             include apiGateWay
         }
 
+        /*
         dynamic classMat "classMaterialDynamicView" {
-            # include *
-
             homeworkAPI -> homeworkHandler "Forward request"
             homeworkHandler -> homeworkSubmisionVerifier
             homeworkHandler -> authenticator "3"
@@ -113,6 +112,9 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             lectureMaterialHandler -> courseEstablismentDBComm "3"
 
         }
+        */
+
+        !include /enrolment-system/dynamic/class_material_homework_submision.dsl
 
         deployment enrollmentSys "Live" "Live_Deployment"   {
             include *
