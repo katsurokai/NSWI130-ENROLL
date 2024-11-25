@@ -100,14 +100,14 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         dynamic classMat "classMaterialDynamicView" {
             # include *
 
-            homeworkAPI -> homeworkController "Forward request"
-            homeworkController -> homeworkSubmisionVerifier
-            homeworkController -> authenticator "3"
-            homeworkController -> classMatDBComm "4"
+            homeworkAPI -> homeworkHandler "Forward request"
+            homeworkHandler -> homeworkSubmisionVerifier
+            homeworkHandler -> authenticator "3"
+            homeworkHandler -> classMatDBComm "4"
 
-            lectureMaterial -> lectureMaterialController "1"
-            lectureMaterialController -> authenticator "2"
-            lectureMaterialController -> courseEstablismentDBComm "3"
+            lectureMaterial -> lectureMaterialHandler "1"
+            lectureMaterialHandler -> authenticator "2"
+            lectureMaterialHandler -> courseEstablismentDBComm "3"
 
         }
 
