@@ -90,6 +90,10 @@ The following diagram below illustrates the interactions when a student wants to
 
 ### Deployment
 
-The following diagram shows the production/live deployment of the software system
+The following diagram shows the development deployment of the software system.
+
+![](embed:Development_Deployment)
+
+The following diagram shows the production/live deployment of the software system.
 
 ![](embed:Live_Deployment)

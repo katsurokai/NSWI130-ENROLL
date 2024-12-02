@@ -7,7 +7,8 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
         notif = softwareSystem "Email/SMS Notification System" "Used to send updates to student, teacher, or admin"
         !include enrolment-system/enrolment-system.dsl
 
-        !include enrolment-system/deployment/deployment.dsl
+        !include enrolment-system/deployment/deployment_dev.dsl
+        !include enrolment-system/deployment/deployment_live.dsl
 
         # user relationship - system level
         student -> enrollmentSys "View, enroll, unenroll in courses and class material"
@@ -51,33 +52,6 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
 
         !include /enrolment-system/dynamic/enrollmenthistory_component_dynamic.dsl
 
-        // dynamic enrollManager "enrollDynamicView" {
-        //     enrollInterface -> enrollIn "Send enrollment information from user to validate"
-        //     enrollInterface -> unenrollIn "Send unenrollment information from user to validate"
-
-        //     enrollIn -> enrollValidation "Request validation for enrollment"
-        //     unenrollIn -> enrollValidation "Request validation for unenrollment"
-
-        //     enrollValidation -> dataSync "Read from"
-        //     dataSync -> sisApi "Read from"
-        //     enrollValidation -> errorHandler "Send error to"
-        //     errorHandler -> enrollLog "Send error to"
-        //     errorHandler -> notifer "Send error to"
-        //     notifer -> notif "Send notification"
-
-        //     enrollValidation -> enrollHistory "Send enroll/unenroll to history"
-        //     enrollHistory -> enrollRep "Send data to repository"
-        //     enrollLog -> enrollRep "Send data to repository"
-        //     enrollRep -> enrollDB "Store data in database"
-
-        // }
-
-        // dynamic enrollManager "enrollHistoryDynamicView"{
-        //     historyInterface -> enrollHistory "Send enrollment history information from user to get information"
-        //     enrollHistory -> enrollRep "Send data to repository"
-        //     enrollRep -> enrollDB "read Data from database"
-        // }
-
         dynamic courseEsta "courseEstaDynamicView"{
             apiCourseController -> courseController "Sends request to change course enroll status"
             courseController -> courseValidator
@@ -88,10 +62,6 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             courseNotifer -> notif
         }
 
-        // component enrolldashboardApp "enrolldashboardAppComponentDiagram" {
-        //     include *
-        // }
-
         component classMat "classMaterialComponentDiagram" {
             include *
             include classMatDB
@@ -100,23 +70,13 @@ workspace "Enrollment Workspace" "This workspace documents the architecture of t
             include apiGateWay
         }
 
-        /*
-        dynamic classMat "classMaterialDynamicView" {
-            homeworkAPI -> homeworkHandler "Forward request"
-            homeworkHandler -> homeworkSubmisionVerifier
-            homeworkHandler -> authenticator "3"
-            homeworkHandler -> classMatDBComm "4"
-
-            lectureMaterial -> lectureMaterialHandler "1"
-            lectureMaterialHandler -> authenticator "2"
-            lectureMaterialHandler -> courseEstablismentDBComm "3"
-
-        }
-        */
-
         !include /enrolment-system/dynamic/class_material_homework_submision.dsl
 
         deployment enrollmentSys "Live" "Live_Deployment"   {
+            include *
+        }
+
+        deployment enrollmentSys "Development" "Development_Deployment"   {
             include *
         }
 
