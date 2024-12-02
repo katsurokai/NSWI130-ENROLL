@@ -1,5 +1,10 @@
 # NSWI130-ENROLL
+<<<<<<< HEAD
 - Why does Enrollment dashboard aplication container directly write to Course establishment DB ??
+=======
+## (11/03/2024)
+> Added [deployment](./C4/Deployment/deployment.png) and updated [workspaceC4.dsl ](./C4/workspaceC4.dsl)
+>>>>>>> main
 
 ## (10/21/2024)
 
