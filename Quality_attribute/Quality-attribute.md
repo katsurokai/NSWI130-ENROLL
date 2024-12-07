@@ -58,3 +58,19 @@ current architecture
    - new container
    - cached it
 2. Ping/Heartbeat check on Enrollment Module (Since both of them are the same)
+
+# Ivan
+![alt text](Reservations/Overview.png)
+1. Modifiability 
+- Scenario: We want to add subscription feature for the room reservation
+![alt text](Reservations/Modifiability.png)
+Actually, system can handle this situation fine due to its architecture. We can just add a new microservice.
+![alt text](Reservations/subscription.png)
+
+2. Testability
+- Scenario: We want to test some new reservation feature
+![alt text](Reservations/Testability.png)
+Solution 1: Container has already have API Interface, which makes it available to test feature with data at our test environment.
+![alt text](Reservations/component.png)
+Solution 2: We can add custom logger that will gather information like input, output, container state
+![alt text](component-logger.png)
