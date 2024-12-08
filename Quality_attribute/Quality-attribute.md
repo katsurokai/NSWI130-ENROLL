@@ -1,5 +1,33 @@
 # Betse 
-API Gateway is a problem scenario (change C4)
+
+Tight Coupling Between Frontend and Backend Services
+
+UI components, such as individual pages, directly call specific backend APIs (e.g., singlePSubjectsPage -> subjectAPIHandler, singlePCreateTicketPage -> ticketAPIHandler).
+
+Each frontend component explicitly interacts with individual microservices instead of delegating these requests to a central API gateway.
+
+Impact on Quality Attributes
+Maintainability:
+
+Impact: Changes in backend APIs or microservices (e.g., renaming an endpoint, modifying data structures) will require corresponding updates in the frontend code. This increases the effort for maintenance and reduces the ability to independently evolve services.
+
+Scalability:
+
+Impact: Tight coupling can limit scalability. Adding new features or making major updates often requires simultaneous changes across multiple layers (UI, API handlers, controllers). This slows down development cycles.
+
+Performance:
+
+Impact: With frontend components making multiple, granular API calls (e.g., fetching lists of subjects, rooms, and teachers separately), network latency and the number of requests increase. This could degrade the user experience.
+
+Testability:
+
+Impact: Testing becomes more complex due to direct coupling. Changes in backend APIs require integration tests for both backend and frontend layers.
+
+## proposed soultion
+
+Introduce an API gateway to act as a single entry point for frontend requests. The gateway can aggregate data from multiple services, simplifying frontend logic.
+
+![alt text](Deployment-001.png)
 
 
 # Both
