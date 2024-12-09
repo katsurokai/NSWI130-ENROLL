@@ -1,33 +1,19 @@
 # Betse 
 
-Tight Coupling Between Frontend and Backend Services
+We want to improve the overall system performance.
+![alt text](Api-gateway/Deployment-001-original.png)
 
-UI components, such as individual pages, directly call specific backend APIs (e.g., singlePSubjectsPage -> subjectAPIHandler, singlePCreateTicketPage -> ticketAPIHandler).
+Currently, frontend components are making multiple, granular API calls (e.g., fetching lists of subjects, rooms, and teachers separately), which increases both network latency and the total number of requests. Over time, this can degrade the user experience.
 
-Each frontend component explicitly interacts with individual microservices instead of delegating these requests to a central API gateway.
+## Proposed Solution:
 
-Impact on Quality Attributes
-Maintainability:
+API Gateway: Introduce an API gateway as a single entry point for all frontend requests. This will consolidate multiple calls into fewer, more efficient requests and reduce network overhead.
+ 
+Caching for Read-Intensive Services: Implement caching for microservices that handle frequently requested, read-intensive data (such as schedules, rooms, and subjects). Using an in-memory store (like Redis) will reduce database load and shorten response times, further improving the user experience.
 
-Impact: Changes in backend APIs or microservices (e.g., renaming an endpoint, modifying data structures) will require corresponding updates in the frontend code. This increases the effort for maintenance and reduces the ability to independently evolve services.
+Microservices on Kubernetes: Deploy microservices into a Kubernetes environment for automatic scaling, load balancing, and resource optimization.
 
-Scalability:
-
-Impact: Tight coupling can limit scalability. Adding new features or making major updates often requires simultaneous changes across multiple layers (UI, API handlers, controllers). This slows down development cycles.
-
-Performance:
-
-Impact: With frontend components making multiple, granular API calls (e.g., fetching lists of subjects, rooms, and teachers separately), network latency and the number of requests increase. This could degrade the user experience.
-
-Testability:
-
-Impact: Testing becomes more complex due to direct coupling. Changes in backend APIs require integration tests for both backend and frontend layers.
-
-## proposed soultion
-
-Introduce an API gateway to act as a single entry point for frontend requests. The gateway can aggregate data from multiple services, simplifying frontend logic.
-
-![alt text](Deployment-001.png)
+![alt text](Api-gateway/Deployment-001.png)
 
 
 # Both
