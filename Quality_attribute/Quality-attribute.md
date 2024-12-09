@@ -1,4 +1,4 @@
-# Betse 
+# Betse
 
 We want to improve the overall system performance.
 ![alt text](Api-gateway/Deployment-001-original.png)
@@ -67,15 +67,57 @@ current architecture
 
 ![alt text](Load-balance/Microservices.png)
 
-# Vitek
-1. Ping/Heartbeat check on People Module 
-   - new container
-   - cached it
-2. Ping/Heartbeat check on Enrollment Module (Since both of them are the same)
+# Heartbeat [Vitek]
+## External module monitoring
+Let's take people module for example.
+- It's an external system.
+- We cannot manage it/restart it if something goes wrong.
+
+Scenario: People Module is down
+Our main system can't work because it's missing mandatory data from people module e.g. whole system goes down if people module goes down.
+
+![People module down](Heartbeat/people-down-error.png)
+
+Solution:
+We cache people module into local database. Now the cacher can satisfy people-module related requersts,
+even if people module itself goes down.
+
+![People module down with caching](Heartbeat/people-down-but-cached.png)
+
+Caveats:
+- People-module could hold subsetially large data and it's caching might require too much (disk) space
+- People-module databases might be specificly designed for fast access and having put cacher directly inbetween might cause unreasonable slowdown
+- Current understanding of the system is people-module hold mostly static data, should it change in future and hold more dynamicly changing data caching it might have unforeen, undesireble side-effects
+
+## Local module monitoring/restarting
+As noted in deployment diagram we are deploying on "dumb" servers which have no `system for restarting on critical error` features,
+though we want solve that here we will at least detect that server/service is down an create an alert.
+
+Scenario: subject service goes down
+
+![Subject service is down](Heartbeat/subject-service-down.png)
+
+Calls (from single page application) now go unresolved because service crashed and **nobody knows about it**
+
+Solution:
+- Running Prometheus as part of the for Logging system
+- Running (prometheus) exporters as part of each `deployment node`, these can trigger (prometheus) alert on bad behaivor
+- Running hourly heartbeat checks on all services
+
+![subject-service-down with logging in place](Heartbeat/subject-service-down-with-logger.png)
+
+
+Caveats:
+- who monitors the monitor
+
+<!-- 1. Ping/Heartbeat check on People Module -->
+<!--    - new container -->
+<!--    - cached it -->
+<!-- 2. Ping/Heartbeat check on Enrollment Module (Since both of them are the same) -->
 
 # Ivan
 ![alt text](Reservations/Overview.png)
-1. Modifiability 
+1. Modifiability
 - Scenario: We want to add subscription feature for the room reservation
 ![alt text](Reservations/Modifiability.png)
 + Actually, system can handle this situation fine due to its architecture. We can just add a new microservice.
