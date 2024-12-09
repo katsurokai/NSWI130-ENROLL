@@ -104,21 +104,25 @@ Caveats:
 - Current understanding of the system is people-module hold mostly static data, should it change in future and hold more dynamicly changing data caching it might have unforeen, undesireble side-effects
 
 ## Local module monitoring/restarting
-As noted in deployment diagram we are deploying on "dumb" servers which have no `system for restarting on critical error` features
-Therefor a system that monitors correct behaiviour and availability ( + performance is needed )
+As noted in deployment diagram we are deploying on "dumb" servers which have no `system for restarting on critical error` features,
+though we want solve that here we will at least detect that server/service is down an create an alert.
 
-Scenario: ticket service goes down
+Scenario: subject service goes down
 
-Calls now go unresolved because at best we logged system crash, at worst nobody knows.
+![Subject service is down](Heartbeat/subject-service-down.png)
+
+Calls (from single page application) now go unresolved because service crashed and **nobody knows about it**
 
 Solution:
 - Running Prometheus as part of the for Logging system
 - Running (prometheus) exporters as part of each `deployment node`, these can trigger (prometheus) alert on bad behaivor
 - Running hourly heartbeat checks on all services
 
-TODO Prometheus + exporters imgs
+![subject-service-down with logging in place](Heartbeat/subject-service-down-with-logger.png)
 
 
+Caveats:
+- who monitors the monitor
 
 <!-- 1. Ping/Heartbeat check on People Module -->
 <!--    - new container -->
