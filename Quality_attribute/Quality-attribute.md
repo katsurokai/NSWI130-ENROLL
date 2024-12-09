@@ -90,13 +90,13 @@ Let's take people module for example.
 Scenario: People Module is down
 Our main system can't work because it's missing mandatory data from people module e.g. whole system goes down if people module goes down.
 
-![People module down](Hearthbeat/people-down-error.png)
+![People module down](Heartbeat/people-down-error.png)
 
 Solution:
 We cache people module into local database. Now the cacher can satisfy people-module related requersts,
 even if people module itself goes down.
 
-![People module down with caching](img/people-down-but-cached.png)
+![People module down with caching](Heartbeat/people-down-but-cached.png)
 
 Caveats:
 - People-module could hold subsetially large data and it's caching might require too much (disk) space
