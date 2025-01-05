@@ -2,7 +2,7 @@
 
 ## Scenario Performance
 
-**Stimulus**: A huge number of Users(Students and teachers) (1000) wants to view thier schedule at the same time.
+**Stimulus**: Larger number of Users (1000) wants to view thier schedule at the same time.
 
 **Source of Stimulus**: Students,teachers.
 
@@ -12,12 +12,14 @@
 
 **Response**: All requests are processed 
 
-**Measure**: 95% of requests must be served within 2-3 seconds under a peak load of 1000 concurrent users.
+**Measure**: all requests are processed with 2-3 seconds latency
 
 
 **Current Architecture**
 
-![alt text](Api-gateway/Deployment-001-original.png)
+![alt text](Api-gateway/schedule_service.png)
+
+![alt text](Api-gateway/Deployment.png)
 
 ![alt text](Api-gateway/Dynamic-004.png)
 
@@ -55,7 +57,7 @@ area of improvment:
 
 
 
-![alt text](Api-gateway/Deployment-001.png)
+![alt text](Api-gateway/Deployment_1.png)
 
 
 
