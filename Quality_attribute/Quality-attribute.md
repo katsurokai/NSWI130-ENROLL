@@ -1,4 +1,4 @@
-# Betse
+# Performance [Betse]
 
 We want to improve the overall system performance.
 ![alt text](Api-gateway/Deployment-001-original.png)
@@ -64,7 +64,7 @@ Caveats:
 <!--    - cached it -->
 <!-- 2. Ping/Heartbeat check on Enrollment Module (Since both of them are the same) -->
 
-# Ivan
+# Modifiability [Ivan]
 ![alt text](Reservations/Overview.png)
 1. Modifiability
 - Scenario: We want to add subscription feature for the room reservation
@@ -125,6 +125,6 @@ current architecture
 
 + Solution 2.0(Availability & Performance): use solution 2 and put it on Kubernetes
 
-   - increase the availability of the system with kubernetes loadbalancing. Also reduce stress on server.
+   - increase the availability of the system with kubernetes load balancing. Also reduce stress on server.
 
 ![alt text](Load-balance/Microservices.png)
