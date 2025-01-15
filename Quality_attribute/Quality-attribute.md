@@ -1,19 +1,64 @@
 # Performance [Betse]
 
-We want to improve the overall system performance.
-![alt text](Api-gateway/Deployment-001-original.png)
+## Scenario Performance
 
-Currently, frontend components are making multiple, granular API calls (e.g., fetching lists of subjects, rooms, and teachers separately), which increases both network latency and the total number of requests. Over time, this can degrade the user experience.
+**Stimulus**: Larger number of Users (1000) wants to view thier schedule at the same time.
+
+**Source of Stimulus**: Students,teachers.
+
+**Artifact**: Ticket Service.
+
+**Environment**: Under busy conditions. 
+
+**Response**: All requests are processed 
+
+**Measure**: all requests are processed with 2-3 seconds latency
+
+
+**Current Architecture**
+
+![alt text](Api-gateway/schedule_service.png)
+
+![alt text](Api-gateway/Deployment.png)
+
+![alt text](Api-gateway/Dynamic-004.png)
+
+area of improvment: 
+
+- schedule service and ticket service are deployed on a separete node but scheduling service act as a data retrival layer and is entirly dependent on  the ticketing service.
+
+- when a student/teacher send request to view thier schedule, request go through schedule service, get list of subjuctes(for students) from the enrollment module, then send list of subjectes to the ticking module and fetch ticket data from the database and return the response.
+
+
+
+## Scenario Security
+
+**Stimulus**: A user attempts a Denial of Service (DoS) attack on the ticket service by sending an excessive number of requests.
+
+**Source of Stimulus**: authenticated user
+
+**Artifact**: Ticket service.
+
+**Environment**: Internal network.
+
+**Response**: Restrict the number of requests a user can make within a specific timeframe
+
+**Measure**: user exceeds 60 request per minute
 
 ## Proposed Solution:
 
-API Gateway: Introduce an API gateway as a single entry point for all frontend requests. This will consolidate multiple calls into fewer, more efficient requests and reduce network overhead.
+**API Gateway**: Introduce an API gateway as a single entry point for all frontend requests to consolidate multiple calls into fewer, more efficient requests and reduce network overhead and also to implement rate limiting on API endpoints to restrict the number of requests per user per minute, preventing resource exhaustion.
  
-Caching for Read-Intensive Services: Implement caching for microservices that handle frequently requested, read-intensive data (such as schedules, rooms, and subjects). Using an in-memory store (like Redis) will reduce database load and shorten response times, further improving the user experience.
+**Redis cache**: Implement caching for ticket services to reduce load on the database and improve response times for accessing ticket data on frequently accessed subjects.
 
-Microservices on Kubernetes: Deploy microservices into a Kubernetes environment for automatic scaling, load balancing, and resource optimization.
+**Container Co-location**: deploy the schdeuling service along with ticketing service (instead of deploying them in a separate node) to avoid latency due to network communication.
 
-![alt text](Api-gateway/Deployment-001.png)
+**Kubernetes**: Deploy microservices into a Kubernetes environment for automatic scaling, load balancing, and resource optimization.
+
+
+
+![alt text](Api-gateway/Deployment_1.png)
+
 
 
 # Heartbeat [Vitek]
