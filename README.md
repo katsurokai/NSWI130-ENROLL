@@ -1,7 +1,7 @@
 # Quality Attribute
 
-Quality attribute read me file .[quality attribute](./Quality_attribute/Quality-attribute.md)
-Quality attribute folder with all the slide and readme .[folder](./Quality_attribute)
+> Quality attribute read me file .[quality attribute](./Quality_attribute/Quality-attribute.md)
+> Quality attribute folder with all the slide and readme .[folder](./Quality_attribute)
 
 
 
